@@ -1,0 +1,669 @@
+﻿@using System.Globalization
+@using WAVE.Website.Classes
+@model EventsDetailsModel
+
+
+@section Header
+{
+    <style>
+        #map-canvas2 {
+            height: 300px;
+            width: auto;
+            z-index: 0;
+        }
+
+        #map-canvas2ex {
+            width: 100%;
+            height: auto;
+            z-index: 100000;
+            bottom: 50px;
+            border: 5px solid white;
+            position: fixed !important;
+            top: 59px;
+            left: 0;
+        }
+
+        #uploadImgBtn {
+            float: right;
+            font-size: 23px;
+            margin-right: 15px;
+            margin-top: 15px;
+            opacity: 0;
+            transition: opacity 3s ease, visibility 3s ease;
+            visibility: hidden;
+        }
+
+        .box:hover > #uploadImgBtn {
+            opacity: 1;
+            visibility: visible !important;
+        }
+
+        .dismiss {
+            position: fixed;
+            bottom: 10px;
+            right: 50px;
+            z-index: 5000;
+        }
+    </style>
+}
+
+
+@section FooterScripts
+{
+
+    <script type="text/javascript">
+        var map;
+        $(document).ready(function () {
+            var mapOptions = {
+                zoom: 12,
+                center: new google.maps.LatLng("@Model.Action.Latitude", "@Model.Action.Longtitude"),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                disableDefaultUI: true,
+
+            };
+            map = new google.maps.Map(document.getElementById("map-canvas2"), mapOptions);
+
+            // To add the marker to the map, use the 'map' property
+            var myLatlng = new google.maps.LatLng("@Model.Action.Latitude", "@Model.Action.Longtitude");
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: "@Model.Action.Title"
+            });
+            // To add the marker to the map, call setMap();
+            marker.setMap(map);
+            google.maps.event.trigger(map, 'resize');
+            $(map).click(google.maps.event.trigger(map, 'resize'));
+        });
+
+    </script>
+    <script type="text/javascript">
+        $("#volunteerbtn").mouseenter(function () {
+            $("#volunteerbtn").html('<i class="fa fa-fw fa-times"></i>Unhelp');
+
+        });
+        $("#volunteerbtn").mouseleave(function () {
+            $("#volunteerbtn").html('<i class="fa fa-fw fa-check"></i>Helping!');
+        });
+        $("#volunteerbtn1").mouseenter(function () {
+            $("#volunteerbtn1").addClass("btn-stroke");
+        });
+        $("#volunteerbtn1").mouseleave(function () {
+            $("#volunteerbtn1").removeClass("btn-stroke");
+        });
+        $(document).ready(function () {
+            var w = $(window).width();
+            var nw = w - 308;
+            $("#progressbar").width(nw);
+        });
+    </script>
+    <script type="text/javascript">
+
+        jQuery(".editBtn").click(function () {
+            var tmp = jQuery(this).attr("id");
+            var id = tmp.substring(5);
+
+            if (jQuery("#updateTxt-" + id).css("display") == "none") {
+                jQuery("#updateTxt-" + id).show();
+                jQuery("#deleteUpdateBtn-" + id).show();
+
+            } else {
+                jQuery("#updateTxt-" + id).hide();
+                jQuery("#deleteUpdateBtn-" + id).hide();
+            }
+
+        });
+        jQuery(".editCommentBtn").click(function () {
+            var tmp = jQuery(this).attr("id");
+            var id = tmp.substring(12);
+            if (jQuery("#commentTxt-" + id).css("display") == "none") {
+                jQuery("#commentTxt-" + id).show();
+                jQuery("#deleteCommentBtn-" + id).show();
+
+            } else {
+                jQuery("#commentTxt-" + id).hide();
+                jQuery("#deleteCommentBtn-" + id).hide();
+            }
+
+        });
+        jQuery(document).ready(function () {
+            jQuery("#ThumpActionId").val('@Model.Action.Id');
+            jQuery("#BannerActionId").val('@Model.Action.Id');
+        });
+
+        jQuery(document).ready(function () {
+            if ($('#title').text().length > 120) {
+                $('#title').css("fontSize", "40px");
+            }
+        });
+
+        function expand() {
+            jQuery("#map-canvas2").attr("id", "map-canvas2ex");
+            window.google.maps.event.trigger(map, 'resize');
+            $(map).click(window.google.maps.event.trigger(map, 'resize'));
+            jQuery(".dismiss").show();
+        }
+        function normal() {
+            jQuery("#map-canvas2ex").attr("id", "map-canvas2");
+            window.google.maps.event.trigger(map, 'resize');
+            $(map).click(window.google.maps.event.trigger(map, 'resize'));
+            jQuery(".dismiss").hide();
+        }
+        $(document).keyup(function (e) {
+
+            if (e.keyCode == 27) { normal() }   // esc
+        });
+    </script>
+
+}
+
+<div class="layout-app">
+    <div class="row row-app" style="z-index: 100;">
+        <!-- col-app -->
+        <div class="col-app col-unscrollable">
+
+            <!-- col-app -->
+            <div class="col-app">
+                <div class="col-md-12">
+                    <div class="innerLR box" style="margin-left: 115px; margin-top: 300px; position: absolute; z-index: 1000;">
+                        <img class="pull-left" src="@Model.Action.Creator.ProfilePhoto.Url" alt="photo" style="border: 5px solid white; border-radius: 100px; height: 200px;">
+                    </div>
+                    <div class="col-table">
+                        <div class="col-table-row">
+                            <div id="title" style="background: rgba(0, 0, 0, 0.5); color: #fff; float: left; font-size: 64px; margin-left: -7px; min-height: 100px; padding-bottom: 8px; padding-left: 330px; position: absolute; right: 0; text-align: left; text-shadow: 2px 0 3px rgba(0, 0, 0, 0.9); top: 300px; width: 100%;">
+                                @*<div style="float: left; height: 50px; width: 100px; border: 2px solid white; margin-top: 25px; margin-right: 220px; margin-left: 20px; border-radius: 5px; font-size: 17px; text-align: center;">
+                                    <div>25 Dec</div>
+                                    <div>13:00-17:00</div>
+                                    </div>*@
+                                @Model.Action.Title
+                            </div>
+                            <div class="pull-left" style="color: #fff; left: 335px; position: absolute; top: 370px;">
+
+                                <span style="font-size: 15px;">by</span><a href="/User/@Model.Action.Creator.Account.UserName" style="font-size: 20px; margin-left: 2px;">@Model.Action.Creator.GetFullName()</a>
+
+
+                            </div>
+                            <div class="box" style="-moz-background-size: cover; -o-background-size: cover; background: url('@Model.Action.BannerPhoto.Url') no-repeat; background-size: cover; min-height: 400px;">
+                                @if (@Model.Action.Creator.Account.UserName == Model.LoggedUser.Account.UserName)
+                                {
+                                    <a href="#modalUpload" id="uploadImgBtn" data-toggle="modal" class="btn btn-primary btn-stroke"><i class="fa fa-camera-retro"></i>@Resources.EventsDetailsUploadImg</a>
+                                }
+                            </div>
+                            <div style="padding-right: 4px;">
+                                <div class="row bg-white shadow2">
+                                    <div class="innerAll col-md-9 pull-right" style="margin-left: 345px;">
+                                        <div class="innerT pull-left margin-none">
+                                            <div class="media-body" style="border-right: 1px solid lightgray; font-size: 14px; text-align: center; width: 80px;">
+                                                <p class="margin-none">@Resources.EventsDetailsVolunteers</p>
+                                                <p class="margin-none" style="font-size: 35px">@Model.Action.Volunteers.Count()</p>
+                                            </div>
+                                        </div>
+                                        <div class="innerT margin-none pull-left">
+                                            <div class="media-body" style="border-right: 1px solid lightgray; font-size: 14px; text-align: center; width: 80px;">
+                                                <p class="margin-none">@Resources.EventsDetailsGoal</p>
+                                                <p class="margin-none" style="font-size: 35px">@Model.Action.Goal1Max</p>
+                                            </div>
+                                        </div>
+                                        <div class="innerT margin-none pull-left">
+                                            <div class="media-body" style="font-size: 14px; text-align: center; width: 80px;">
+                                                <p class="margin-none">@Resources.EventsDetailsDaysLeft</p>
+                                                @{
+                                                    if (Model.Action.GetRemainingDays() < 0)
+                                                    {
+                                                        <p class="margin-none" style="font-size: 35px">0</p>
+                                                    }
+                                                    else
+                                                    {
+                                                        <p class="margin-none" style="font-size: 35px">@Model.Action.GetRemainingDays()</p>
+                                                    }
+                                                }
+
+
+                                            </div>
+                                        </div>
+                                        <div class="media innerAll margin-none pull-right">
+                                            <div style="padding-top: 4px;">
+                                                @if (Request.IsAuthenticated == false)
+                                                {
+                                                    <a href="/Account/Login" class="innerTB pull-right btn btn-primary" style="width: 200px;"><i class="fa fa-fw fa-key"></i>Log In To Volunteer</a>
+                                                }
+                                                else if (@Model.Action.Creator.Account.UserName == Model.LoggedUser.Account.UserName)
+                                                {
+                                                    <a href="/#modal-1" data-toggle="modal" class="btn-xs innerTB pull-right btn btn-primary">
+                                                        <i class="fa fa-fw fa-edit" style="margin-left: 5px"></i>@Resources.EventsDetailsEditAction
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    if (Model.LoggedUser.IsVolunteer(Model.Action))
+                                                    {
+                                                        using (Html.BeginForm("Delete", "Volunteer"))
+                                                        {
+                                                            <input type="hidden" value="@Model.Action.Id" name="Id" />
+                                                            <button type="submit" id="volunteerbtn" class="innerTB pull-right btn btn-success" style="width: 200px;"><i class="fa fa-fw fa-check"></i>@Resources.EventsDetailsHelping</button>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        using (Html.BeginForm("Create", "Volunteer"))
+                                                        {
+                                                            <input type="hidden" value="@Model.Action.Id" name="Id" />
+                                                            <button type="submit" id="volunteerbtn1" class="innerTB pull-right btn btn-success" style="width: 200px;">@Resources.EventsDetailsHelp</button>
+                                                        }
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="" style="margin-top: 35px;">
+                                        <div class="col-md-12">
+                                            <div class="">
+                                                <div class="col-md-9">
+                                                    <div class="">
+                                                        <!-- Tabs -->
+                                                        <div class="">
+                                                            <div class="widget widget-tabs widget-tabs-responsive" style="background: none; border: none;">
+
+                                                                <!-- Tabs Heading -->
+                                                                <div class="widget-head" style="background: none; padding: 5px 10px 0 32px;">
+                                                                    <ul>
+                                                                        <li class="active" style="background: none"><a href="#tab-1" data-toggle="tab">@Resources.EventsDetailsDescription</a></li>
+                                                                        <li style="background: none"><a href="#tab-2" data-toggle="tab">@Resources.EventsDetailsUpdates</a></li>
+                                                                        <li style="background: none"><a href="#tab-3" data-toggle="tab">@Resources.EventsDetailsDiscussions</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <!-- // Tabs Heading END -->
+                                                                <div class="widget-body" style="padding: 0">
+                                                                    <div class="tab-content">
+                                                                        <!-- Tab content -->
+                                                                        <div class="tab-pane active" id="tab-1" style="margin-top: 5px">
+                                                                            <div class="">
+                                                                                <div class="col-md-12 bg-white shadow2" style="border-radius: 15px; color: #4E5860; font-family: 'Segoe UI', 'FF Tisa', Georgia, serif; font-size: 1.2em; font-weight: 400; line-height: 1.8em; line-height: 1.8; padding: 1.9em 4.9em 2.25em 2.9em;">
+                                                                                    @Html.Raw(Model.Action.Description)
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- Tab content -->
+                                                                        <div class="tab-pane" id="tab-2" style="margin-top: 5px">
+                                                                            <div class="layout-timeline innerLR">
+                                                                                <div class="col-md-12 row bg-white shadow2" style="border-radius: 15px;">
+                                                                                    @if (Model.Action.Creator.Account.UserName == Model.LoggedUser.Account.UserName)
+                                                                                    {
+                                                                                        <div class="widget-body padding-none">
+                                                                                            <div class="tab-content">
+
+                                                                                                <div class="tab-pane active animated fadeInUp" id="shareTab">
+                                                                                                    <div class="share">
+                                                                                                        @using (Html.BeginForm("CreateUpdate", "Events"))
+                                                                                                        {
+                                                                                                            <input type="hidden" value="@Model.Action.Id" name="Id" />
+                                                                                                            <textarea class="form-control" rows="6" placeholder="@Resources.EventsDetailsPlaceholderUpdate" name="UpdateText"></textarea>
+                                                                                                            <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle fa-fw"></i>@Resources.EventsDetailsAddUpdate</button>
+                                                                                                        }
+                                                                                                    </div>
+                                                                                                </div>
+
+
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+                                                                                    @{
+                                                                                        var grop = from au in Model.Action.ActionUpdates
+                                                                                                   orderby au.DateModified.Date descending
+                                                                                                   group au by au.DateModified.Date
+                                                                                                       into g
+                                                                                                       select new { g.Key, Updates = g };
+                                                                                    }
+                                                                                    @if (!grop.Any())
+                                                                                    {
+                                                                                        <div class="text-left innerTP inner-2x">
+
+                                                                                            There are no available updates
+
+                                                                                        </div>
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        <div class="col-md-4 bg-white">
+                                                                                        </div>
+                                                                                        <div class="col-md-8 bg-white">
+                                                                                            <div class="innerAll">
+
+
+
+                                                                                                <ul class="timeline">
+
+
+
+                                                                                                    @foreach (var group in grop)
+                                                                                                    {
+                                                                                                        <li class="active">
+                                                                                                            <div class="separator bottom">
+                                                                                                                <span class="date box-generic">
+                                                                                                                    @if (group.Key == DateTime.Now.Date)
+                                                                                                                    {
+                                                                                                                        @:Today
+                                                                                                            }
+                                                                                                                    else
+                                                                                                                    {
+                                                                                                                        @group.Key.ToString("MMMM dd", CultureInfo.InvariantCulture)
+                                                                                                                    }
+                                                                                                                </span>
+                                                                                                                <div style="padding: 14px;"></div>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                        foreach (var au in group.Updates)
+                                                                                                        {
+                                                                                                            <li class="active">
+                                                                                                                <span class="type"><i></i></span>
+                                                                                                                <div class="widget widget-heading-simple widget-body-white margin-none">
+                                                                                                                    <div class="widget-body">
+                                                                                                                        <div id="" class="alert alert-gray">
+                                                                                                                            <p class="glyphiconscircle_info margin-none"><i></i>@au.Text</p>
+                                                                                                                            @if (Model.Action.Creator.Account.UserName == Model.LoggedUser.Account.UserName)
+                                                                                                                            {
+                                                                                                                                using (Html.BeginForm("EditUpdate", "Events", new { }, FormMethod.Post, new { @id = "updateTxt-" + @au.Id, style = "display:none;" }))
+                                                                                                                                {
+                                                                                                                                    <input type="hidden" value="@Model.Action.Id" name="Id" />
+                                                                                                                                    <input type="hidden" value="@au.Id" name="ActionUpdateId" />
+                                                                                                                                    <textarea class="form-control" rows="6" name="UpdateText">@au.Text</textarea>
+                                                                                                                                    <button type="submit" class="btn btn-primary btn-sm pull-left"><i class="fa fa-edit fa-fw"></i>@Resources.EventsDetailsEditUpdate</button>
+                                                                                                                                }
+                                                                                                                                using (Html.BeginForm("DeleteUpdate", "Events", new { }, FormMethod.Post, new { @id = "deleteUpdateBtn-" + @au.Id, style = "display:none;" }))
+                                                                                                                                {
+                                                                                                                                    <input type="hidden" value="@Model.Action.Id" name="Id" />
+                                                                                                                                    <input type="hidden" value="@au.Id" name="ActionUpdateId" />
+                                                                                                                                    <button type="submit" class="btn btn-primary btn-sm pull-left" style="margin-left: 10px"><i class="fa fa-trash-o fa-fw"></i>@Resources.EventsDetailsDeleteUpdate</button>
+                                                                                                                                }
+                                                                                                                            }
+
+                                                                                                                        </div>
+                                                                                                                        <a id="edit-@au.Id" class="glyphicons single pencil editBtn"><i></i></a>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </li>
+                                                                                                        }
+                                                                                                    }
+                                                                                                </ul>
+
+                                                                                            </div>
+                                                                                        </div>}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- // Tab content END -->
+                                                                        <!-- Tab content -->
+                                                                        <div class="tab-pane bg-white shadow2" id="tab-3" style="border-radius: 15px; margin-top: 5px;">
+
+                                                                            <div class="tab-content">
+
+                                                                                <div class="tab-pane active animated fadeInUp">
+                                                                                    <div class="share" style="padding-top: 15px;">
+                                                                                        @using (Html.BeginForm("CreateComment", "Events"))
+                                                                                        {
+                                                                                            <input type="hidden" value="@Model.Action.Id" name="Id" />
+                                                                                            <textarea class="form-control" rows="6" placeholder="@Resources.EventsDetailsPlaceholderComment" name="CommentText"></textarea>
+                                                                                            <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle fa-fw"></i>@Resources.EventsDetailsAddComment</button>
+                                                                                        }
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            @{
+                                                                                var comments = from c in Model.Action.Comments
+                                                                                               orderby c.DateCreated descending
+                                                                                               select c;
+                                                                            }
+
+                                                                            @foreach (var c in comments)
+                                                                            {
+                                                                                <div class="media innerAll border-bottom margin-none">
+                                                                                    <a href="#" class="pull-left">
+                                                                                        <img src="@c.User.ProfilePhoto.Url" alt="people" class="img-responsive img-circle" />
+                                                                                    </a>
+                                                                                    <div class="media-body">
+                                                                                        @if (c.DateCreated.Date == DateTime.Now.Date)
+                                                                                        {
+                                                                                            <small class="strong pull-right">
+                                                                                                @{
+                                                                                            var hoursDiff = DateTime.Now.Hour - c.DateCreated.Hour;
+                                                                                            if ((hoursDiff) == 0)
+                                                                                            {
+                                                                                                var timeDiff = DateTime.Now.Minute - c.DateCreated.Minute;
+                                                                                                if (timeDiff != 1)
+                                                                                                {
+                                                                                                    @(timeDiff + " " + Resources.EventsDetailsMinutes)
+                                                                                                    ;
+                                                                                                }
+                                                                                                else
+                                                                                                {
+                                                                                                    @(timeDiff + " " + Resources.EventsDetailsMinute)
+                                                                                                    ;
+                                                                                                }
+                                                                                            }
+                                                                                            else if (hoursDiff == 1)
+                                                                                            {
+                                                                                                @(@hoursDiff + " " + Resources.EventsDetailsHour)
+                                                                                                ;
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                                                                                                @(@hoursDiff + " " + Resources.EventsDetailsHours)
+                                                                                                ;
+                                                                                            }
+                                                                                                }
+                                                                                            </small>
+                                                                                            if (c.User.Id == Model.LoggedUser.Id || User.IsInRole("SuperAdministrator"))
+                                                                                            {
+                                                                                                <a id="editComment-@c.Id" class="glyphicons single pencil editCommentBtn pull-right"><i></i></a>
+                                                                                            }
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            var days = (int)(DateTime.Now.DayOfYear - c.DateCreated.DayOfYear + (365.25 * (DateTime.Now.Year - c.DateCreated.Year)));
+                                                                                            <small class="strong pull-right">@days @Resources.EventsDetailsDays</small>
+                                                                                        }
+                                                                                        <h5>@c.User.GetFullName()</h5>
+                                                                                        @if (c.User == Model.Action.Creator)
+                                                                                        {
+                                                                                            <p class="innerB border-bottom">@Resources.EventsDetailsEventOrganizer</p>
+                                                                                        }
+                                                                                        else if (c.User.IsVolunteer(Model.Action))
+                                                                                        {
+                                                                                            <p class="innerB border-bottom">@Resources.EventsDetailsVolunteer</p>
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            <p class="innerB border-bottom">@Resources.EventsDetailsUser</p>
+                                                                                        }
+                                                                                        <p>@c.Text</p>
+                                                                                    </div>
+                                                                                    @if (Model.Action.Creator.Account.UserName == Model.LoggedUser.Account.UserName)
+                                                                                    {
+                                                                                        using (Html.BeginForm("EditComment", "Events", new { }, FormMethod.Post, new { @id = "commentTxt-" + @c.Id, style = "display:none;" }))
+                                                                                        {
+                                                                                            <input type="hidden" value="@Model.Action.Id" name="Id" />
+                                                                                            <input type="hidden" value="@c.Id" name="CommentId" />
+                                                                                            <textarea class="form-control" rows="6" name="UpdateText">@c.Text</textarea>
+                                                                                            <button type="submit" class="btn btn-primary btn-sm pull-left"><i class="fa fa-edit fa-fw"></i>@Resources.EventsDetailsEditComment</button>
+                                                                                        }
+                                                                                    }
+                                                                                    @if (User.IsInRole("SuperAdministrator"))
+                                                                                    {
+                                                                                        using (Html.BeginForm("DeleteComment", "Events", new { }, FormMethod.Post, new { @id = "deleteCommentBtn-" + @c.Id, style = "display:none;" }))
+                                                                                        {
+                                                                                            <input type="hidden" value="@Model.Action.Id" name="Id" />
+                                                                                            <input type="hidden" value="@c.Id" name="CommentId" />
+                                                                                            <button type="submit" class="btn btn-primary btn-sm pull-left" style="margin-left: 10px"><i class="fa fa-trash-o fa-fw"></i>@Resources.EventsDetailsDeleteComment</button>
+                                                                                        }
+                                                                                    }
+                                                                                </div>
+                                                                            }
+
+                                                                        </div>
+                                                                        <!-- // Tab content END -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- // Tabs END -->
+
+                                                    </div>
+                                                    <div class="col-md-12 bg-white shadow2 " style="-ms-border-radius: 15px; border-radius: 15px;  margin-bottom: 15px;">
+                                                        <div class="pull-left" style="padding: 16px 0 15px 20px; font-size: 27px; color: #2776ec;">
+                                                            Help with your voice!
+                                                        </div>
+                                                        <div class="pull-right" style="padding: 20px 20px 15px 20px;">
+
+                                                            <div class="addthis_sharing_toolbox"></div>
+                                                            @*  <div class="addthis_toolbox addthis_default_style addthis_32x32_style"><a class="addthis_button_facebook"></a>
+                                                                <a class="addthis_button_twitter addthis_button" style="text-decoration:none;">
+                                                                    Share on Twitter
+                                                                </a>
+                                                                <a class="addthis_button_email"></a>
+                                                                <a class="addthis_button_twitter"></a>
+                                                                <a class="addthis_button_email"></a>
+                                                                <a class="addthis_button_twitter"></a>
+                                                                <a class="addthis_button_email"></a>
+                                                                <a href="http://www.addthis.com/bookmark.php"
+                                                                   class="addthis_button"
+                                                                   style="text-decoration:none;">
+                                                                    <img src="http://s7.addthis.com/static/btn/sm-plus.gif"
+                                                                         width="32" height="32" border="0" alt="Share" /> Share
+                                                                </a>
+                                                                </div>*@
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+
+                                                    <div class="col-md-12 bg-white shadow2 " style="-ms-border-radius: 15px; border-radius: 15px;">
+                                                        <div class="heading-buttons innerLR">
+                                                            <h5 class="pull-left margin-none innerTB">Volunteers</h5>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+                                                        <div class="innerAll ">
+                                                            @foreach (var v in Model.Action.Volunteers)
+                                                            {
+                                                                var u = v.User;
+                                                                <a href="/User/@u.Account.UserName" class="innerAll half pull-left border-none myclass" id="img-@u.Account.UserName">
+                                                                    <img src="@u.ProfilePhoto.Url" alt="@u.GetFullName()" width="150" class="img-circle mytooltip" title="@u.GetFullName()">
+                                                                </a>
+                                                            }
+
+                                                            <div class="clearfix"></div>
+
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="col-md-12">
+                                                        <div style="padding: 40px 0 0 0;">
+                                                            <div class="innerAll bg-white shadow2" style="border-radius: 15px; margin-bottom: 10px">
+                                                                <div class="media innerAll margin-none">
+                                                                    <div class="pull-left innerTB">
+                                                                        <i class="fa fa-fw  fa-calendar fa-2x"></i>
+                                                                    </div>
+                                                                    <div class="media-body innerTB">
+                                                                        <p class="margin-none">Starts : @Model.Action.StartDate</p>
+                                                                        <p class="margin-none">Ends  : @Model.Action.EndDate</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="media innerAll margin-none">
+                                                                    <div class="pull-left innerTB">
+                                                                        <i class="fa fa-fw  fa-tag fa-2x"></i>
+                                                                    </div>
+                                                                    <div class="media-body innerTB">
+                                                                        <p class="margin-none">@Model.Action.Category.Title</p>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="innerAll shadow2" style="margin-bottom:15px; border-radius: 15px;background: url('@Model.Action.Creator.BannerPhoto.Url') white;background-size:200% 50%; background-repeat-y:no-repeat;background-position-y:-45px; background-position-x : 50%;height:350px;">
+                                                                <div class="media margin-none">
+                                                                    <div class="text-center">
+                                                                        <img src="@Model.Action.Creator.ProfilePhoto.Url" alt="photo" style="border: 5px solid white; border-radius: 100px; height: 100px; margin-top: 38px;">
+
+                                                                        <h5 style="color: lightgray !important;">Organized by</h5>
+                                                                        <h4 style="color: #4d4d4d !important;">@Model.Action.Creator.GetFullName()</h4>
+                                                                        @if (!Model.Action.Creator.City.IsEmpty() && !Model.Action.Creator.Country.IsEmpty())
+                                                                        {
+                                                                            <i class="fa fa-map-marker" style="color: lightgray !important;"> @Model.Action.Creator.City, @Model.Action.Creator.Country</i>
+                                                                        }
+                                                                    </div>
+                                                                    <div class="clearfix"></div>
+                                                                    <div style="color: #4d4d4d !important;" class="col-md-12">
+                                                                        <div style="padding-top: 5px; height:50px; ">
+
+                                                                            <div class="media-body pull-left" style="font-size: 15px; text-align: center; border-right: 1px solid lightgray; padding-right: 3px">
+                                                                                <p class="margin-none">@Resources.UserIndexCreated</p>
+                                                                                <p class="margin-none" style="font-size: 15px">@Model.Action.Creator.Actions.Count()</p>
+                                                                            </div>
+                                                                            <div class="media-body pull-left" style="font-size: 15px; text-align: center; border-right: 1px solid lightgray; padding-right: 3px;padding-left: 3px">
+                                                                                <p class="margin-none">@Resources.UserIndexParticipated</p>
+                                                                                <p class="margin-none" style="font-size: 15px">@Model.Action.Creator.Volunteers.Count()</p>
+                                                                            </div>
+                                                                            <div class="media-body pull-left" style="border-right: 1px solid lightgray; font-size: 15px; text-align: center; padding-right: 3px; padding-left: 3px">
+                                                                                <p class="margin-none">@Resources.UserIndexFollowers</p>
+                                                                                <p class="margin-none" style="font-size: 15px">@Model.Action.Creator.UserReceivedUnites.Count()</p>
+                                                                            </div>
+                                                                            <div class="media-body pull-left" style="font-size: 15px; text-align: center; padding-left: 3px">
+                                                                                <p class="margin-none">@Resources.UserIndexFollowing</p>
+                                                                                <p class="margin-none" style="font-size: 15px">@Model.Action.Creator.UserSendUnites.Count()</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="btn-group-vertical" style="width: 100%;">
+                                                                    <button type="submit" class="btn btn-success" style="margin-bottom: 10px; border-radius:4px">
+                                                                        <span>Follow</span>
+                                                                    </button>
+                                                                    <button class="btn btn-stroke btn-primary" style="border-radius: 4px;">
+                                                                        <span>Contact</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="innerAll bg-white shadow2" style="border-radius: 15px;">
+                                                            <div class="media innerAll margin-none">
+                                                                <div class="pull-left innerTB">
+                                                                    <i class="fa fa-fw fa-map-marker fa-2x"></i>
+                                                                </div>
+                                                                <div class="media-body innerTB">
+                                                                    <p class="margin-none">@Model.Action.Adress</p>
+                                                                    @{
+
+                                                                        var ri = new RegionInfo(Model.Action.Location);
+                                                                        var countryName = ri.DisplayName;
+                                                                    }
+                                                                    <p class="margin-none">@countryName</p>
+
+                                                                </div>
+                                                                <div id='map-canvas2'></div>
+                                                                <a href="#" onclick="expand()">Expand...</a>
+                                                                <button href="#" onclick="normal()" class="dismiss btn btn-primary" style="display:none">Dismiss...</button>
+                                                                @* @Html.GenerateRelayQrCode(Request.Url.AbsolutePath,250,250,0)*@
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

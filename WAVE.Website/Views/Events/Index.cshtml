@@ -1,0 +1,336 @@
+﻿@model EventsIndexModel
+
+@section Header
+{
+    <link href="~/Content/css/Coral/bootstrap-select.css" rel="stylesheet" />}
+
+@section FooterScripts
+{
+    <script src="~/Scripts/JQuery/jquery-ui.min.js"></script>
+    <script src="~/Scripts/JQuery/jquery.ui.touch-punch.min.js"></script>
+    <script src="~/Scripts/Coral/modals.init.js"></script>
+    <script src="~/Scripts/Coral/bootbox.min.js"></script>
+    <script src="~/Scripts/Coral/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/Coral/bootstrap-datepicker.init.js"></script>
+    <script src="~/Scripts/Coral/jquery.gritter.min.js"></script>
+    <script src="~/Scripts/Coral/gritter.init.js"></script>
+    <script src="~/Scripts/Coral/bootstrap-timepicker.init.js"></script>
+    <script src="~/Scripts/Coral/bootstrap-select.init.js"></script>
+    <script src="~/Scripts/Coral/jqueryui-sliders.init.js"></script>
+    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+    {
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var pathname = window.location.hash;
+                if (pathname.indexOf('Add') > -1) {
+                    $("#modalbtn").trigger("click");
+
+                }
+            });
+        </script>
+    }
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#sortSelect').change(function() {
+                var sort = $("#sortSelect option:selected").val();
+                window.location = "/Events/Sort/" + sort;
+            });
+            $('#usertypeSelect').change(function() {
+                var sort = $("#usertypeSelect option:selected").val();
+                window.location = "/Events/UserType/" + sort;
+            });
+            $('#statusSelect').change(function() {
+                var sort = $("#statusSelect option:selected").val();
+                window.location = "/Events/Status/" + sort;
+            });
+        });
+    </script>
+}
+<div class="layout-app">
+
+    <!-- row -->
+    <div class="row row-app margin-none">
+        <!-- col -->
+        <div class="col-md-12">
+
+            <!-- col-separator -->
+            <div class="col-separator col-separator-first border-none">
+
+                <!-- col-table -->
+                <div class="col-table">
+                    <!-- col-table-row -->
+                    <!-- col-table-row -->
+                    <div class="col-table-row">
+
+                        <!-- col-app -->
+                        <div class="col-app">
+
+                            <!-- row-app -->
+                            <div class="row row-app margin-none innerT">
+
+                                <!-- col -->
+                                <div class="col-sm-12 col-md-3 col-lg-2">
+
+                                    <!-- col-separator -->
+                                    <div class="col-separator bg-none">
+                                        <div class="col-separator-h"></div>
+                                        <div class="innerAll  bg-white shadow2" style="border-radius: 3px;">
+                                            <div class="widget widget-tabs border-none margin-none">
+                                                <div class="widget-body padding-none">
+                                                    <label>
+                                                        Sort by:
+                                                    </label>
+                                                    <select name="" data-container="body" data-style="btn-primary" class="selectpicker" id="sortSelect" style="width: 190px;">
+                                                        @if (Model.Sort == Sort.Relevance)
+                                                        {
+                                                            <option value="Relevance" selected="selected">@Resources.EventsIndexRelevance</option>
+                                                            <option value="Title">@Resources.EventsIndexTitle</option>
+                                                            <option value="Ending">@Resources.EventsIndexEnding</option>
+                                                            <option value="Latest">@Resources.EventsIndexLatest</option>
+                                                        }
+                                                        else if (Model.Sort == Sort.Title)
+                                                        {
+                                                            <option value="Relevance">@Resources.EventsIndexRelevance</option>
+                                                            <option value="Title" selected="selected">@Resources.EventsIndexTitle</option>
+                                                            <option value="Ending">@Resources.EventsIndexEnding</option>
+                                                            <option value="Latest">@Resources.EventsIndexLatest</option>
+                                                        }
+                                                        else if (Model.Sort == Sort.Ending)
+                                                        {
+                                                            <option value="Relevance">@Resources.EventsIndexRelevance</option>
+                                                            <option value="Title">@Resources.EventsIndexTitle</option>
+                                                            <option value="Ending" selected="selected">@Resources.EventsIndexEnding</option>
+                                                            <option value="Latest">@Resources.EventsIndexLatest</option>
+                                                        }
+                                                        else if (Model.Sort == Sort.Latest)
+                                                        {
+                                                            <option value="Relevance">@Resources.EventsIndexRelevance</option>
+                                                            <option value="Title">@Resources.EventsIndexTitle</option>
+                                                            <option value="Ending">@Resources.EventsIndexEnding</option>
+                                                            <option value="Latest" selected="selected">@Resources.EventsIndexLatest</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-separator-h"></div>
+                                        <div class="innerAll bg-white" style="border-radius: 3px 3px 0 0;">
+                                            <div class="widget widget-tabs border-none margin-none">
+                                                <div class="widget-body padding-none">
+                                                    <label>
+                                                        @Resources.EventsIndexFilterBy
+                                                    </label>
+                                                    <div class="innerAll">
+                                                        @*TODO: Add functionality*@
+                                                        <div class="btn-group btn-group-block row margin-none" data-toggle="buttons">
+                                                            <label for="" class="btn btn-primary  col-md-6 active">
+                                                                <input type="radio" name="options" id="option1" checked="checked">
+                                                                @Resources.EventsIndexAllActions
+
+                                                            </label>
+                                                            <label for="" class="btn btn-primary  col-md-6">
+                                                                <input type="radio" name="options" id="option2">
+                                                                @Resources.EventsIndexMyActions
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="innerAll bg-white">
+                                            <label>
+                                                @Resources.EventsCreateSelectActionCategory
+                                            </label>
+                                            <div class="row innerT">
+                                                @foreach (var ci in Model.CategoryList)
+                                                {
+                                                    <div class="col-md-3">
+                                                        <a href="/Events/Category/@ci.Category.Title">
+                                                            @if (ci.Selected)
+                                                            {
+                                                                <img src="@ci.Category.SmallImageUrl" class="categoryImg mytooltip" style="opacity: 1;" title="@ci.Category.Title" />
+                                                            }
+                                                            else
+                                                            {
+                                                                <img src="@ci.Category.SmallImageUrl" class="categoryImg mytooltip" title="@ci.Category.Title" />
+                                                            }
+                                                        </a>
+
+
+                                                    </div>
+                                                }
+
+
+
+                                            </div>
+
+
+                                        </div>
+                                        <div class="widget widget-tabs border-none margin-none shadow2" style="border-radius: 0 0 3px 3px;">
+                                            <div class="widget-body padding-none">
+                                                <div class="innerAll ">
+                                                    <label>
+                                                        @Resources.EventsIndexOrganizedBy
+                                                    </label>
+                                                    <select name="" data-container="body" data-style="btn-primary" class="selectpicker" id="usertypeSelect">
+                                                        @if (Model.OrganizedBy == OrganizedBy.Everybody)
+                                                        {
+                                                            <option value="Everybody" selected="selected">@Resources.EventsIndexEverybody</option>
+                                                            <option value="Organizations">@Resources.EventsIndexOrganizations</option>
+                                                            <option value="Company">@Resources.EventsIndexCompany</option>
+                                                            <option value="Users">@Resources.EventsIndexUsers</option>
+                                                        }
+                                                        else if (Model.OrganizedBy == OrganizedBy.Organizations)
+                                                        {
+                                                            <option value="Everybody">@Resources.EventsIndexEverybody</option>
+                                                            <option selected="selected" value="Organizations">@Resources.EventsIndexOrganizations</option>
+                                                            <option value="Company">@Resources.EventsIndexCompany</option>
+                                                            <option value="Users">@Resources.EventsIndexUsers</option>
+                                                        }
+                                                        else if (Model.OrganizedBy == OrganizedBy.Company)
+                                                        {
+                                                            <option value="Everybody">@Resources.EventsIndexEverybody</option>
+                                                            <option value="Organizations">@Resources.EventsIndexOrganizations</option>
+                                                            <option selected="selected" value="Company">@Resources.EventsIndexCompany</option>
+                                                            <option value="Users">@Resources.EventsIndexUsers</option>
+                                                        }
+                                                        else if (Model.OrganizedBy == OrganizedBy.Users)
+                                                        {
+                                                            <option value="Everybody">@Resources.EventsIndexEverybody</option>
+                                                            <option value="Organizations">@Resources.EventsIndexOrganizations</option>
+                                                            <option value="Company">@Resources.EventsIndexCompany</option>
+                                                            <option selected="selected" value="Users">@Resources.EventsIndexUsers</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="innerAll">
+                                                    <label>
+                                                        @Resources.EventsIndexActionStatus
+                                                    </label>
+                                                    <select name="" data-container="body" data-style="btn-primary" class="selectpicker" id="statusSelect">
+
+                                                        @if (Model.Status == Status.All)
+                                                        {
+                                                            <option value="All" selected="selected">@Resources.EventsIndexAll</option>
+                                                            <option value="Ongoing">@Resources.EventsIndexOngoing</option>
+                                                            <option value="Successfull">@Resources.EventsIndexSuccessful</option>
+                                                            <option value="Unsuccessfull">@Resources.EventsIndexUnsuccessful</option>
+                                                        }
+                                                        else if (Model.Status == Status.Ongoing)
+                                                        {
+                                                            <option value="All" selected="selected">@Resources.EventsIndexAll</option>
+                                                            <option value="Ongoing">@Resources.EventsIndexOngoing</option>
+                                                            <option selected="selected" value="Successfull">@Resources.EventsIndexSuccessful</option>
+                                                            <option value="Unsuccessfull">@Resources.EventsIndexUnsuccessful</option>
+                                                        }
+                                                        else if (Model.Status == Status.Successful)
+                                                        {
+                                                            <option value="All" selected="selected">@Resources.EventsIndexAll</option>
+                                                            <option value="Ongoing">@Resources.EventsIndexOngoing</option>
+                                                            <option selected="selected" value="Successfull">@Resources.EventsIndexSuccessful</option>
+                                                            <option value="Unsuccessfull">@Resources.EventsIndexUnsuccessful</option>
+                                                        }
+                                                        else if (Model.Status == Status.Unsuccessful)
+                                                        {
+                                                            <option value="All" selected="selected">@Resources.EventsIndexAll</option>
+                                                            <option value="Ongoing">@Resources.EventsIndexOngoing</option>
+                                                            <option value="Successfull">@Resources.EventsIndexSuccessful</option>
+                                                            <option selected="selected" value="Unsuccessfull">@Resources.EventsIndexUnsuccessful</option>
+                                                        }
+
+                                                    </select>
+                                                    <div class="innerAll">
+                                                        <a href="/Events/Reset">@Resources.EventsIndexResetFilters</a>
+                                                    </div>
+                                                </div>
+                                                @*<div class="innerAll  ">
+                                                        <label>
+                                                            Select by Date:
+                                                        </label>
+                                                        <div class="row innerB">
+                                                            <div class="col-md-2 ">
+                                                                <label style="margin-top: 7px;">
+                                                                    From:
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <input class="form-control" type="text" value="2013-02-14" id="datepicker11" />
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="row innerB">
+                                                            <div class="col-md-2 ">
+                                                                <label style="margin-top: 7px;">
+                                                                    To:
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <input class="form-control" type="text" value="2013-02-14" id="datepicker22" />
+
+                                                            </div>
+                                                        </div>
+                                                    </div>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- // END col-separator -->
+
+                                </div>
+                                <!-- // END col -->
+                                <!-- col -->
+                                <div class="col-lg-10 col-md-9 col-sm-12">
+
+                                    <!-- col-separator -->
+                                    <div class="col-separator col-unscrollable col-separator-last bg-none">
+
+                                        <!-- col-table -->
+                                        <div class="col-table">
+                                            <!-- col-table-row -->
+                                            <div class="col-table-row">
+
+                                                <!-- col-app -->
+                                                <div class="col-app col-unscrollable">
+
+                                                    <!-- col-app -->
+                                                    <div class="col-app">
+
+                                                        <div class="innerAll2">
+                                                            <div class="row">
+                                                                @Html.Partial("~/Views/Events/EventsPartials/_Actions.cshtml", Model)
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- // END col-table-row -->
+
+                                        </div>
+                                        <!-- // END col-table -->
+
+                                    </div>
+                                    <!-- // END col-separator -->
+
+                                </div>
+                                <!-- // END col -->
+
+                            </div>
+                            <!-- // END row -->
+
+                        </div>
+                        <!-- // END col-app -->
+
+                    </div>
+                    <!-- // END col-table-row -->
+
+                </div>
+                <!-- // END col-table -->
+
+            </div>
+            <!-- // END col-separator -->
+
+        </div>
+        <!-- // END col -->
+
+    </div>
+    <!-- // END row-app -->
+</div>

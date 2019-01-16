@@ -1,0 +1,175 @@
+﻿@model MessagesModel
+
+
+@section Header
+{
+}
+
+@{
+    ViewBag.Title = "Messages";
+    var lastfrom = true;
+}
+
+
+@section FooterScripts
+{
+    <script>
+        $(document).ready(function() {
+            $(".boxscroll").niceScroll({
+                cursorcolor: "#333",
+                cursoropacitymin: 0.3,
+                background: "#bbb",
+                cursorborder: "0",
+                autohidemode: false,
+                cursorminheight: 30,
+                cursorborderradius: '10px'
+            });
+            $("div[id^='ascrail']").show();
+        });
+    </script>
+}
+<div class="layout-app">
+    <!-- row -->
+    <div class="row row-app" style="padding-bottom: 15px !important; padding-top: 15px !important;">
+        <!-- col -->
+        <div class="col-md-3">
+            <!-- col-separator -->
+            <div class="col-separator col-separator-first box boxscroll" style="border-radius: 15px;">
+                <div class="innerAll">
+                    <a href="#modal-1" data-toggle="modal" class=" btn btn-stroke btn-primary pull-right text-left" style="width: 100%">Compose a new message<i class="fa fa-plus" style="padding-top: -5px; position: absolute; right: 20px; top: 21px;"></i></a>
+                    <ul class="list-unstyled" style="margin-top: 40px;">
+
+                        @foreach (var cli in Model.ContactList)
+                        {
+                            if (cli.User == Model.ActiveUser)
+                            {
+                                <li class="active msgBody">
+                                    <div class="media innerAll half">
+                                        <a href="/Messages/Details/@cli.User.Account.UserName" class="cover"></a>
+                                        <i class="fa fa-bookmark-o msgbookmark"></i>
+                                        <div class="media-object pull-left hidden-phone">
+                                            <img src="@cli.User.ProfilePhoto.Url" alt="Image" class="smdgImg" />
+                                        </div>
+                                        <div class="media-body body2">
+                                            <a href="/User/@cli.User.Account.UserName"><div class="line1">@cli.User.GetFullName()</div></a>
+                                        </div>
+                                        <small class="text-italic text-primary-light date2">@cli.Date</small>
+                                    </div>
+                                </li>
+                            }
+                            else
+                            {
+                                if (cli.Status == UserMessageStatus.Unread)
+                                {
+                                    <li class="unread msgBody">
+                                        <div class="media innerAll half">
+                                            <a href="/Messages/Details/@cli.User.Account.UserName" class="cover"></a>
+                                            <i class="fa fa-bookmark msgbookmark"></i>
+                                            <div class="media-object pull-left hidden-phone"><img src="@cli.User.ProfilePhoto.Url" alt="Image" class="smdgImg" /></div>
+                                            <div class="media-body body2">
+                                                <a href="/User/@cli.User.Account.UserName"><div class="line1">@cli.User.GetFullName()</div></a>
+                                            </div>
+                                            <small class="text-italic text-primary-light date2">@cli.Date</small>
+                                        </div>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="msgBody">
+                                        <div class="media innerAll half">
+                                            <a href="/Messages/Details/@cli.User.Account.UserName" class="cover"></a>
+                                            <i class="fa fa-bookmark-o msgbookmark"></i>
+                                            <div class="media-object pull-left hidden-phone"><img src="@cli.User.ProfilePhoto.Url" alt="Image" class="smdgImg" /></div>
+                                            <div class="media-body body2">
+                                                <a href="/User/@cli.User.Account.UserName"><div class="line1">@cli.User.GetFullName()</div></a>
+                                            </div>
+                                            <small class="text-italic text-primary-light date2">@cli.Date</small>
+                                        </div>
+                                    </li>
+                                }
+                            }
+                        }
+                    </ul>
+
+                </div>
+            </div>
+            <!-- // END col-separator -->
+        </div>
+        <!-- // END col -->
+        <!-- col -->
+        <div class="col-md-9">
+            <!-- col-separator -->
+            <div class="col-separator box bg-none scroll">
+                <div class="innerAll">
+
+                    @foreach (var msg in Model.Messages)
+                    {
+                        if (msg.From == Model.ActiveUser)
+                        {
+                            if (lastfrom)
+                            {
+                                <div class="media message">
+                                    <a href="" class="pull-left"><img src="@msg.From.ProfilePhoto.Url" alt="Image" class="msgImg" /></a>
+                                    <div class="media-body half pull-left shadow2">
+                                        <p class="margin-none">@msg.Text</p>
+                                        <p class="pull-right date3"><span class="text-faded">@msg.DateSent</span></p>
+                                    </div>
+                                </div>
+                                lastfrom = true;
+                            }
+                            else
+                            {
+                                <div class="media message continue">
+                                    <div class="media-body half pull-left continueL shadow2">
+                                        <p class="margin-none">@msg.Text</p>
+                                        <p class="pull-right date3"><span class="text-faded">@msg.DateSent</span></p>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            if (!lastfrom)
+                            {
+                                <div class="media message continue">
+                                    <div class="media-body half pull-right continueR shadow2">
+                                        <p class="margin-none">@msg.Text</p>
+                                        <p class="pull-right date3"><span class="text-faded">@msg.DateSent</span></p>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="media message">
+                                    <a href="" class="pull-right"><img src="@msg.From.ProfilePhoto.Url" alt="Image" class="msgImg" /></a>
+                                    <div class="media-body half pull-right shadow2">
+                                        <p class="margin-none">@msg.Text</p>
+                                        <p class="pull-right date3"><span class="text-faded">@msg.DateSent</span></p>
+                                    </div>
+                                </div>
+                                lastfrom = false;
+                            }
+                        }
+                    }
+                    <div class="innerAll border-bottom"></div>
+                    <div class="media message" style="border-radius: 15px; padding-top: 15px;">
+                        <a href="" class="pull-right"><img src="@Model.CurrentUser.ProfilePhoto.Url" alt="Image" class="msgImg" /></a>
+                        <div class="media-body half pull-right shadow2 innerTB" style="width: 100%">
+                            @using (Html.BeginForm("Compose", "Messages"))
+                            {
+                                <input type="hidden" value="@Model.ActiveUser.Account.UserName" name="To" />
+                                <textarea class="form-control notes" rows="3" placeholder="Add your Message" name="Message" style="border: none"></textarea>
+                                <button type="submit" class="btn btn-primary btn-sm pull-right" style="margin-top: 5px;"><i class="fa fa-plus-circle fa-fw"></i>Send Message</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // END col-separator -->
+        </div>
+        <!-- // END col -->
+    </div>
+    <!-- // END row-app -->
+
+
+</div>

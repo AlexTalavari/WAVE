@@ -1,0 +1,36 @@
+﻿@model RegisterExternalLoginModel
+@{
+    ViewBag.Title = Resources.ExtLoginVBTitle;
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@Resources.ExtLoginConfMsg1 @ViewBag.ProviderDisplayName @Resources.ExtLoginConfMsg2</h2>
+</hgroup>
+
+@using (Html.BeginForm("ExternalLoginConfirmation", "Account", new {ViewBag.ReturnUrl}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Association Form</legend>
+        <p>
+            @Resources.ExtLoginConfMsg3 <strong>@ViewBag.ProviderDisplayName</strong>.
+            @Resources.ExtLoginConfMsg4
+        </p>
+        <ol>
+            <li class="name">
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+        </ol>
+        @Html.HiddenFor(m => m.ExternalLoginData)
+        <input type="submit" value="@Resources.Register" />
+    </fieldset>
+}
+
+@section FooterScripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

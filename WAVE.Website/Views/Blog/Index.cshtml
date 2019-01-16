@@ -1,0 +1,130 @@
+﻿@using WAVE.Website.Classes
+@model List<BlogPost>
+@{
+    ViewBag.Title = Resources.BlogIndexVBTitle;
+}
+@section Header
+{
+    <style type="text/css">
+        .title {
+            font-size: 20px;
+            line-height: 1.1;
+        }
+
+        time .day {
+            display: block;
+            font-size: 20px;
+            line-height: 18px;
+            padding-top: 2px;
+        }
+
+        time .month {
+            display: block;
+            font-size: 20px;
+            line-height: 18px;
+        }
+
+        time .time {
+            display: block;
+            font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "dejavu sans", "helvetica neue", arial, sans-serif;
+            font-size: 11px;
+            line-height: 10px;
+            margin: 0;
+            padding-top: 7px;
+        }
+
+        time {
+            background: #b5c2ca;
+            color: #fff;
+            display: block;
+            float: left;
+            font-family: "Segoe UI Light", "Source Sans Pro", "Segoe WP Light", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana", "Arial", sans-serif;
+            height: 60px;
+            text-align: center;
+            width: 60px;
+        }
+
+        .blog {
+            font-family: 'Segoe UI Light', serif;
+            font-size: 14px;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 0;
+        }
+    </style>
+}
+<div class="layout-app">
+    <!-- row-app -->
+    <div class="row row-app">
+        <div class="col-md-12 col-sm-12">
+
+            <!-- col-separator.box -->
+            <div class="box">
+
+                <!-- col-table -->
+                <div class="col-table">
+
+                    <!-- col-table-row -->
+                    <div class="col-table-row">
+
+                        <div class="col-app" style="background: #fff;">
+                            <!-- col-app -->
+                            <div class="col-app iscrollWrapper">
+
+                                <div class="jscroll">
+
+                                    <!-- row-app -->
+                                    <section>
+                                        <div class="col-md-12 blog">
+                                            @foreach (var b in Model)
+                                            {
+                                                <div style="margin-top: 20px;">
+                                                    <div style="float: left">
+                                                        <time class="updated" datetime="@b.DateCreated">
+                                                            <span class="day">@b.DateCreated.Day</span>
+                                                            <span class="month">@b.DateCreated.ToString("MMM")</span>
+                                                            <span class="time">@b.DateCreated.TimeOfDay.Hours:@b.DateCreated.TimeOfDay.Minutes</span>
+                                                        </time>
+                                                    </div>
+                                                    <div style="float: left; margin-left: 10px;">
+                                                        <p>@Resources.BlogIndexWrittenBy @b.Creator.Name</p>
+                                                        <a href="/Blog/Details/@b.Id"><p class="title">@b.Title</p></a>
+                                                    </div>
+                                                </div>
+                                                <div style="clear: both; margin-bottom: 5px;"></div>
+                                                <img src="@b.ImageUrl" style="max-height: 150px;" />
+
+                                                <p>
+                                                    @b.Content.HtmlStripTags(true, true).Truncate(1000)
+                                                    <a href="/Blog/Details/@b.Id">Resources.BlogIndexContinue</a>
+                                                </p>
+                                                <div style="clear: both; margin-bottom: 10px;"></div>
+                                            }
+                                        </div>
+
+                                    </section>
+                                    <!-- // END row -->
+                                    @Html.Partial("~/Views/Shared/LayoutPartials/_Footer.cshtml")
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- // END col-app -->
+                      
+                    </div>
+                    <!-- // END col-table-row -->
+                   
+                </div>
+                <!-- // END col-table -->
+
+            </div>
+            <!-- // END col-separator -->
+
+        </div>
+        <!-- // END col -->
+
+    </div>
+    <!-- // END row-app -->
+</div>

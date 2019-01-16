@@ -1,0 +1,51 @@
+﻿
+        <div class="modal-content">
+            <!-- Modal body -->
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <!-- Tabs -->
+                <div style="margin-top: 25px;">
+                    <div class="widget widget-tabs widget-tabs-responsive">
+
+                        <!-- Tabs Heading -->
+                        <div class="widget-head">
+                            <ul>
+                                <li class="active"><a href="#tabThumb" data-toggle="tab"><span>@Resources.ModalsEventsUploImgUploadThumbnail</span></a></li>
+                                <li><a href="#tabBanner" data-toggle="tab"><span>@Resources.ModalsEventsUploImgUploadBanner</span></a></li>
+                            </ul>
+                        </div>
+                        <!-- // Tabs Heading END -->
+                        <div class="widget-body">
+                            <div class="tab-content">
+                                <!-- Tab content -->
+                                <div id="tabThumb" class="tab-pane active widget-body-regular">
+                                    @using (Html.BeginForm("UploadFileThumb", "Events", FormMethod.Post, new {enctype = "multipart/form-data"}))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="ThumpActionId" id="ThumpActionId" />
+                                        <input type="file" name="files">
+                                        <br>
+                                        <input type="submit" value="@Resources.ModalsEventsUploImgUploadBtn">
+                                    }
+                                </div>
+                                <!-- // Tab content END -->
+                                <!-- Tab content -->
+                                <div id="tabBanner" class="tab-pane widget-body-regular">
+                                    @using (Html.BeginForm("UploadFileBanner", "Events", FormMethod.Post, new {enctype = "multipart/form-data"}))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="BannerActionId" id="BannerActionId" />
+                                        <input type="file" name="files">
+                                        <br>
+                                        <input type="submit" value="@Resources.ModalsEventsUploImgUploadBtn">
+                                    }
+                                </div>
+                                <!-- // Tab content END -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- // Modal body END -->
+        </div>

@@ -1,0 +1,168 @@
+﻿@using System.Threading
+@using WAVE.Website.Classes
+@model LayoutModel
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#enBtn").click(function() {
+            $.cookie("_culture", "en-US");
+            location.reload();
+        });
+        $("#grBtn").click(function() {
+            $.cookie("_culture", "el-GR");
+            location.reload();
+        });
+    });
+</script>
+
+
+<!-- // Start navbar -->
+<div class="navbar hidden-print navbar-primary box main" role="navigation">
+    <button class="btn btn-circle btn-navbar text-primary pull-left" id="menubutton"><i class="fa fa-chevron-down"></i></button>
+
+
+    <div class="col-md-3 pull-left visible-md visible-lg">
+        @using (Html.BeginForm("Index", "Search"))
+        {
+            @Html.ValidationSummary(true)
+            <div class="input-group">
+                <input type="text" class="form-control input-sm" placeholder="@Resources.LayoutNavBarSearch" value="@Model.SearchTerm" name="SearchTerm">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+                </span>
+
+            </div>
+        }
+        <!-- /input-group -->
+    </div>
+
+    <div id="logocontainer">
+        <a href="/" style="display: table; margin: 0 auto;">
+            <img id="logo" class="borderless" src="~/Content/images/WAVE.png" alt="WAVE" />
+        </a>
+    </div>
+
+
+    @if (!Request.IsAuthenticated)
+    {
+        <a href="/#modal-2" data-toggle="modal" class="loginbtn btn btn-stroke btn-primary pull-right"><span>@Resources.LayoutNavBarSignUp</span></a>
+        <a href="/#modal-1" data-toggle="modal" class="loginbtn btn btn-stroke btn-primary pull-right"><span>@Resources.LayoutNavBarSignIn</span></a>
+    }
+
+    else
+    {
+        @*<a href="/User/Details/@Model.Account.Id" class="loginbtn btn btn-stroke btn-primary pull-right"><span>@Model.GetFullName()</span></a>*@
+
+        <div class="user-action pull-right">
+            <div class="dropdown username">
+                <a class="dropdown-toggle " data-toggle="dropdown" href="#">@Model.LoggedUser.GetFullName()<span class="caret"></span></a>
+                <ul class="dropdown-menu pull-right">
+                    <li><a href="/User/@Model.LoggedUser.Account.UserName" class="glyphicons user"><i></i>@Resources.LayoutNavBarProfile</a></li>
+                    @*<li><a href="/Messages" class="glyphicons envelope"><i></i>Messages</a></li>
+                        <li><a href="/Settings">Settings</a></li>*@
+                    <li>
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new {id = "logoutForm"}))
+                        {
+                            @Html.AntiForgeryToken()
+                            <a href="javascript:document.getElementById('logoutForm').submit()" class="glyphicons log_out"><i></i>@Resources.LayoutNavBarLogout</a>
+                        }
+                    </li>
+                    <li><a href="/Contact" class="glyphicons warning_sign"><i></i>@Resources.LayoutNavBarReportAProblem</a></li>
+                    <li><a href="/About/FAQs" class="glyphicons bullhorn"><i></i>@Resources.LayoutNavBarHelp</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <ul class="notifications pull-right hidden-xs">
+            <li class="dropdown notif">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="notif-block fa fa-envelope">
+                        <span class="badge badge-primary">
+                            @Model.LoggedUser.UserReceivedUserMessages.Where(um => um.Status == UserMessageStatus.Unread).Count()
+                        </span>
+                    </i>
+                </a>
+                <ul class="dropdown-menu chat media-list">
+
+                    @foreach (var msg in @Model.LoggedUser.UserReceivedUserMessages.OrderByDescending(um => um.DateSent).Take(5))
+                    {
+                        <li class="media">
+                            <a class="pull-left" href="/Messages/@msg.Id">
+                                <img class="media-object thumb" src="@msg.From.ProfilePhoto.Url" alt="50x50" width="50" />
+                            </a>
+                            <div class="media-body">
+                                @{ var timediff = DateTime.Now.Subtract(msg.DateSent); }
+                                @if (timediff.Minutes < 60)
+                                {
+                                    <span class="label label-default pull-right">@timediff.Minutes m</span>
+                                }
+                                else if (timediff.Hours < 24)
+                                {
+                                    <span class="label label-default pull-right">@timediff.Hours h</span>
+                                }
+                                else
+                                {
+                                    <span class="label label-default pull-right">@timediff.Days d</span>
+                                }
+                                <h5 class="media-heading">@msg.From.GetFullName()</h5>
+                                <p class="margin-none">@msg.Text.Truncate(20)</p>
+                            </div>
+                        </li>
+                    }
+                    <li><a href="/Messages" class="btn btn-primary"><i class="fa fa-list"></i><span>View all messages</span></a></li>
+                </ul>
+            </li>
+            <li class="dropdown notif">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="notif-block fa fa-flag">
+                        <span class="badge badge-primary">
+                            @Model.LoggedUser.UserNotifications.Where(un => un.Status == UserNotificationStatus.Unread).Count()
+                        </span>
+                    </i>
+                </a>
+                <ul class="dropdown-menu alerts">
+                    <li class="heading"><i class="fa fa-bell-o"></i><span>Alerts Heading</span></li>
+                    <li>
+                        <i class="fa fa-folder "></i><a>New Comment from</a><small>Anax Fotopoulos</small>
+                        <div class="action pull-right">
+                            <a href="" class="success"><i class="fa fa-check"></i></a><a href="" class="delete"><i class="fa fa-times"></i></a>
+                        </div>
+                    </li>
+                    <li class="center loadmore">
+                        <a href="/Notifications"><i class="fa"></i>Load more</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    }
+
+
+    <div class="user-action pull-right">
+        <div class="dropdown username">
+
+            @{
+                var clt = Thread.CurrentThread.CurrentCulture;
+                var cult = "/Content/images/flags/" + clt.IetfLanguageTag.Substring(3).ToLower() + ".png";
+            }
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="flag innerAll" src="@cult" alt="@clt.EnglishName" style="margin-top: -2px;"><span class="caret"></span></a>
+            <ul class="dropdown-menu pull-right">
+
+
+                <li>
+                    <a class="language innerAll" href="#" id="enBtn">
+                        <img class="flag" src="/Content/images/flags/us.png" alt="">English
+                    </a>
+                </li>
+
+                <li>
+                    <a class="language innerAll" href="#" id="grBtn">
+                        <img class="flag innerAll" src="/Content/images/flags/gr.png" alt="">Ελληνικά
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- // END navbar -->

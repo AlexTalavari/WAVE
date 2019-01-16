@@ -1,0 +1,153 @@
+﻿<div class="layout-app" style="display: block; visibility: visible;">
+    <!-- row -->
+    <div class="row row-app margin-none">
+
+        <!-- col -->
+        <div class="col-md-2 col-sm-3 border-none">
+
+            <!-- col-separator.box -->
+            <div class="col-separator box col-separator-first reset-components">
+
+                <div class="profile-avatar">
+                    <img src="../assets/images/people/775/avatar.jpg" width="380" class="img-responsive thumb" />
+                    <div class="btn-avatar btn-group btn-group-xs">
+                        <a href="#" class="btn"><i class="fa fa-pencil"></i>change</a>
+                        <a href="#" class="btn"><i class="fa fa-cog"></i></a>
+                    </div>
+                </div>
+
+                <div class="innerAll">
+                    <h4><i class="fa fa-circle text-success pull-right"></i>MosaicPRO</h4>
+                    <p class="margin-none text-muted">Premium Web Templates</p>
+                </div>
+
+                <div class="innerLR innerB center">
+                    <div class="btn-group btn-group-block row margin-none">
+                        <a href="#" class="btn btn-success col-sm-6 col-md-12 col-lg-6"><i class="fa fa-check"></i>Friend</a>
+                        <a href="#" class="btn btn-default col-sm-6 col-md-12 col-lg-6"><i class="fa fa-comment-o"></i>Chat</a>
+                    </div>
+                </div>
+                <div class="col-separator-h box"></div>
+
+                <ul class="list-group list-group-1 margin-none">
+                    <li class="list-group-item border-top-none"><a href="index.html?lang=en"><span class="badge pull-right badge-primary hidden-md">13</span><i class="fa fa-book"></i> Timeline</a></li>
+                    <li class="list-group-item"><a href="social_account.html?lang=en"><i class="fa fa-user"></i>My Account</a></li>
+                    <li class="list-group-item active"><a href="social_messages.html?lang=en"><span class="badge pull-right badge-primary hidden-md">2</span><i class="fa fa-envelope"></i> Messages</a></li>
+                    <li class="list-group-item"><a href="social_friends.html?lang=en"><i class="fa fa-group"></i>Friends</a></li>
+                    <li class="list-group-item border-bottom-none"><a href="login.html?lang=en"><i class="fa fa-lock"></i>Logout</a></li>
+                </ul>
+
+
+                <div class="col-separator-h box"></div>
+
+            </div>
+            <!-- // END col-separator.box -->
+
+        </div>
+        <!-- // END col -->
+
+        <!-- col -->
+        <div class="col-md-3">
+
+            <!-- col-separator -->
+            <div class="col-separator box">
+
+                <div class="innerAll border-bottom">
+                    <form autocomplete="off" class="form-inline margin-none">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" placeholder="Find someone .." />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-primary btn-xs pull-right"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="bg-primary innerAll half text-center">3 new messages</div>
+                <div class="innerAll">
+                    <ul class="list unstyled">
+                        <li class="bg-gray" data-ng-repeat="m in model.messages">
+                            <div class="media innerAll half">
+                                <div class="media-object pull-left hidden-phone">
+                                    <img src="{{m.imageUrl}}" alt="Image" width="35" /></div>
+                                <div class="media-body">
+                                    <span class="strong">{{m.senderName}}</span>
+                                    <small>{{m.messageTitle}}</small><br />
+                                    <small class="text-italic text-primary-light"><i class="fa fa-calendar fa fa-fixed-width"></i>{{m.days}} day(s) ago</small>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <!-- // END col-separator -->
+
+        </div>
+        <!-- // END col -->
+
+        <!-- col -->
+        <div class="col-md-7">
+
+            <!-- col-separator -->
+            <div class="col-separator box">
+
+                <div class="innerAll">
+
+                    <div class="media">
+                        <a href="" class="pull-left">
+                            <img src="../assets/images/people/250/2.jpg" width="100" alt="Image" class="img-responsive" /></a>
+                        <div class="media-body innerTB half">
+                            <div class="btn-group btn-group-xs pull-right">
+                                <button class="btn btn-default"><i class="fa fa-reply text-primary"></i></button>
+                                <button class="btn btn-default btn-stroke"><i class="fa fa-times text-danger"></i></button>
+                            </div>
+                            <a href="" class="strong">adrian</a>
+                            <p><span class="text-faded"><i class="fa fa-fw fa-calendar"></i>July 8, 2013 12:38 pm</span></p>
+                            <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, nesciunt, quia, beatae sint tempora provident autem ex vero sapiente libero rem reprehenderit illum hic recusandae deleniti assumenda ad quas doloremque.</p>
+                        </div>
+                    </div>
+                    <div class="innerAll border-bottom"></div>
+                    <div class="media">
+                        <a href="" class="pull-right">
+                            <img src="../assets/images/people/250/3.jpg" width="100" alt="Image" class="img-responsive" /></a>
+                        <div class="media-body innerTB half">
+                            <div class="btn-group btn-group-xs">
+                                <button class="btn btn-default"><i class="fa fa-reply text-primary"></i></button>
+                                <button class="btn btn-default btn-stroke"><i class="fa fa-times text-danger"></i></button>
+                            </div>
+                            <div class="pull-right text-right">
+                                <a href="" class="strong">joanne</a>
+                                <p><span class="text-faded"><i class="fa fa-fw fa-calendar"></i>July 8, 2013 12:38 pm</span></p>
+                            </div>
+                            <div class="clearfix"></div>
+                            <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, nesciunt, quia, beatae sint tempora provident autem ex vero sapiente libero rem reprehenderit illum hic recusandae deleniti assumenda ad quas doloremque.</p>
+                        </div>
+                    </div>
+                    <div class="innerAll border-bottom"></div>
+                    <div class="media">
+                        <a href="" class="pull-left">
+                            <img src="../assets/images/people/250/2.jpg" width="100" alt="Image" class="img-responsive" /></a>
+                        <div class="media-body innerTB half">
+                            <div class="btn-group btn-group-xs pull-right">
+                                <button class="btn btn-default"><i class="fa fa-reply text-primary"></i></button>
+                                <button class="btn btn-default btn-stroke"><i class="fa fa-times text-danger"></i></button>
+                            </div>
+                            <a href="" class="strong">adrian</a>
+                            <p><span class="text-faded"><i class="fa fa-fw fa-calendar"></i>July 8, 2013 12:38 pm</span></p>
+                            <p class="margin-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, nesciunt, quia, beatae sint tempora provident autem ex vero sapiente libero rem reprehenderit illum hic recusandae deleniti assumenda ad quas doloremque.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- // END col-separator -->
+
+        </div>
+        <!-- // END col -->
+
+    </div>
+    <!-- // END row-app -->
+
+
+</div>

@@ -1,0 +1,1460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BlogIndexContinue" xml:space="preserve">
+    <value>Continue</value>
+    <comment>Continue</comment>
+  </data>
+  <data name="BlogIndexVBTitle" xml:space="preserve">
+    <value>Blog</value>
+    <comment>Blog</comment>
+  </data>
+  <data name="BlogIndexWrittenBy" xml:space="preserve">
+    <value>Written by</value>
+    <comment>Writter by</comment>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change password</value>
+    <comment>Change password</comment>
+  </data>
+  <data name="ChangePasswordLegend" xml:space="preserve">
+    <value>Change Password Form</value>
+    <comment>Change Password Form</comment>
+  </data>
+  <data name="ChangePasswordTitle" xml:space="preserve">
+    <value>Change Password</value>
+    <comment>Change Password</comment>
+  </data>
+  <data name="CommentIndexVBTitle" xml:space="preserve">
+    <value>Index</value>
+    <comment>Index</comment>
+  </data>
+  <data name="ContactIndexPlaceholderEmail" xml:space="preserve">
+    <value>Enter your email...</value>
+    <comment>Enter your email...</comment>
+  </data>
+  <data name="ContactIndexPlaceholderMsg" xml:space="preserve">
+    <value>Enter your message...</value>
+    <comment>Enter your message...</comment>
+  </data>
+  <data name="ContactIndexPlaceholderName" xml:space="preserve">
+    <value>Enter your name...</value>
+    <comment>Enter your name...</comment>
+  </data>
+  <data name="ContactIndexSend" xml:space="preserve">
+    <value>Send</value>
+    <comment>Send</comment>
+  </data>
+  <data name="ContactIndexShareYourIdeas" xml:space="preserve">
+    <value>Share your ideas</value>
+    <comment>Share your ideas</comment>
+  </data>
+  <data name="ContactIndexVBTitle" xml:space="preserve">
+    <value>Contact Us</value>
+    <comment>Contact Us</comment>
+  </data>
+  <data name="Errors404Msg1" xml:space="preserve">
+    <value>Oups!</value>
+    <comment>Oups!</comment>
+  </data>
+  <data name="Errors404Msg2" xml:space="preserve">
+    <value>This page does not exist.</value>
+    <comment>This page does not exist.</comment>
+  </data>
+  <data name="Errors404Msg3" xml:space="preserve">
+    <value>ERROR MESSAGE GOES HERE!</value>
+    <comment>ERROR MESSAGE GOES HERE!</comment>
+  </data>
+  <data name="EventActions1DayLeft" xml:space="preserve">
+    <value>1 day left</value>
+    <comment>1 day left</comment>
+  </data>
+  <data name="EventActionsAimFul" xml:space="preserve">
+    <value>Aim fulfilled</value>
+    <comment>Aim fulfilled</comment>
+  </data>
+  <data name="EventActionsDatePassed" xml:space="preserve">
+    <value>Date passed</value>
+    <comment>Date passed</comment>
+  </data>
+  <data name="EventActionsDaysLeft" xml:space="preserve">
+    <value>days left</value>
+    <comment>days left</comment>
+  </data>
+  <data name="EventActionsFail" xml:space="preserve">
+    <value>fail</value>
+    <comment>fail</comment>
+  </data>
+  <data name="EventActionsMore" xml:space="preserve">
+    <value>more!</value>
+    <comment>more!</comment>
+  </data>
+  <data name="EventActionsSuccess" xml:space="preserve">
+    <value>success</value>
+    <comment>success</comment>
+  </data>
+  <data name="EventActionsUnsuccessful" xml:space="preserve">
+    <value>Unsuccessful</value>
+    <comment>Unsuccessful</comment>
+  </data>
+  <data name="EventActionsWeNeed" xml:space="preserve">
+    <value>We need </value>
+    <comment>We need </comment>
+  </data>
+  <data name="EventsCreateActionAddress" xml:space="preserve">
+    <value>Action Address</value>
+    <comment>Action Address</comment>
+  </data>
+  <data name="EventsCreateActionCountry" xml:space="preserve">
+    <value>Action Country</value>
+    <comment>Action Country</comment>
+  </data>
+  <data name="EventsCreateActionDescription" xml:space="preserve">
+    <value>Describe the action...</value>
+    <comment>Describe the action...</comment>
+  </data>
+  <data name="EventsCreateCategory" xml:space="preserve">
+    <value>Category</value>
+    <comment>Category</comment>
+  </data>
+  <data name="EventsCreateCategoryText" xml:space="preserve">
+    <value>Category</value>
+    <comment>Category</comment>
+  </data>
+  <data name="EventsCreateFamily" xml:space="preserve">
+    <value>Family</value>
+    <comment>Family</comment>
+  </data>
+  <data name="EventsCreateCulture" xml:space="preserve">
+    <value>Culture</value>
+    <comment>Culture</comment>
+  </data>
+  <data name="EventsCreateDate" xml:space="preserve">
+    <value>Date</value>
+    <comment>Date</comment>
+  </data>
+  <data name="EventsCreateDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="EventsCreateEducation" xml:space="preserve">
+    <value>Education</value>
+    <comment>Education</comment>
+  </data>
+  <data name="EventsCreateEndDate" xml:space="preserve">
+    <value>End Date</value>
+    <comment>End Date</comment>
+  </data>
+  <data name="EventsCreateEndTime" xml:space="preserve">
+    <value>End Time</value>
+    <comment>End Time</comment>
+  </data>
+  <data name="EventsCreateEnterActionTitle" xml:space="preserve">
+    <value>Enter Action Title...</value>
+    <comment>Enter Action Title...</comment>
+  </data>
+  <data name="EventsCreateEnvironment" xml:space="preserve">
+    <value>Environment</value>
+    <comment>Environment</comment>
+  </data>
+  <data name="EventsCreateGoals" xml:space="preserve">
+    <value>Goals</value>
+    <comment>Goals</comment>
+  </data>
+  <data name="EventsCreateHealth" xml:space="preserve">
+    <value>Health</value>
+    <comment>Health</comment>
+  </data>
+  <data name="EventsCreateHumanity" xml:space="preserve">
+    <value>Humanity</value>
+    <comment>Humanity</comment>
+  </data>
+  <data name="EventsCreateLocation" xml:space="preserve">
+    <value>Location</value>
+    <comment>Location</comment>
+  </data>
+  <data name="EventsCreateNaturalDisaster" xml:space="preserve">
+    <value>Natural Disaster</value>
+    <comment>Natural Disaster</comment>
+  </data>
+  <data name="EventsCreateOf" xml:space="preserve">
+    <value>of</value>
+    <comment>of</comment>
+  </data>
+  <data name="EventsCreatePhoto" xml:space="preserve">
+    <value>Photo</value>
+    <comment>Photo</comment>
+  </data>
+  <data name="EventsCreateSelectActionCategory" xml:space="preserve">
+    <value>Select Action Category</value>
+    <comment>Select Action Category</comment>
+  </data>
+  <data name="EventsCreateSetVolunteerGoals" xml:space="preserve">
+    <value>Set Volunteer Goals</value>
+    <comment>Set Volunteer Goals</comment>
+  </data>
+  <data name="EventsCreateStartDate" xml:space="preserve">
+    <value>Start Date</value>
+    <comment>Start Date</comment>
+  </data>
+  <data name="EventsCreateStartTime" xml:space="preserve">
+    <value>Start Time</value>
+    <comment>Start Time</comment>
+  </data>
+  <data name="EventsCreateStep" xml:space="preserve">
+    <value>Step</value>
+    <comment>Step</comment>
+  </data>
+  <data name="EventsCreateStep1Title" xml:space="preserve">
+    <value>Title</value>
+    <comment>Title</comment>
+  </data>
+  <data name="EventsCreateStep3Label" xml:space="preserve">
+    <value>Describe the Action</value>
+    <comment>Describe the Action</comment>
+  </data>
+  <data name="EventsCreateSubmit" xml:space="preserve">
+    <value>Submit</value>
+    <comment>Submit</comment>
+  </data>
+  <data name="EventsCreateTitle" xml:space="preserve">
+    <value>Title</value>
+    <comment>Title</comment>
+  </data>
+  <data name="EventsCreateUpdateActionImageUrl" xml:space="preserve">
+    <value>Action Image Url</value>
+    <comment>Action Image Url</comment>
+  </data>
+  <data name="EventsCreateUpdatePlaceholderImgUrl" xml:space="preserve">
+    <value>Post image URL here</value>
+    <comment>Post image URL here</comment>
+  </data>
+  <data name="EventsCreateUpdatePreview" xml:space="preserve">
+    <value>Preview</value>
+    <comment>Preview</comment>
+  </data>
+  <data name="EventsCreateVarious" xml:space="preserve">
+    <value>Various</value>
+    <comment>Various</comment>
+  </data>
+  <data name="ExtLoginConfMsg1" xml:space="preserve">
+    <value>Associate your</value>
+    <comment>Associate your</comment>
+  </data>
+  <data name="ExtLoginConfMsg2" xml:space="preserve">
+    <value>account.</value>
+    <comment>account.</comment>
+  </data>
+  <data name="ExtLoginConfMsg3" xml:space="preserve">
+    <value>You've successfully authenticated with</value>
+    <comment>You've successfully authenticated with</comment>
+  </data>
+  <data name="ExtLoginConfMsg4" xml:space="preserve">
+    <value>Please enter a user name for this site below and click the Confirm button to finish
+            logging in.</value>
+    <comment>Please enter a user name for this site below and click the Confirm button to finish
+            logging in.</comment>
+  </data>
+  <data name="ExtLoginFail" xml:space="preserve">
+    <value>Unsuccessful login with service.</value>
+    <comment>Unsuccessful login with service.</comment>
+  </data>
+  <data name="ExtLoginFailVBTitle" xml:space="preserve">
+    <value>Login Failure</value>
+    <comment>Login Failure</comment>
+  </data>
+  <data name="ExtLoginMsg1" xml:space="preserve">
+    <value>There are no external authentication services configured. See</value>
+    <comment>There are no external authentication services configured. See</comment>
+  </data>
+  <data name="ExtLoginMsg2" xml:space="preserve">
+    <value>this article</value>
+    <comment>this article</comment>
+  </data>
+  <data name="ExtLoginMsg3" xml:space="preserve">
+    <value>for details on setting up this ASP.NET application to support logging in via external services.</value>
+    <comment>for details on setting up this ASP.NET application to support logging in via external services.</comment>
+  </data>
+  <data name="ExtLogins1" xml:space="preserve">
+    <value>Log in using your</value>
+    <comment>Log in using your</comment>
+  </data>
+  <data name="ExtLogins2" xml:space="preserve">
+    <value>account</value>
+    <comment>account</comment>
+  </data>
+  <data name="ExtLoginSocial" xml:space="preserve">
+    <value>Log in using another service</value>
+    <comment>Log in using another service</comment>
+  </data>
+  <data name="ExtLoginVBTitle" xml:space="preserve">
+    <value>Register</value>
+    <comment>Register</comment>
+  </data>
+  <data name="HomePageAbout" xml:space="preserve">
+    <value>WAVE is a crowdsourcing platform for social actions.You can  finding volunteers for your actions. Volunteers can engage with you and make you a better organizer. We believe volunteerism can change the world.</value>
+    <comment>WAVE is a crowdsourcing platform for social actions.You can  finding volunteers for your actions. Volunteers can engage with you and make you a better organizer. We believe volunteerism can change the world.</comment>
+  </data>
+  <data name="HowItWorks" xml:space="preserve">
+    <value>How it Works</value>
+    <comment>How it Works</comment>
+  </data>
+  <data name="LeftMenuCompany" xml:space="preserve">
+    <value>Company</value>
+    <comment>Company</comment>
+  </data>
+  <data name="LeftMenuGroup" xml:space="preserve">
+    <value>Group</value>
+    <comment>Group</comment>
+  </data>
+  <data name="LeftMenuNGO" xml:space="preserve">
+    <value>NGO</value>
+    <comment>NGO</comment>
+  </data>
+  <data name="LeftMenuSchool" xml:space="preserve">
+    <value>School</value>
+    <comment>School</comment>
+  </data>
+  <data name="LeftMenuSelect" xml:space="preserve">
+    <value>Select:</value>
+    <comment>Select:</comment>
+  </data>
+  <data name="LeftMenuUniversity" xml:space="preserve">
+    <value>University</value>
+    <comment>University</comment>
+  </data>
+  <data name="LeftMenuVolunteer" xml:space="preserve">
+    <value>Volunteer</value>
+    <comment>Volunteer</comment>
+  </data>
+  <data name="LoginLogin" xml:space="preserve">
+    <value>Login</value>
+    <comment>Login</comment>
+  </data>
+  <data name="LoginMsg1" xml:space="preserve">
+    <value>Login to your Account</value>
+    <comment>Login to your Account</comment>
+  </data>
+  <data name="LoginNoAccount" xml:space="preserve">
+    <value>No account? Register</value>
+    <comment>No account? Register</comment>
+  </data>
+  <data name="LoginPartLogin" xml:space="preserve">
+    <value>Login</value>
+    <comment>Login</comment>
+  </data>
+  <data name="LoginPartRemember" xml:space="preserve">
+    <value>Remember me</value>
+    <comment>Remember me</comment>
+  </data>
+  <data name="LoginPassword" xml:space="preserve">
+    <value>Password</value>
+    <comment>Password</comment>
+  </data>
+  <data name="LoginRemember" xml:space="preserve">
+    <value>Remember my details</value>
+    <comment>Remember my details</comment>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>Login</value>
+    <comment>Login</comment>
+  </data>
+  <data name="LoginUsername" xml:space="preserve">
+    <value>Username</value>
+    <comment>Username</comment>
+  </data>
+  <data name="ManageLogedInAs" xml:space="preserve">
+    <value>You're logged in as</value>
+    <comment>You're logged in as</comment>
+  </data>
+  <data name="ManageVBTitle" xml:space="preserve">
+    <value>Manage Account</value>
+    <comment>Manage Account</comment>
+  </data>
+  <data name="PlaceholderConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+    <comment>Confirm Password</comment>
+  </data>
+  <data name="PlaceholderEmail" xml:space="preserve">
+    <value>Email</value>
+    <comment>Email</comment>
+  </data>
+  <data name="PlaceholderName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="PlaceholderPassword" xml:space="preserve">
+    <value>Password</value>
+    <comment>Password</comment>
+  </data>
+  <data name="PlaceholderSurname" xml:space="preserve">
+    <value>Surname</value>
+    <comment>Surname</comment>
+  </data>
+  <data name="PlaceholderUsername" xml:space="preserve">
+    <value>Username</value>
+    <comment>Username</comment>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+    <comment>Register</comment>
+  </data>
+  <data name="RegisterCreatAnAccount" xml:space="preserve">
+    <value>Create an Account</value>
+    <comment>Create an Account</comment>
+  </data>
+  <data name="RegisterHaveAnAccount" xml:space="preserve">
+    <value>Have an account? Login</value>
+    <comment>Have an account? Login</comment>
+  </data>
+  <data name="RegisterPartRegister" xml:space="preserve">
+    <value>Register</value>
+    <comment>Register</comment>
+  </data>
+  <data name="RegisterPartTerms" xml:space="preserve">
+    <value>Terms of Use</value>
+    <comment>Terms of Use</comment>
+  </data>
+  <data name="RegisterRegister" xml:space="preserve">
+    <value>Register</value>
+    <comment>Register</comment>
+  </data>
+  <data name="RegisterTerms" xml:space="preserve">
+    <value>Terms of Use</value>
+    <comment>Terms of Use</comment>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+    <comment>Remove</comment>
+  </data>
+  <data name="RemoveExtLogins1" xml:space="preserve">
+    <value>Remove this</value>
+    <comment>Remove this</comment>
+  </data>
+  <data name="RemoveExtLogins2" xml:space="preserve">
+    <value>credential from your account</value>
+    <comment>credential from your account</comment>
+  </data>
+  <data name="SetPassword" xml:space="preserve">
+    <value>Set Password</value>
+    <comment>Set Password</comment>
+  </data>
+  <data name="SetPasswordForm" xml:space="preserve">
+    <value>Set Password Form</value>
+    <comment>Set Password Form</comment>
+  </data>
+  <data name="SetPasswordMsg" xml:space="preserve">
+    <value>You do not have a local password for this site. Add a local
+    password so you can log in without an external login.</value>
+    <comment>You do not have a local password for this site. Add a local
+    password so you can log in without an external login.</comment>
+  </data>
+  <data name="VolunteerBasic" xml:space="preserve">
+    <value>Basic Info</value>
+    <comment>Basic Info</comment>
+  </data>
+  <data name="VolunteerDescriptionStep2" xml:space="preserve">
+    <value>......................................................</value>
+    <comment>......................................................</comment>
+  </data>
+  <data name="VolunteerDescriptionStep3" xml:space="preserve">
+    <value>.....................................................</value>
+    <comment>......................................................</comment>
+  </data>
+  <data name="VolunteerDoYouAccept" xml:space="preserve">
+    <value>Do you Accept the</value>
+    <comment>Do you Accept the</comment>
+  </data>
+  <data name="VolunteerFinish" xml:space="preserve">
+    <value>Finish</value>
+    <comment>Finish</comment>
+  </data>
+  <data name="VolunteerFirst" xml:space="preserve">
+    <value>First</value>
+    <comment>First</comment>
+  </data>
+  <data name="VolunteerLast" xml:space="preserve">
+    <value>Last</value>
+    <comment>Last</comment>
+  </data>
+  <data name="VolunteerLocationTrack" xml:space="preserve">
+    <value>Can we track your location to serve location based info?</value>
+    <comment>Can we track your location to serve location based info?</comment>
+  </data>
+  <data name="VolunteerNewsletters" xml:space="preserve">
+    <value>Do you want to receive newsletters?</value>
+    <comment>Do you want to receive newsletters?</comment>
+  </data>
+  <data name="VolunteerNext" xml:space="preserve">
+    <value>Next</value>
+    <comment>Next</comment>
+  </data>
+  <data name="VolunteerOf" xml:space="preserve">
+    <value>of</value>
+    <comment>of</comment>
+  </data>
+  <data name="VolunteerPersonal" xml:space="preserve">
+    <value>Personla Info</value>
+    <comment>Personla Info</comment>
+  </data>
+  <data name="VolunteerPersonalization" xml:space="preserve">
+    <value>Personalization</value>
+    <comment>Personalization</comment>
+  </data>
+  <data name="VolunteerPlaceholderAddress" xml:space="preserve">
+    <value>Address...</value>
+    <comment>Address...</comment>
+  </data>
+  <data name="VolunteerPlaceholderCity" xml:space="preserve">
+    <value>City...</value>
+    <comment>City...</comment>
+  </data>
+  <data name="VolunteerPlaceholderConfirmPassword" xml:space="preserve">
+    <value>Confirm Password...</value>
+    <comment>Confirm Password...</comment>
+  </data>
+  <data name="VolunteerPlaceholderCountry" xml:space="preserve">
+    <value>Country...</value>
+    <comment>Address...</comment>
+  </data>
+  <data name="VolunteerPlaceholderEmail" xml:space="preserve">
+    <value>Email...</value>
+    <comment>Email...</comment>
+  </data>
+  <data name="VolunteerPlaceholderFacebook" xml:space="preserve">
+    <value>Facebook...</value>
+    <comment>Facebook...</comment>
+  </data>
+  <data name="VolunteerPlaceholderGender" xml:space="preserve">
+    <value>Gender...</value>
+    <comment>Gender...</comment>
+  </data>
+  <data name="VolunteerPlaceholderGooglePlus" xml:space="preserve">
+    <value>Google Plus...</value>
+    <comment>Google Plus...</comment>
+  </data>
+  <data name="VolunteerPlaceholderLinkedIn" xml:space="preserve">
+    <value>LinkedIn...</value>
+    <comment>LinkedIn...</comment>
+  </data>
+  <data name="VolunteerPlaceholderName" xml:space="preserve">
+    <value>Name...</value>
+    <comment>Name...</comment>
+  </data>
+  <data name="VolunteerPlaceholderPassword" xml:space="preserve">
+    <value>Password...</value>
+    <comment>Password...</comment>
+  </data>
+  <data name="VolunteerPlaceholderPhone" xml:space="preserve">
+    <value>Phone...</value>
+    <comment>Phone...</comment>
+  </data>
+  <data name="VolunteerPlaceholderSchoolUniversity" xml:space="preserve">
+    <value>School/University</value>
+    <comment>School/University</comment>
+  </data>
+  <data name="VolunteerPlaceholderSkype" xml:space="preserve">
+    <value>Skype...</value>
+    <comment>Skype...</comment>
+  </data>
+  <data name="VolunteerPlaceholderSurname" xml:space="preserve">
+    <value>Surname...</value>
+    <comment>Surname...</comment>
+  </data>
+  <data name="VolunteerPlaceholderTwitter" xml:space="preserve">
+    <value>Twitter...</value>
+    <comment>Twitter...</comment>
+  </data>
+  <data name="VolunteerPlaceholderUsername" xml:space="preserve">
+    <value>Username...</value>
+    <comment>Username...</comment>
+  </data>
+  <data name="VolunteerPlaceholderWebsite" xml:space="preserve">
+    <value>Website...</value>
+    <comment>Website...</comment>
+  </data>
+  <data name="VolunteerPlaceholderYoutube" xml:space="preserve">
+    <value>Youtube...</value>
+    <comment>Youtube...</comment>
+  </data>
+  <data name="VolunteerPlaceholderZipCode" xml:space="preserve">
+    <value>Zip Code...</value>
+    <comment>Zip Code...</comment>
+  </data>
+  <data name="VolunteerPrevious" xml:space="preserve">
+    <value>Previous</value>
+    <comment>Previous</comment>
+  </data>
+  <data name="VolunteerSignUp" xml:space="preserve">
+    <value>Sign Up</value>
+    <comment>Sign Up</comment>
+  </data>
+  <data name="VolunteerSocial" xml:space="preserve">
+    <value>Social</value>
+    <comment>Social</comment>
+  </data>
+  <data name="VolunteerStep" xml:space="preserve">
+    <value>Step</value>
+    <comment>Step</comment>
+  </data>
+  <data name="VolunteerStep5Text" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices libero vel massa egestas facilisis. Mauris convallis augue nec dolor dignissim vestibulum. Praesent imperdiet elit posuere arcu posuere consectetur. Morbi dignissim eleifend nibh, eget tincidunt nibh dignissim hendrerit. Cras iaculis congue lorem, eget gravida augue vehicula sed. Nam lorem sem, consectetur ac tempus quis, consectetur ut lectus. In bibendum luctus pharetra. Morbi lacinia sem sem. Phasellus quis tellus magna.</value>
+    <comment>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices libero vel massa egestas facilisis. Mauris convallis augue nec dolor dignissim vestibulum. Praesent imperdiet elit posuere arcu posuere consectetur. Morbi dignissim eleifend nibh, eget tincidunt nibh dignissim hendrerit. Cras iaculis congue lorem, eget gravida augue vehicula sed. Nam lorem sem, consectetur ac tempus quis, consectetur ut lectus. In bibendum luctus pharetra. Morbi lacinia sem sem. Phasellus quis tellus magna.</comment>
+  </data>
+  <data name="VolunteerTerms" xml:space="preserve">
+    <value>Terms of Use</value>
+    <comment>Terms of Use</comment>
+  </data>
+  <data name="EventsDetailsAddComment" xml:space="preserve">
+    <value>Add comment</value>
+    <comment>Add comment</comment>
+  </data>
+  <data name="EventsDetailsAddUpdate" xml:space="preserve">
+    <value>Add update</value>
+    <comment>Add update</comment>
+  </data>
+  <data name="EventsDetailsBy" xml:space="preserve">
+    <value>by</value>
+    <comment>by</comment>
+  </data>
+  <data name="EventsDetailsDays" xml:space="preserve">
+    <value>days ago</value>
+    <comment>days ago</comment>
+  </data>
+  <data name="EventsDetailsDaysLeft" xml:space="preserve">
+    <value>Days left</value>
+    <comment>Days left</comment>
+  </data>
+  <data name="EventsDetailsDeleteComment" xml:space="preserve">
+    <value>Delete comment</value>
+    <comment>Delete comment</comment>
+  </data>
+  <data name="EventsDetailsDeleteUpdate" xml:space="preserve">
+    <value>Delete update</value>
+    <comment>Delete update</comment>
+  </data>
+  <data name="EventsDetailsDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="EventsDetailsDiscussions" xml:space="preserve">
+    <value>Discussions</value>
+    <comment>Discussions</comment>
+  </data>
+  <data name="EventsDetailsEditAction" xml:space="preserve">
+    <value>Edit Action</value>
+    <comment>Edit Action</comment>
+  </data>
+  <data name="EventsDetailsEditComment" xml:space="preserve">
+    <value>Edit comment</value>
+    <comment>Edit comment</comment>
+  </data>
+  <data name="EventsDetailsEditUpdate" xml:space="preserve">
+    <value>Edit update</value>
+    <comment>Edit update</comment>
+  </data>
+  <data name="EventsDetailsEventOrganizer" xml:space="preserve">
+    <value>Event Organizer</value>
+    <comment>Event Organizer</comment>
+  </data>
+  <data name="EventsDetailsGoal" xml:space="preserve">
+    <value>Goal</value>
+    <comment>Goal</comment>
+  </data>
+  <data name="EventsDetailsHelp" xml:space="preserve">
+    <value>Help</value>
+    <comment>Help</comment>
+  </data>
+  <data name="EventsDetailsHelping" xml:space="preserve">
+    <value>Helping!</value>
+    <comment>Helping!</comment>
+  </data>
+  <data name="EventsDetailsHour" xml:space="preserve">
+    <value>hour ago</value>
+    <comment>hour ago</comment>
+  </data>
+  <data name="EventsDetailsHours" xml:space="preserve">
+    <value>hours ago</value>
+    <comment>hours ago</comment>
+  </data>
+  <data name="EventsDetailsMinute" xml:space="preserve">
+    <value>minute ago</value>
+    <comment>minute ago</comment>
+  </data>
+  <data name="EventsDetailsMinutes" xml:space="preserve">
+    <value>minutes ago</value>
+    <comment>minutes ago</comment>
+  </data>
+  <data name="EventsDetailsPlaceholderComment" xml:space="preserve">
+    <value>Add your comment</value>
+    <comment>Add your comment</comment>
+  </data>
+  <data name="EventsDetailsPlaceholderUpdate" xml:space="preserve">
+    <value>Add your update</value>
+    <comment>Add your update</comment>
+  </data>
+  <data name="EventsDetailsUpdates" xml:space="preserve">
+    <value>Updates</value>
+    <comment>Updates</comment>
+  </data>
+  <data name="EventsDetailsUploadImg" xml:space="preserve">
+    <value>Upload Image</value>
+    <comment>Upload Image</comment>
+  </data>
+  <data name="EventsDetailsUser" xml:space="preserve">
+    <value>User</value>
+    <comment>User</comment>
+  </data>
+  <data name="EventsDetailsVolunteer" xml:space="preserve">
+    <value>Volunteer</value>
+    <comment>Volunteer</comment>
+  </data>
+  <data name="EventsDetailsVolunteers" xml:space="preserve">
+    <value>Volunteers</value>
+    <comment>Volunteers</comment>
+  </data>
+  <data name="EventsEditDeleteThisEvent" xml:space="preserve">
+    <value>Delete this event</value>
+    <comment>Delete this event</comment>
+  </data>
+  <data name="EventsIndexActionStatus" xml:space="preserve">
+    <value>Action Status:</value>
+    <comment>Action Status:</comment>
+  </data>
+  <data name="EventsIndexAll" xml:space="preserve">
+    <value>All</value>
+    <comment>All</comment>
+  </data>
+  <data name="EventsIndexAllActions" xml:space="preserve">
+    <value>All Actions</value>
+    <comment>All Actions</comment>
+  </data>
+  <data name="EventsIndexCompany" xml:space="preserve">
+    <value>Company</value>
+    <comment>Company</comment>
+  </data>
+  <data name="EventsIndexEnding" xml:space="preserve">
+    <value>Ending</value>
+    <comment>Ending</comment>
+  </data>
+  <data name="EventsIndexEverybody" xml:space="preserve">
+    <value>Everybody</value>
+    <comment>Everybody</comment>
+  </data>
+  <data name="EventsIndexFilterBy" xml:space="preserve">
+    <value>Filter by:</value>
+    <comment>Filter by:</comment>
+  </data>
+  <data name="EventsIndexLatest" xml:space="preserve">
+    <value>Latest</value>
+    <comment>Latest</comment>
+  </data>
+  <data name="EventsIndexMyActions" xml:space="preserve">
+    <value>My Actions</value>
+    <comment>My Actions</comment>
+  </data>
+  <data name="EventsIndexOngoing" xml:space="preserve">
+    <value>Ongoing</value>
+    <comment>Ongoing</comment>
+  </data>
+  <data name="EventsIndexOrganizations" xml:space="preserve">
+    <value>Organization</value>
+    <comment>Organization</comment>
+  </data>
+  <data name="EventsIndexOrganizedBy" xml:space="preserve">
+    <value>Organized by:</value>
+    <comment>Organized by:</comment>
+  </data>
+  <data name="EventsIndexRelevance" xml:space="preserve">
+    <value>Revelance</value>
+    <comment>Revelance</comment>
+  </data>
+  <data name="EventsIndexResetFilters" xml:space="preserve">
+    <value>Reset filters...</value>
+    <comment>Reset filters...</comment>
+  </data>
+  <data name="EventsIndexSuccessful" xml:space="preserve">
+    <value>Successful</value>
+    <comment>Successful</comment>
+  </data>
+  <data name="EventsIndexTitle" xml:space="preserve">
+    <value>Title</value>
+    <comment>Title</comment>
+  </data>
+  <data name="EventsIndexUnsuccessful" xml:space="preserve">
+    <value>Unsiccessful</value>
+    <comment>Unsiccessful</comment>
+  </data>
+  <data name="EventsIndexUsers" xml:space="preserve">
+    <value>Users</value>
+    <comment>Users</comment>
+  </data>
+  <data name="LayoutNavBarLogout" xml:space="preserve">
+    <value>Logout</value>
+    <comment>Logout</comment>
+  </data>
+  <data name="LayoutNavBarSignIn" xml:space="preserve">
+    <value>Sign In</value>
+    <comment>Sign In</comment>
+  </data>
+  <data name="LayoutNavBarSignUp" xml:space="preserve">
+    <value>Sign Up</value>
+    <comment>Sign Up</comment>
+  </data>
+  <data name="MessagesIndexCompose" xml:space="preserve">
+    <value>Compose</value>
+    <comment>Compose</comment>
+  </data>
+  <data name="MessagesIndexDrafts" xml:space="preserve">
+    <value>Drafts</value>
+    <comment>Drafts</comment>
+  </data>
+  <data name="MessagesIndexEmail" xml:space="preserve">
+    <value>emails.</value>
+    <comment>emails.</comment>
+  </data>
+  <data name="MessagesIndexInbox" xml:space="preserve">
+    <value>Inbox</value>
+    <comment>Inbox</comment>
+  </data>
+  <data name="MessagesIndexNew" xml:space="preserve">
+    <value>new</value>
+    <comment>new</comment>
+  </data>
+  <data name="MessagesIndexSent" xml:space="preserve">
+    <value>Sent</value>
+    <comment>Sent</comment>
+  </data>
+  <data name="MessagesIndexSettings" xml:space="preserve">
+    <value>Settings</value>
+    <comment>Settings</comment>
+  </data>
+  <data name="MessagesIndexYouhave" xml:space="preserve">
+    <value>You have</value>
+    <comment>You have</comment>
+  </data>
+  <data name="ModalsEventsUploImgUploadBanner" xml:space="preserve">
+    <value>Upload Banner</value>
+    <comment>Upload Banner</comment>
+  </data>
+  <data name="ModalsEventsUploImgUploadThumbnail" xml:space="preserve">
+    <value>Upload Thumbnail</value>
+    <comment>Upload Thumbnail</comment>
+  </data>
+  <data name="SearchIndexAllActions" xml:space="preserve">
+    <value>All Actions</value>
+    <comment>All Actions</comment>
+  </data>
+  <data name="SearchIndexEnding" xml:space="preserve">
+    <value>Ending</value>
+    <comment>Ending</comment>
+  </data>
+  <data name="SearchIndexFilterBy" xml:space="preserve">
+    <value>Filter by:</value>
+    <comment>Filter by:</comment>
+  </data>
+  <data name="SearchIndexFrom" xml:space="preserve">
+    <value>From:</value>
+    <comment>From:</comment>
+  </data>
+  <data name="SearchIndexLatest" xml:space="preserve">
+    <value>Latest</value>
+    <comment>Latest</comment>
+  </data>
+  <data name="SearchIndexMyActions" xml:space="preserve">
+    <value>My Actions</value>
+    <comment>My Actions</comment>
+  </data>
+  <data name="SearchIndexNoResults" xml:space="preserve">
+    <value>No results Found or you didn't specify a query</value>
+    <comment>No results Found or you didn't specify a query</comment>
+  </data>
+  <data name="SearchIndexRating" xml:space="preserve">
+    <value>Rating</value>
+    <comment>Rating</comment>
+  </data>
+  <data name="SearchIndexRelevance" xml:space="preserve">
+    <value>Relevance</value>
+    <comment>Relevance</comment>
+  </data>
+  <data name="SearchIndexSelectByDate" xml:space="preserve">
+    <value>Select by Date:</value>
+    <comment>Select by Date:</comment>
+  </data>
+  <data name="SearchIndexSelectCategory" xml:space="preserve">
+    <value>Select category:</value>
+    <comment>Select category:</comment>
+  </data>
+  <data name="SearchIndexSortBy" xml:space="preserve">
+    <value>Sort by:</value>
+    <comment>Sort by:</comment>
+  </data>
+  <data name="SearchIndexTitle" xml:space="preserve">
+    <value>Title</value>
+    <comment>Title</comment>
+  </data>
+  <data name="SearchIndexTo" xml:space="preserve">
+    <value>To:</value>
+    <comment>To:</comment>
+  </data>
+  <data name="SearchIndexVBTitle" xml:space="preserve">
+    <value>Index</value>
+    <comment>Index</comment>
+  </data>
+  <data name="SharedErrorError1" xml:space="preserve">
+    <value>Error.</value>
+    <comment>Error.</comment>
+  </data>
+  <data name="SharedErrorError2" xml:space="preserve">
+    <value>An error occurred while processing your request.</value>
+    <comment>An error occurred while processing your request.</comment>
+  </data>
+  <data name="SharedErrorVBTitle" xml:space="preserve">
+    <value>Error</value>
+    <comment>Error</comment>
+  </data>
+  <data name="SharedLayoutNotifyMe" xml:space="preserve">
+    <value>Notify me</value>
+    <comment>Notify me</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterAbout" xml:space="preserve">
+    <value>is a platform for finding volunteers for your events. Volunteers can rate you and make you
+                        a better organizer. We make volunteerism a game where you can receive badges.</value>
+    <comment>is a platform for finding volunteers for your events. Volunteers can rate you and make you
+                        a better organizer. We make volunteerism a game where you can receive badges.</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterAboutSite" xml:space="preserve">
+    <value>About WAVE</value>
+    <comment>About WAVE</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterAmbassador" xml:space="preserve">
+    <value>Become an Ambasador</value>
+    <comment>Become an Ambasador</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterBlog" xml:space="preserve">
+    <value>Blog</value>
+    <comment>Blog</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterContactUs" xml:space="preserve">
+    <value>Contact us</value>
+    <comment>Contact us</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterDirectory" xml:space="preserve">
+    <value>Directory</value>
+    <comment>Directory</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterDiscover" xml:space="preserve">
+    <value>Discover</value>
+    <comment>Discover</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterFAQ" xml:space="preserve">
+    <value>FAQs</value>
+    <comment>FAQs</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterForBusiness" xml:space="preserve">
+    <value>WAVE for Business</value>
+    <comment>WAVE for Business</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterForOrganizations" xml:space="preserve">
+    <value>for Organizations</value>
+    <comment>for Organizations</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterInfo" xml:space="preserve">
+    <value>Inforrmation</value>
+    <comment>Inforrmation</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterNewsletter" xml:space="preserve">
+    <value>Sign up for our Newsletter</value>
+    <comment>Sign up for Newsletter</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterPlaceholderEmail" xml:space="preserve">
+    <value>Your email address</value>
+    <comment>Your email address</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterPrivacy" xml:space="preserve">
+    <value>Privacy Policy</value>
+    <comment>Privacy Policy</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterStats" xml:space="preserve">
+    <value>Stats</value>
+    <comment>Stats</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterSupport" xml:space="preserve">
+    <value>Support</value>
+    <comment>Support</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterSupporters" xml:space="preserve">
+    <value>Our Supporters</value>
+    <comment>Our Supporters</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterTerms" xml:space="preserve">
+    <value>Terms of Use</value>
+    <comment>Terms of Use</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterTheTeam" xml:space="preserve">
+    <value>Team</value>
+    <comment>Team</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuAbout" xml:space="preserve">
+    <value>About</value>
+    <comment>About</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuAddAnAction" xml:space="preserve">
+    <value>Add an Action</value>
+    <comment>Add an Action</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuAmbassadors" xml:space="preserve">
+    <value>Ambassadors</value>
+    <comment>Ambassadors</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuBlog" xml:space="preserve">
+    <value>Blog</value>
+    <comment>Blog</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuDiscover" xml:space="preserve">
+    <value>Discover</value>
+    <comment>Discover</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuHallOfFame" xml:space="preserve">
+    <value>Hall of Fame</value>
+    <comment>Hall of Fame</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuRankings" xml:space="preserve">
+    <value>Rankings</value>
+    <comment>Rankings</comment>
+  </data>
+  <data name="SharedLoginPartialLogOff" xml:space="preserve">
+    <value>Log off</value>
+    <comment>Log off</comment>
+  </data>
+  <data name="UserEditAddress" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="UserEditCity" xml:space="preserve">
+    <value>City:</value>
+  </data>
+  <data name="UserEditCountry" xml:space="preserve">
+    <value>Country:</value>
+  </data>
+  <data name="UserEditDescribeAction" xml:space="preserve">
+    <value>Describe the Action</value>
+  </data>
+  <data name="UserEditDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="UserEditFacebook" xml:space="preserve">
+    <value>Facebook:</value>
+  </data>
+  <data name="UserEditGooglePlus" xml:space="preserve">
+    <value>Google+:</value>
+  </data>
+  <data name="UserEditInfo" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="UserEditLinkedIn" xml:space="preserve">
+    <value>LinkedIn:</value>
+  </data>
+  <data name="UserEditLocation" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="UserEditName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="UserEditPhone" xml:space="preserve">
+    <value>Phone:</value>
+  </data>
+  <data name="UserEditPlaceholderAddress" xml:space="preserve">
+    <value>Enter Address..</value>
+  </data>
+  <data name="UserEditPlaceholderCity" xml:space="preserve">
+    <value>Enter City...</value>
+  </data>
+  <data name="UserEditPlaceholderDescribeAction" xml:space="preserve">
+    <value>Describe the Action...</value>
+  </data>
+  <data name="USerEditPlaceholderFacebook" xml:space="preserve">
+    <value>Enter Facebook...</value>
+  </data>
+  <data name="UserEditPlaceholderGooglePlus" xml:space="preserve">
+    <value>Enter Google+...</value>
+  </data>
+  <data name="UserEditPlaceholderLinkedIn" xml:space="preserve">
+    <value>Enter LinkedIn...</value>
+  </data>
+  <data name="UserEditPlaceholderName" xml:space="preserve">
+    <value>Enter Name...</value>
+  </data>
+  <data name="UserEditPlaceholderPhone" xml:space="preserve">
+    <value>Enter Phone...</value>
+  </data>
+  <data name="UserEditPlaceholderSkype" xml:space="preserve">
+    <value>Enter Skype...</value>
+  </data>
+  <data name="UserEditPlaceholderSurname" xml:space="preserve">
+    <value>Enter Surname...</value>
+  </data>
+  <data name="UserEditPlaceholderTwitter" xml:space="preserve">
+    <value>Enter Twitter...</value>
+  </data>
+  <data name="UserEditPlaceholderWebsite" xml:space="preserve">
+    <value>Enter Website...</value>
+  </data>
+  <data name="UserEditPlaceholderYoutube" xml:space="preserve">
+    <value>Enter Youtube...</value>
+  </data>
+  <data name="UserEditPlaceholderZipCode" xml:space="preserve">
+    <value>Enter Zip Code...</value>
+  </data>
+  <data name="UserEditSkype" xml:space="preserve">
+    <value>Skype:</value>
+  </data>
+  <data name="UserEditSocial" xml:space="preserve">
+    <value>Social</value>
+  </data>
+  <data name="UserEditStartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="UserEditSurname" xml:space="preserve">
+    <value>Surname:</value>
+  </data>
+  <data name="UserEditTitle" xml:space="preserve">
+    <value>Edit Profile</value>
+    <comment>Edit Profile</comment>
+  </data>
+  <data name="UserEditTwitter" xml:space="preserve">
+    <value>Twitter:</value>
+  </data>
+  <data name="UserEditWebsite" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="UserEditYoutube" xml:space="preserve">
+    <value>Youtube:</value>
+  </data>
+  <data name="UserEditZipCode" xml:space="preserve">
+    <value>Zip Code:</value>
+  </data>
+  <data name="UserIndexCreated" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="UserIndexEditProfile" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
+  <data name="UserIndexFollow" xml:space="preserve">
+    <value>Follow</value>
+  </data>
+  <data name="UserIndexFollowers" xml:space="preserve">
+    <value>Followers</value>
+  </data>
+  <data name="UserIndexFollowing" xml:space="preserve">
+    <value>Following</value>
+  </data>
+  <data name="UserIndexFollowing1" xml:space="preserve">
+    <value>Following!</value>
+  </data>
+  <data name="UserIndexParticipated" xml:space="preserve">
+    <value>Participated</value>
+  </data>
+  <data name="UserIndexUploadImg" xml:space="preserve">
+    <value>Upload Image</value>
+    <comment>Upload Image</comment>
+  </data>
+  <data name="LayoutNavBarProfile" xml:space="preserve">
+    <value>Profile</value>
+    <comment>Profile</comment>
+  </data>
+  <data name="LayoutNavBarSearch" xml:space="preserve">
+    <value>Search for an action...</value>
+    <comment>Search for an action...</comment>
+  </data>
+  <data name="ModalsEventsUploImgUploadBtn" xml:space="preserve">
+    <value>Upload Image</value>
+    <comment>Upload Image</comment>
+  </data>
+  <data name="UserEditBirthDate" xml:space="preserve">
+    <value>Birth Date:</value>
+    <comment>Birth Date:</comment>
+  </data>
+  <data name="HomeSlider1A" xml:space="preserve">
+    <value>Take Action Today</value>
+    <comment>Take Action Today</comment>
+  </data>
+  <data name="HomeSlider1B" xml:space="preserve">
+    <value>Make earth a better place</value>
+    <comment>Make earth a better place</comment>
+  </data>
+  <data name="HomeSlider2A" xml:space="preserve">
+    <value>You can do everything</value>
+    <comment>You can do everything</comment>
+  </data>
+  <data name="HomeSlider2B" xml:space="preserve">
+    <value>We will suport you</value>
+    <comment>We will suport you</comment>
+  </data>
+  <data name="HomeSlider3A" xml:space="preserve">
+    <value>Make a better world</value>
+    <comment>Make a better world</comment>
+  </data>
+  <data name="HomeSlider3B" xml:space="preserve">
+    <value>Find people who want to join you</value>
+    <comment>Find people who want to join you</comment>
+  </data>
+  <data name="HomeSlider4A" xml:space="preserve">
+    <value>You love to help?</value>
+    <comment>You love to help?</comment>
+  </data>
+  <data name="HomeSlider4B" xml:space="preserve">
+    <value>Join today and help us shape the future</value>
+    <comment>Join today and help us shape the future</comment>
+  </data>
+  <data name="HomeTopActionsPopularActions" xml:space="preserve">
+    <value>Popular Actions</value>
+    <comment>Popular Actions</comment>
+  </data>
+  <data name="HomeTopActionsSeeAll" xml:space="preserve">
+    <value>See all...</value>
+    <comment>See all...</comment>
+  </data>
+  <data name="HomeTopUsersCreated" xml:space="preserve">
+    <value>Created</value>
+    <comment>Created</comment>
+  </data>
+  <data name="HomeTopUsersFollowers" xml:space="preserve">
+    <value>Followers</value>
+    <comment>Followers</comment>
+  </data>
+  <data name="HomeTopUsersFollowing" xml:space="preserve">
+    <value>Following</value>
+    <comment>Following</comment>
+  </data>
+  <data name="HomeTopUsersParticipated" xml:space="preserve">
+    <value>Participated</value>
+    <comment>Participated</comment>
+  </data>
+  <data name="HomeTopUsersPopularUsers" xml:space="preserve">
+    <value>Popular Users</value>
+    <comment>Popular Users</comment>
+  </data>
+  <data name="HomeWelcomeAct" xml:space="preserve">
+    <value>Act</value>
+    <comment>Act</comment>
+  </data>
+  <data name="HomeWelcomeActString1" xml:space="preserve">
+    <value>Communicate with</value>
+    <comment>Communicate with</comment>
+  </data>
+  <data name="HomeWelcomeActString2" xml:space="preserve">
+    <value>other vollunteers</value>
+    <comment>other vollunteers</comment>
+  </data>
+  <data name="HomeWelcomeActString3" xml:space="preserve">
+    <value>and make an action plan.</value>
+    <comment>and make an action plan.</comment>
+  </data>
+  <data name="HomeWelcomeDiscover" xml:space="preserve">
+    <value>Discover</value>
+    <comment>Discover</comment>
+  </data>
+  <data name="HomeWelcomeEndorsements" xml:space="preserve">
+    <value>Endorsements</value>
+    <comment>Endorsements</comment>
+  </data>
+  <data name="HomeWelcomeEngage" xml:space="preserve">
+    <value>Engage</value>
+    <comment>Engage</comment>
+  </data>
+  <data name="HomeWelcomeFind" xml:space="preserve">
+    <value>Find</value>
+    <comment>Find</comment>
+  </data>
+  <data name="HomeWelcomeFindString1" xml:space="preserve">
+    <value>Start your own action</value>
+    <comment>Start your own action</comment>
+  </data>
+  <data name="HomeWelcomeFindString2" xml:space="preserve">
+    <value>within seconds and</value>
+    <comment>within seconds and</comment>
+  </data>
+  <data name="HomeWelcomeFindString3" xml:space="preserve">
+    <value>find people that</value>
+    <comment>find people that</comment>
+  </data>
+  <data name="HomeWelcomeFindString4" xml:space="preserve">
+    <value>would love to help</value>
+    <comment>would love to help</comment>
+  </data>
+  <data name="HomeWelcomeSignUpToday" xml:space="preserve">
+    <value>Sign up today and start your action.</value>
+    <comment>Sign up today and start your action.</comment>
+  </data>
+  <data name="HomeWelcomeStart" xml:space="preserve">
+    <value>Start</value>
+    <comment>Start</comment>
+  </data>
+  <data name="HomeWelcomeStartActionToday" xml:space="preserve">
+    <value>Start an Action today</value>
+    <comment>Start an Action today</comment>
+  </data>
+  <data name="HomeWelcomeStartString1" xml:space="preserve">
+    <value>Identify a problem that</value>
+    <comment>Identify a problem that</comment>
+  </data>
+  <data name="HomeWelcomeStartString2" xml:space="preserve">
+    <value>is happening near you</value>
+    <comment>is happening near you</comment>
+  </data>
+  <data name="HomeWelcomeStartString3" xml:space="preserve">
+    <value>or browse for one from</value>
+    <comment>or browse for one from</comment>
+  </data>
+  <data name="HomeWelcomeStartString4" xml:space="preserve">
+    <value>our community</value>
+    <comment>our community</comment>
+  </data>
+  <data name="HomeWelcomeString1" xml:space="preserve">
+    <value>Go out there</value>
+    <comment>Go out there</comment>
+  </data>
+  <data name="HomeWelcomeString2" xml:space="preserve">
+    <value>and make our world</value>
+    <comment>and make our world</comment>
+  </data>
+  <data name="HomeWelcomeString3" xml:space="preserve">
+    <value>a better place!</value>
+    <comment>a better place!</comment>
+  </data>
+  <data name="LayoutNavBarReportAProblem" xml:space="preserve">
+    <value>Report a problem</value>
+    <comment>Report a problem</comment>
+  </data>
+  <data name="LayoutNavBarHelp" xml:space="preserve">
+    <value>Help</value>
+    <comment>Help</comment>
+  </data>
+  <data name="EventsDaysPassed" xml:space="preserve">
+    <value>Date Passed</value>
+    <comment>Date Passed</comment>
+  </data>
+  <data name="RegisterTerms0" xml:space="preserve">
+    <value>Agree to</value>
+    <comment>Agree to</comment>
+  </data>
+  <data name="AccountController_Manage_The_current_password_is_incorrect_or_the_new_password_is_invalid_" xml:space="preserve">
+    <value>The current password is incorrect or the new password is invalid.</value>
+  </data>
+</root>

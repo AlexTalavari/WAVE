@@ -1,0 +1,32 @@
+﻿<div class="modal fade" id="modal-1" style="display: none;" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                @{ Html.RenderAction("LoginPartial", "Account"); }
+            </div>
+            <!-- // Modal body END -->
+        </div>
+    </div>
+
+</div>
+<div class="modal fade" id="modal-2" style="display: none;" aria-hidden="true">
+
+    <div class="modal-dialog" style="width: 400px;">
+        <div class="modal-content">
+
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                @{ Html.RenderAction("RegisterPartial", "Account"); }
+            </div>
+            <!-- // Modal body END -->
+        </div>
+    </div>
+
+</div>

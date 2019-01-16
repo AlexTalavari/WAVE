@@ -1,0 +1,652 @@
+﻿@using WAVE.Website.Classes
+@using Action = WAVE.Dal.Entities.Action
+@model UserModel
+
+
+
+@section Header
+{
+
+    <link href="~/Content/css/bootstrap/bootstrap-progressbar-2.3.2.min.css" rel="stylesheet" />
+    <link href="~/Content/css/actions.css" rel="stylesheet" />
+
+    <style>
+        #uploadImgBtn {
+            float: right;
+            font-size: 23px;
+            margin-right: 15px;
+            margin-top: 15px;
+            opacity: 0;
+            transition: opacity 1s ease, visibility 1s ease;
+            visibility: hidden;
+        }
+
+        .box:hover > #uploadImgBtn {
+            opacity: 1;
+            visibility: visible !important;
+        }
+
+        .widget.widget-tabs > .widget-head ul li.active { height: 65px !important; }
+
+        .widget {
+            border: none;
+            margin: 0 auto 0;
+        }
+
+        .widget .widget-head {
+            height: 63px;
+            line-height: 63px;
+            padding: 0;
+        }
+
+        .widget.widget-tabs > .widget-head ul li { height: 65px !important; }
+
+        .widget.widget-tabs > .widget-head ul li a {
+            height: 65px;
+            padding: 0;
+            width: 120px;
+        }
+
+        .widget.widget-tabs > .widget-head ul li:hover a {
+            height: 65px;
+            padding: 0;
+            width: 120px;
+        }
+
+        .widget.widget-tabs > .widget-head ul li a div p:nth-child(1) { margin-top: 6px !important; }
+    </style>
+}
+
+@section FooterScripts
+{
+
+    <script type="text/javascript">
+        $("#volunteerbtn").mouseenter(function() {
+            $("#volunteerbtn").html('<i class="fa fa-fw fa-times"></i>Unfollow');
+
+        });
+        $("#volunteerbtn").mouseleave(function() {
+            $("#volunteerbtn").html('<i class="fa fa-fw fa-check"></i>Following!');
+        });
+        $("#volunteerbtn1").mouseenter(function() {
+            $("#volunteerbtn1").addClass("btn-stroke");
+        });
+        $("#volunteerbtn1").mouseleave(function() {
+            $("#volunteerbtn1").removeClass("btn-stroke");
+        });
+        $(document).ready(function() {
+            var w = $(window).width();
+            var nw = w - 308;
+            $("#progressbar").width(nw);
+        });
+
+        jQuery(document).ready(function() {
+            jQuery("#ProfileActionId").val('@Model.CurrentUser.Account.UserName');
+            jQuery("#BannerActionId").val('@Model.CurrentUser.Account.UserName');
+        });
+    </script>
+}
+<div class="layout-app">
+    <div class="row row-app" style="z-index: 100;">
+        <!-- col-app -->
+        <div class="col-app col-unscrollable">
+
+            <!-- col-app -->
+            <div class="col-app">
+                <div class="col-md-12">
+                    <div class="innerLR box" style="margin-top: 300px; position: absolute; z-index: 1000;">
+                        @if (@Model.LoggedUser.Account.UserName == Model.CurrentUser.Account.UserName)
+                        {
+                            <a href="#modalUploadProfile" data-toggle="modal">
+                                <div class="pull-left" style="background-image: url('@Model.CurrentUser.ProfilePhoto.Url'); border: 5px solid white; border-radius: 100px; height: 200px; width: 200px;">
+                                    <div style="-moz-transition: all 1s ease; -ms-transition: all 1s ease; -o-transition: all 1s ease; -webkit-transition: all 1s ease; background-image: url('/Content/images/addprofilepicture.png'); color: white; font-size: 16px; height: 200px; margin: -5px 0 0 -5px; opacity: 0; padding: 140px 0 0 40px; transition: all 1s ease; width: 200px;" onmouseover=" this.style.opacity = '1' " onmouseout=" this.style.opacity = '0' ">
+                                        <i class="fa fa-camera-retro"></i>
+                                        Upload Image
+                                    </div>
+                                </div>
+                            </a>
+                        }
+                        else
+                        {
+                            <div class="pull-left" style="background-image: url('@Model.CurrentUser.ProfilePhoto.Url'); border: 5px solid white; border-radius: 100px; height: 200px; width: 200px;">
+
+                            </div>
+                        }
+
+                    </div>
+                    <div class="col-table">
+                        <div class="col-table-row">
+                            <div class="" style="background: rgba(0, 0, 0, 0.5); color: #fff; float: left; font-size: 64px; margin-left: -7px; max-height: 111px; min-height: 111px; padding-bottom: 18px; position: absolute; right: 0; text-align: left; text-shadow: 2px 0 3px rgba(0, 0, 0, 0.9); top: 289px; width: 100%;">
+
+                                <div style="font-size: 48px; margin-left: 235px; padding-top: 10px;">
+                                    @Model.CurrentUser.GetFullName()
+                                    <p style="font-size: 12px;">@Model.CurrentUser.Description.Truncate(100)</p>
+                                </div>
+                            </div>
+                            <div class="box" style="-moz-background-size: cover; -o-background-size: cover; background: url('@Model.CurrentUser.BannerPhoto.Url') no-repeat; background-size: cover; min-height: 400px;">
+                                @if (@Model.LoggedUser.Account.UserName == Model.CurrentUser.Account.UserName)
+                                {
+                                    <a href="#modalUpload" id="uploadImgBtn" data-toggle="modal" class="btn btn-primary btn-stroke"><i class="fa fa-camera-retro"></i> @Resources.UserIndexUploadImg</a>
+                                }
+                            </div>
+                            <div style="padding-right: 4px;">
+                                <div class="row bg-white shadow2">
+                                    <div class="innerAll col-md-12">
+                                        <div class="pull-left col-md-12">
+                                            <div class="widget widget-tabs widget-tabs-responsive center">
+                                                <div class="widget-head">
+                                                    <ul>
+                                                        <li class="active">
+
+                                                            <a href="#tab-1" data-toggle="tab">
+                                                                <div class="media-body" style="border-right: 1px solid lightgray; font-size: 14px; text-align: center;">
+                                                                    <p class="margin-none">@Resources.UserIndexCreated</p>
+                                                                    <p class="margin-none" style="font-size: 35px">@Model.CurrentUser.Actions.Count()</p>
+                                                                </div>
+                                                            </a>
+
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="#tab-2" data-toggle="tab">
+                                                                <div class="media-body" style="border-right: 1px solid lightgray; font-size: 14px; text-align: center;">
+                                                                    <p class="margin-none">@Resources.UserIndexParticipated</p>
+                                                                    <p class="margin-none" style="font-size: 35px">@Model.CurrentUser.Volunteers.Count()</p>
+                                                                </div>
+                                                            </a>
+
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="#tab-3" data-toggle="tab">
+                                                                <div class="media-body" style="border-right: 1px solid lightgray; font-size: 14px; text-align: center;">
+                                                                    <p class="margin-none">@Resources.UserIndexFollowers</p>
+                                                                    <p class="margin-none" style="font-size: 35px">@Model.CurrentUser.UserReceivedUnites.Count()</p>
+                                                                </div>
+                                                            </a>
+
+                                                        </li>
+                                                        <li>
+
+                                                            <a href="#tab-4" data-toggle="tab">
+                                                                <div class="media-body" style="font-size: 14px; text-align: center;">
+                                                                    <p class="margin-none">@Resources.UserIndexFollowing</p>
+                                                                    <p class="margin-none" style="font-size: 35px">@Model.CurrentUser.UserSendUnites.Count()</p>
+                                                                </div>
+                                                            </a>
+
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="media innerAll margin-none pull-right" style="margin-top: -63px !important;">
+                                            <div style="padding-top: 4px;">
+
+                                                @if (@Model.LoggedUser == null)
+                                                {
+                                                    <a href="/Account/Login" class="innerTB pull-right btn btn-primary" style="width: 200px;"><i class="fa fa-fw fa-key"></i>Log In To Follow</a>
+                                                }
+                                                else if (@Model.CurrentUser.Account.UserName == @Model.LoggedUser.Account.UserName)
+                                                {
+                                                    <a href="/#modal-1" data-toggle="modal" class="btn-xs innerTB pull-right btn btn-primary">
+                                                        <i class="fa fa-fw fa-edit" style="margin-left: 5px"></i>@Resources.UserIndexEditProfile
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    if (Model.LoggedUser.IsUnited(Model.CurrentUser))
+                                                    {
+                                                        using (Html.BeginForm("Unfollow", "Unite"))
+                                                        {
+                                                            <input type="hidden" value="@Model.CurrentUser.Account.UserName" name="Username" />
+                                                            <button type="submit" id="volunteerbtn" class="innerTB pull-right btn btn-success" style="width: 200px;"><i class="fa fa-fw fa-check"></i>@Resources.UserIndexFollowing1</button>
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        using (Html.BeginForm("Follow", "Unite"))
+                                                        {
+                                                            <input type="hidden" value="@Model.CurrentUser.Account.UserName" name="Username" />
+                                                            <button type="submit" id="volunteerbtn1" class="innerTB pull-right btn btn-success" style="width: 200px;">@Resources.UserIndexFollow</button>
+                                                        }
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <div class="">
+                                <div class="" style="margin-top: 35px;">
+                                    <div class="col-md-12">
+                                        <div class="">
+                                            <div class="col-md-3">
+                                                <div class="col-md-12">
+                                                    <div style="padding: 40px 0 0 0;">
+                                                        <div class="innerAll bg-white shadow2" style="border-radius: 15px;">
+                                                            <div class="media innerAll margin-none">
+                                                                <div class="pull-left innerTB">
+                                                                    <i class="fa fa-fw fa-map-marker fa-2x"></i>
+                                                                </div>
+                                                                <div class="media-body innerTB">
+                                                                    <p class="margin-none">@Model.CurrentUser.Adress</p>
+
+                                                                    <p class="margin-none"></p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="media innerAll margin-none">
+                                                                <div class="pull-left innerTB">
+                                                                    <i class="fa fa-fw  fa-calendar fa-2x"></i>
+                                                                </div>
+                                                                <div class="media-body innerTB">
+                                                                    <p class="margin-none">Starts :</p>
+                                                                    <p class="margin-none">Ends  :</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="media innerAll margin-none">
+                                                                <div class="pull-left innerTB">
+                                                                    <i class="fa fa-fw  fa-tag fa-2x"></i>
+                                                                </div>
+                                                                <div class="media-body innerTB">
+                                                                    <p class="margin-none"></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="media innerAll margin-none">
+                                                                <div class="pull-left innerTB">
+                                                                    <i class="fa fa-fw  fa-tag fa-2x"></i>
+                                                                </div>
+                                                                <div class="media-body innerTB">
+                                                                    <p class="margin-none">@Model</p>
+                                                                </div>
+                                                            </div>
+                                                            @*<div id='map-canvas'></div>*@
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-md-9">
+                                                <div class="center">
+                                                    <!-- Tabs -->
+                                                    <div class="" style="margin-bottom: 50px;">
+                                                        <div class="widget widget-tabs widget-tabs-responsive" style="background: none; border: none;">
+                                                            <div class="widget-body" style="padding: 0">
+                                                                <div class="tab-content">
+                                                                    <!-- Tab content -->
+                                                                    <div class="tab-pane active" id="tab-1" style="margin-top: 25px">
+                                                                        <section class="container container-actions" style="margin-left: 15px;">
+                                                                            <div class="row-fluid">
+                                                                                @if (@Model.LoggedUser.Account.UserName == Model.CurrentUser.Account.UserName)
+                                                                                {
+                                                                                    <a href="/Events/Start">
+                                                                                        <div class="container-item-action">
+                                                                                            <div class="item-action" style="background-image: url(/Content/images/create.png); background-position: 2px; background-repeat: no-repeat;">
+                                                                                                <div class="item-action-overlay2">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                }
+                                                                                @foreach (var a in Model.CurrentUser.Actions)
+                                                                                {
+                                                                                    <a href="/Events/Details/@a.Id">
+                                                                                        <div class="container-item-action">
+                                                                                            <div class="item-action" style="background-image: url(@a.ThumbnailPhoto.Url); background-position: center; background-repeat: no-repeat; background-size: cover;">
+                                                                                                <div class="item-action-overlay">
+                                                                                                    <div class="tag @a.GetCategoryClass()">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="item-action-content">
+                                                                                                    <div class="item-action-top-content">
+                                                                                                        <div class="item-action-top-content-inner">
+                                                                                                            <img class="organizerPhoto" src="@a.Creator.ProfilePhoto.Url" alt="@a.Creator.GetFullName() Photo" />
+                                                                                                            <div class="item-action-product-title">@a.Title</div>
+                                                                                                            <div class="organizerInfo">
+                                                                                                                by <span>@a.Creator.GetFullName()</span>
+                                                                                                            </div>
+                                                                                                            <div class="days">
+
+                                                                                                                @if (a.GetRemainingDays() < 0)
+                                                                                                                {
+                                                                                                                    <span>@Resources.EventActionsDatePassed</span>
+                                                                                                                }
+                                                                                                                else if (a.GetRemainingDays() == 1)
+                                                                                                                {
+                                                                                                                    <span>@Resources.EventActions1DayLeft</span>
+                                                                                                                }
+                                                                                                                else
+                                                                                                                {
+                                                                                                                    <span>@a.GetRemainingDays() @Resources.EventActionsDaysLeft</span>
+                                                                                                                }
+
+                                                                                                            </div>
+                                                                                                            <div class="location-info" style="color: #4193d0 !important;">
+                                                                                                                <i class="fa fa-map-marker"></i><span style="padding-left: 5px">
+                                                                                                                                                    @a.Location
+                                                                                                                                                </span>
+                                                                                                            </div>
+                                                                                                        </div>
+
+                                                                                                    </div>
+                                                                                                    <div class="item-action-add-content">
+                                                                                                        <div class="item-action-add-content-inner">
+                                                                                                            <div class="section">
+                                                                                                                <p class="description">
+                                                                                                                    @a.Description.HtmlStripTags(true, true).Truncate(200);
+                                                                                                                </p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="charity_details">
+                                                                                                    <div class="progress progress-striped active" data-ui-jq="createProgressBars">
+                                                                                                        @{
+                                                                                                            var width = 100*a.Volunteers.Count/a.MaxValueBar;
+                                                                                                            var progress_bar_status = "";
+                                                                                                            var progress_text = Resources.EventActionsWeNeed + " " + (a.MaxValueBar - a.Volunteers.Count) + " " + Resources.EventActionsMore;
+                                                                                                            if (a.MaxValueBar - a.Volunteers.Count <= 0)
+                                                                                                            {
+                                                                                                                progress_bar_status = Resources.EventActionsSuccess;
+                                                                                                                progress_text = Resources.EventActionsAimFul;
+                                                                                                            }
+                                                                                                            else if (@a.GetRemainingDays() < 0 && a.MaxValueBar - a.Volunteers.Count > 0)
+                                                                                                            {
+                                                                                                                progress_bar_status = Resources.EventActionsFail;
+                                                                                                                progress_text = Resources.EventActionsUnsuccessful;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        <span class="progressbar-back-text">@progress_text</span>
+                                                                                                        <div class="bar bar-info @progress_bar_status" style="width: @width%">
+                                                                                                            <span class="progressbar-front-text">@progress_text</span>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                @*<div class="organizer">
+                                                                                                    <div class="location-info text-faded">
+                                                                                                    <i class="fa fa-map-marker"></i><span style="padding-left: 5px">@a.Location
+                                                                                                    </span>
+                                                                                                    </div>
+                                                                                                    </div>*@
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                }
+                                                                            </div>
+                                                                        </section>
+                                                                    </div>
+                                                                    <!-- Tab content -->
+                                                                    <div class="tab-pane" id="tab-2" style="margin-top: 25px">
+                                                                        <section class="container container-actions" style="margin-left: 15px;">
+                                                                            <div class="row-fluid">
+                                                                                @if (@Model.LoggedUser.Account.UserName == Model.CurrentUser.Account.UserName)
+                                                                                {
+                                                                                    <a href="/Events">
+                                                                                        <div class="container-item-action">
+                                                                                            <div class="item-action" style="background-image: url(/Content/images/find.jpg); background-position: 2px; background-repeat: no-repeat;">
+                                                                                                <div class="item-action-overlay2">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                }
+                                                                                @foreach (var v in Model.CurrentUser.Volunteers)
+                                                                                {
+                                                                                    <a href="/Events/Details/@v.Action.Id">
+                                                                                        <div class="container-item-action">
+                                                                                            <div class="item-action" style="background-image: url(@v.Action.ThumbnailPhoto.Url); background-position: center; background-repeat: no-repeat; background-size: cover;">
+                                                                                                <div class="item-action-overlay">
+                                                                                                    <div class="tag @v.Action.GetCategoryClass()">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="item-action-content">
+                                                                                                    <div class="item-action-top-content">
+                                                                                                        <div class="item-action-top-content-inner">
+                                                                                                            <img class="organizerPhoto" src="@v.Action.Creator.ProfilePhoto.Url" alt="@v.Action.Creator.GetFullName() Photo" />
+                                                                                                            <div class="item-action-product-title">@v.Action.Title</div>
+                                                                                                            <div class="organizerInfo">
+                                                                                                                @Resources.EventsDetailsBy <span>@v.Action.Creator.GetFullName()</span>
+                                                                                                            </div>
+                                                                                                            @*<div class="rating-container">
+                                                                                                                <div class="rating text-faded">
+                                                                                                                @{
+                                                                                                                var rating = a.Creator.GetRating();
+                                                                                                                if (rating < 0)
+                                                                                                                {
+                                                                                                                @("Unrated");
+                                                                                                                }
+                                                                                                                else
+                                                                                                                {
+                                                                                                                for (int i = 5; i > rating; i--)
+                                                                                                                {
+                                                                                                                <span class="text-faded"><i class="fa fa-star"></i></span>
+                                                                                                                }
+                                                                                                                for (int i = 0; i < rating; i++)
+                                                                                                                {
+                                                                                                                <span class="text-rating"><i class="fa fa-star"></i></span>
+                                                                                                                }
+                                                                                                                }
+                                                                                                                }
+                                                                                                                </div>
+                                                                                                                </div>*@
+                                                                                                            <div class="days">
+
+                                                                                                                @if (v.Action.GetRemainingDays() < 0)
+                                                                                                                {
+                                                                                                                    <span>@Resources.EventActionsDatePassed</span>
+                                                                                                                }
+                                                                                                                else if (v.Action.GetRemainingDays() == 1)
+                                                                                                                {
+                                                                                                                    <span>@Resources.EventActions1DayLeft</span>
+                                                                                                                }
+                                                                                                                else
+                                                                                                                {
+                                                                                                                    <span>@v.Action.GetRemainingDays() @Resources.EventActions1DayLeft</span>
+                                                                                                                }
+
+                                                                                                            </div>
+                                                                                                            <div class="location-info" style="color: #4193d0 !important;">
+                                                                                                                <i class="fa fa-map-marker"></i><span style="padding-left: 5px">
+                                                                                                                                                    @v.Action.Location
+                                                                                                                                                </span>
+                                                                                                            </div>
+                                                                                                        </div>
+
+                                                                                                    </div>
+                                                                                                    <div class="item-action-add-content">
+                                                                                                        <div class="item-action-add-content-inner">
+                                                                                                            <div class="section">
+                                                                                                                <p class="description">
+                                                                                                                    @v.Action.Description.HtmlStripTags(true, true).Truncate(200);
+                                                                                                                </p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="charity_details">
+                                                                                                    <div class="progress progress-striped active" data-ui-jq="createProgressBars">
+
+
+                                                                                                        @{
+                                                                                                            var width = 100*v.Action.Volunteers.Count/v.Action.MaxValueBar;
+                                                                                                            var progress_bar_status = "";
+                                                                                                            var progress_text = Resources.EventActionsWeNeed + " " + (v.Action.MaxValueBar - v.Action.Volunteers.Count) + " " + Resources.EventActionsMore;
+                                                                                                            if (v.Action.MaxValueBar - v.Action.Volunteers.Count <= 0)
+                                                                                                            {
+                                                                                                                progress_bar_status = Resources.EventActionsSuccess;
+                                                                                                                progress_text = Resources.EventActionsAimFul;
+                                                                                                            }
+                                                                                                            else if (@v.Action.GetRemainingDays() < 0 && v.Action.MaxValueBar - v.Action.Volunteers.Count > 0)
+                                                                                                            {
+                                                                                                                progress_bar_status = Resources.EventActionsFail;
+                                                                                                                progress_text = Resources.EventActionsUnsuccessful;
+                                                                                                            }
+                                                                                                        }
+                                                                                                        <span class="progressbar-back-text">@progress_text</span>
+                                                                                                        <div class="bar bar-info @progress_bar_status" style="width: @width%">
+                                                                                                            <span class="progressbar-front-text">@progress_text</span>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                @*<div class="organizer">
+                                                                                                    <div class="location-info text-faded">
+                                                                                                    <i class="fa fa-map-marker"></i><span style="padding-left: 5px">@v.Action.Location
+                                                                                                    </span>
+                                                                                                    </div>
+                                                                                                    </div>*@
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                }
+                                                                            </div>
+                                                                        </section>
+                                                                    </div>
+                                                                    <!-- // Tab content END -->
+                                                                    <!-- Tab content -->
+                                                                    <div class="tab-pane " id="tab-3" style="border-radius: 15px; margin-top: 25px;">
+                                                                        <section class="container container-actions" style="margin-left: 15px;">
+                                                                            <div class="row-fluid">
+                                                                                @foreach (var un in Model.CurrentUser.UserReceivedUnites)
+                                                                                {
+                                                                                    var u = un.From;
+
+                                                                                    <a href="/User/@u.Account.UserName">
+                                                                                        <div class="container-item-action">
+                                                                                            <div class="item-action" style="background-image: url(@u.BannerPhoto.Url); background-position: center; background-repeat: no-repeat; background-size: cover; height: 320px; width: 380px">
+                                                                                                <div class="item-action-content" style="bottom: 0;">
+                                                                                                    <div class="item-action-top-content">
+                                                                                                        <div class="item-action-top-content-inner">
+                                                                                                            <img class="organizerPhoto" src="@u.ProfilePhoto.Url" alt="@u.GetFullName() Photo" />
+                                                                                                            <div class="item-action-product-title" style="font-size: 16px; height: 53px; margin-top: -53px; padding-top: 20px;">@u.GetFullName()</div>
+                                                                                                            <div style="color: #4193d0 !important;">
+                                                                                                                <div class="margin-none pull-left" style="margin-left: -6px !important; padding-top: 5px">
+
+                                                                                                                    <div class="media-body" style="border-right: 1px solid lightgray; font-size: 12px; text-align: center; width: 75px;">
+                                                                                                                        <p class="margin-none">@Resources.UserIndexCreated</p>
+                                                                                                                        <p class="margin-none" style="font-size: 18px">@u.Actions.Count()</p>
+                                                                                                                    </div>
+
+                                                                                                                </div>
+                                                                                                                <div class="margin-none pull-left" style="padding-top: 5px">
+
+                                                                                                                    <div class="media-body" style="border-right: 1px solid lightgray; font-size: 12px; text-align: center; width: 75px;">
+                                                                                                                        <p class="margin-none">@Resources.UserIndexParticipated</p>
+                                                                                                                        <p class="margin-none" style="font-size: 18px">@u.Volunteers.Count()</p>
+                                                                                                                    </div>
+
+                                                                                                                </div>
+                                                                                                                <div class="margin-none pull-left" style="padding-top: 5px">
+
+                                                                                                                    <div class="media-body" style="border-right: 1px solid lightgray; font-size: 12px; text-align: center; width: 75px;">
+                                                                                                                        <p class="margin-none">@Resources.UserIndexFollowers</p>
+                                                                                                                        <p class="margin-none" style="font-size: 18px">@u.UserReceivedUnites.Count()</p>
+                                                                                                                    </div>
+
+                                                                                                                </div>
+                                                                                                                <div class="margin-none pull-left" style="padding-top: 5px">
+                                                                                                                    <div class="media-body" style="font-size: 12px; text-align: center; width: 75px;">
+                                                                                                                        <p class="margin-none">@Resources.UserIndexFollowing</p>
+                                                                                                                        <p class="margin-none" style="font-size: 18px">@u.UserSendUnites.Count()</p>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                }
+                                                                            </div>
+                                                                        </section>
+                                                                    </div>
+                                                                    <!-- // Tab content END -->
+                                                                    <!-- Tab content -->
+                                                                    <div class="tab-pane" id="tab-4" style="border-radius: 15px; margin-top: 25px;">
+                                                                        <section class="container container-actions" style="margin-left: 15px;">
+                                                                            <div class="row-fluid">
+                                                                                @foreach (var un in Model.CurrentUser.UserSendUnites)
+                                                                                {
+                                                                                    var u = un.To;
+
+                                                                                    <a href="/User/@u.Account.UserName">
+                                                                                        <div class="container-item-action">
+                                                                                            <div class="item-action" style="background-image: url(@u.BannerPhoto.Url); background-position: center; background-repeat: no-repeat; background-size: cover; height: 320px; width: 380px">
+                                                                                                <div class="item-action-content" style="bottom: 0;">
+                                                                                                    <div class="item-action-top-content">
+                                                                                                        <div class="item-action-top-content-inner">
+                                                                                                            <img class="organizerPhoto" src="@u.ProfilePhoto.Url" alt="@u.GetFullName() Photo" />
+                                                                                                            <div class="item-action-product-title" style="font-size: 16px; height: 53px; margin-top: -53px; padding-top: 20px;">@u.GetFullName()</div>
+                                                                                                            <div style="color: #4193d0 !important;">
+                                                                                                                <div class="margin-none pull-left" style="margin-left: -6px !important; padding-top: 5px">
+
+                                                                                                                    <div class="media-body" style="border-right: 1px solid lightgray; font-size: 12px; text-align: center; width: 75px;">
+                                                                                                                        <p class="margin-none">@Resources.UserIndexCreated</p>
+                                                                                                                        <p class="margin-none" style="font-size: 18px">@u.Actions.Count()</p>
+                                                                                                                    </div>
+
+                                                                                                                </div>
+                                                                                                                <div class="margin-none pull-left" style="padding-top: 5px">
+
+                                                                                                                    <div class="media-body" style="border-right: 1px solid lightgray; font-size: 12px; text-align: center; width: 75px;">
+                                                                                                                        <p class="margin-none">@Resources.UserIndexParticipated</p>
+                                                                                                                        <p class="margin-none" style="font-size: 18px">@u.Volunteers.Count()</p>
+                                                                                                                    </div>
+
+                                                                                                                </div>
+                                                                                                                <div class="margin-none pull-left" style="padding-top: 5px">
+
+                                                                                                                    <div class="media-body" style="border-right: 1px solid lightgray; font-size: 12px; text-align: center; width: 75px;">
+                                                                                                                        <p class="margin-none">@Resources.UserIndexFollowers</p>
+                                                                                                                        <p class="margin-none" style="font-size: 18px">@u.UserReceivedUnites.Count()</p>
+                                                                                                                    </div>
+
+                                                                                                                </div>
+                                                                                                                <div class="margin-none pull-left" style="padding-top: 5px">
+                                                                                                                    <div class="media-body" style="font-size: 12px; text-align: center; width: 75px;">
+                                                                                                                        <p class="margin-none">@Resources.UserIndexFollowing</p>
+                                                                                                                        <p class="margin-none" style="font-size: 18px">@u.UserSendUnites.Count()</p>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                }
+                                                                            </div>
+                                                                        </section>
+                                                                    </div>
+                                                                    <!-- // Tab content END -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div style="border: 1px dashed gray; height: 1px; margin-top: 75px; width: 100%;">
+                                                        </div>
+                                                    </div>
+                                                    <!-- // Tabs END -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

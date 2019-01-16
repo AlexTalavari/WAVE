@@ -1,0 +1,30 @@
+﻿.slider {
+  margin-top: 60px;
+}
+/** Donation Section **/
+#donation_box {
+  -webkit-box-shadow: 1px 1px 8px -6px #000000;
+  box-shadow: 1px 1px 8px -6px #000000;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#donation_box .container {
+  background: #fff;
+  padding: 25px 0;
+}
+#donation_box form {
+  margin: 0;
+}
+#donation_box h2 {
+  font-weight: normal;
+  border-left: 3px solid #1cc3c9;
+  padding-left: 17px;
+  margin: 0;
+  line-height: 27px;
+}
+#donation_box h5 {
+  font-weight: normal;
+  padding-left: 400px;
+  color: grey;
+}

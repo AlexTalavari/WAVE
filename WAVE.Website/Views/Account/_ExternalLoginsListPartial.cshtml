@@ -1,0 +1,25 @@
+﻿@model ICollection<AuthenticationClientData>
+
+@if (Model.Count == 0)
+{
+    <div class="message-info">
+        <p>@Resources.ExtLoginMsg1 <a href="http://go.microsoft.com/fwlink/?LinkId=252166">@Resources.ExtLoginMsg2</a>
+            @Resources.ExtLoginMsg3</p>
+    </div>
+}
+else
+{
+    using (Html.BeginForm("ExternalLogin", "Account", new {ViewBag.ReturnUrl}))
+    {
+        @Html.AntiForgeryToken()
+        <fieldset id="socialLoginList">
+            <legend>@Resources.ExtLoginSocial</legend>
+            <p>
+                @foreach (var p in Model)
+                {
+                    <button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="@Resources.ExtLogins1 @p.DisplayName @Resources.ExtLogins2">@p.DisplayName</button>
+                }
+            </p>
+        </fieldset>
+    }
+}

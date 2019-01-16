@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Ban", "User"))
+{
+<input type="text" placeholder="Enter usename to be banned"  name="UserName" />
+<button type="submit" id="volunteerbtn" class="innerTB pull-right btn btn-success" style="width: 200px;"><i class="fa fa-fw fa-check"></i>Ban User</button>
+                                                        }

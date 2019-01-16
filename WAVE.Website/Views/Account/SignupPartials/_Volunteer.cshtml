@@ -1,0 +1,173 @@
+﻿@model RegisterModel
+@{
+    var txtClass = "col-md-6 form-control";
+}
+
+
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new {@id = "signupForm"}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <!-- Form Wizard / Arrow navigation & Progress bar -->
+    <div id="rootwizard" class="wizard">
+
+        <!-- Wizard heading -->
+        <div class="wizard-head">
+            <ul class="bwizard-steps">
+                <li class="active"><a href="#tab1" data-toggle="tab">@Resources.VolunteerBasic</a></li>
+                <li><a href="#tab2" data-toggle="tab">@Resources.VolunteerPersonal</a></li>
+                <li><a href="#tab3" data-toggle="tab">@Resources.VolunteerSocial</a></li>
+                <li><a href="#tab4" data-toggle="tab">@Resources.VolunteerPersonalization</a></li>
+                <li><a href="#tab5" data-toggle="tab">@Resources.VolunteerFinish</a></li>
+            </ul>
+        </div>
+        <!-- // Wizard heading END -->
+
+        <div class="widget">
+
+            <div class="widget-body">
+                <div class="tab-content">
+
+                    <!-- Step 1 -->
+                    <div class="tab-pane active" id="tab1">
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.TextBoxFor(m => m.UserName, new {placeholder = Resources.VolunteerPlaceholderUsername, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.Name, new {placeholder = Resources.VolunteerPlaceholderName, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.Surname, new {placeholder = Resources.VolunteerPlaceholderSurname, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.DropDownListFor(m => m.UserProfile.Gender, new SelectList(Enum.GetValues(typeof (Gender)), "Female"), new {placeholder = Resources.VolunteerPlaceholderGender, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.Email, new {placeholder = Resources.VolunteerPlaceholderEmail, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.PasswordFor(m => m.Password, new {placeholder = Resources.VolunteerPlaceholderPassword, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.PasswordFor(m => m.ConfirmPassword, new {placeholder = Resources.VolunteerPlaceholderConfirmPassword, @class = txtClass})
+                                @Html.HiddenFor(m => m.UserProfile.UserType)
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // Step 1 END -->
+
+                    <!-- Step 2 -->
+                    <div class="tab-pane" id="tab2">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="textDescription">@Resources.VolunteerDescriptionStep2</label>
+                                @Html.TextBoxFor(m => m.UserProfile.Phone, new {placeholder = Resources.VolunteerPlaceholderPhone, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.DateOfBirth, new {@class = txtClass + " inputmask-date-2 span8"})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.City, new {placeholder = Resources.VolunteerPlaceholderCity, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.Adress, new {placeholder = Resources.VolunteerPlaceholderAddress, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.Country, new {placeholder = Resources.VolunteerPlaceholderCountry, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.ZipCode, new {placeholder = Resources.VolunteerPlaceholderZipCode, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.School, new {placeholder = Resources.VolunteerPlaceholderSchoolUniversity, @class = txtClass})
+                                <div class="separator"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // Step 2 END -->
+
+                    <!-- Step 3 -->
+                    <div class="tab-pane" id="tab3">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="textDescription">@Resources.VolunteerDescriptionStep3</label>
+                                @Html.TextBoxFor(m => m.UserProfile.Facebook, new {placeholder = Resources.VolunteerPlaceholderFacebook, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.Twitter, new {placeholder = Resources.VolunteerPlaceholderTwitter, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.GooglePlus, new {placeholder = Resources.VolunteerPlaceholderGooglePlus, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.Linkedin, new {placeholder = Resources.VolunteerPlaceholderLinkedIn, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.Youtube, new {placeholder = Resources.VolunteerPlaceholderYoutube, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.Skype, new {placeholder = Resources.VolunteerPlaceholderSkype, @class = txtClass})
+                                <div class="separator"></div>
+                                @Html.TextBoxFor(m => m.UserProfile.Website, new {placeholder = Resources.VolunteerPlaceholderWebsite, @class = txtClass})
+                                <div class="separator"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // Step 3 END -->
+
+                    <!-- Step 4 -->
+                    <div class="tab-pane" id="tab4">
+                        <label class="checkbox">
+                            <input type="checkbox" class="checkbox" value="1" />
+                            Option 1 - Sexy checkbox
+	
+                        </label>
+                        <label class="checkbox">
+                            <div class="checker" id="uniform-undefined2">
+                                <span>
+                                    <input type="checkbox" class="checkbox" value="1" style="opacity: 0;"></span>
+                            </div>
+                            @Resources.VolunteerDoYouAccept <a>@Resources.VolunteerTerms</a>
+                        </label>
+
+                        <label class="checkbox">
+                            <div class="checker" id="uniform-undefined1">
+                                <span>
+                                    <input type="checkbox" class="checkbox" value="1" style="opacity: 0;"></span>
+                            </div>
+                            @Resources.VolunteerNewsletters
+                        </label>
+
+                        <label class="checkbox">
+                            <div class="checker" id="uniform-undefined4">
+                                <span>
+                                    <input type="checkbox" class="checkbox" value="1" style="opacity: 0;"></span>
+                            </div>
+                            @Resources.VolunteerLocationTrack
+                        </label>
+
+                        
+                    </div>
+                    <!-- // Step 4 END -->
+
+                    <!-- Step 5 -->
+                    <div class="tab-pane" id="tab5">
+                        <p>@Resources.VolunteerStep5Text</p>
+
+                    </div>
+                    <!-- // Step 5 END -->
+
+                </div>
+
+                <!-- Wizard pagination controls -->
+                <ul class="pagination margin-bottom-none">
+                    <li class="primary previous first disabled"><a href="#" class="no-ajaxify">@Resources.VolunteerFirst</a></li>
+                    <li class="primary previous disabled"><a href="#" class="no-ajaxify">@Resources.VolunteerPrevious</a></li>
+                    <li class="last primary"><a href="#" class="no-ajaxify">@Resources.VolunteerLast</a></li>
+                    <li class="next primary"><a href="#" class="no-ajaxify">@Resources.VolunteerNext</a></li>
+                    <li class="next finish primary" style="display: none;"><a href="javascript:;" class="no-ajaxify" onclick=" document.getElementById('signupForm').submit(); ">@Resources.VolunteerSignUp</a></li>
+                </ul>
+                <!-- // Wizard pagination controls END -->
+                <!-- Wizard Progress bar -->
+                <div class="widget-head progress progress-primary" id="bar">
+                    <div class="progress-bar" style="width: 20%;">@Resources.VolunteerStep <strong class="step-current">1</strong> @Resources.VolunteerOf <strong class="steps-total">5</strong> - <strong class="steps-percent">20%</strong></div>
+                </div>
+                <!-- // Wizard Progress bar END -->
+            </div>
+        </div>
+    </div>
+    <!-- // Form Wizard / Arrow navigation & Progress bar END -->
+}
+<script src="~/Scripts/Coral/jquery.bootstrap.wizard.js"></script>
+<script src="~/Scripts/Coral/form-wizards.init.js"></script>
+<script src="~/Scripts/Coral/jquery.inputmask.bundle.min.js"></script>
+<script src="~/Scripts/Coral/inputmask.init.js"></script>
+<script src="~/Scripts/Coral/bootstrap-switch.js"></script>
+<script src="~/Scripts/Coral/bootstrap-switch.init.js"></script>
+<script src="~/Scripts/Coral/jquery.uniform.min.js"></script>
+<script src="~/Scripts/Coral/uniform.init.js"></script>

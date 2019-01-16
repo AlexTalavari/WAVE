@@ -1,0 +1,45 @@
+﻿<div class="modal fade" id="modal-1" style="display: none;" aria-hidden="true">
+
+    <div class="modal-dialog" style="width: 475px;">
+        <div class="modal-content">
+            <style>
+                .notes {
+                    background-image: -webkit-linear-gradient(left, white - 10px, transparent - 10px), -webkit-linear-gradient(right, white - 10px, transparent - 10px), -webkit-linear-gradient(white 30px, #2776ec 30px, #2776ec 31px, white 31px);
+                    background-image: -moz-linear-gradient(left, white - 10px, transparent - 10px), -moz-linear-gradient(right, white - 10px, transparent - 10px), -moz-linear-gradient(white 30px, #2776ec 30px, #2776ec 31px, white 31px);
+                    background-image: -ms-linear-gradient(left, white - 10px, transparent - 10px), -ms-linear-gradient(right, white - 10px, transparent - 10px), -ms-linear-gradient(white 30px, #2776ec 30px, #2776ec 31px, white 31px);
+                    background-image: -o-linear-gradient(left, white - 10px, transparent - 10px), -o-linear-gradient(right, white - 10px, transparent - 10px), -o-linear-gradient(white 30px, #2776ec 30px, #2776ec 31px, white 31px);
+                    background-image: linear-gradient(left, white - 10px, transparent - 10px), linear-gradient(right, white - 10px, transparent - 10px), linear-gradient(white 30px, #2776ec 30px, #2776ec 31px, white 31px);
+                    background-size: 100% 100%, 100% 100%, 100% 31px;
+                    border: 1px solid #2776ec;
+                    line-height: 31px;
+                    resize: none;
+                }
+
+                .form-group { font-family: 'SegoeUI'; }
+            </style>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                @using (Html.BeginForm("Compose", "Messages"))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group" style="margin-bottom: -5px;">
+                        <div class="col-sm-12">
+                            <div class="media message" style="padding: 0">
+                                <div class="media-body innerTB" style="border-radius: 0; max-width: 100%; padding: 0;">                                   
+                                    <input type="hidden" value="@ViewBag.To" name="To" />
+                                    <textarea class="form-control notes" rows="3" placeholder="Add your Message" name="CommentText" style="border: none"></textarea>
+                                    <button type="submit" class="btn btn-primary btn-sm pull-right" style="margin-top: 5px;"><i class="fa fa-plus-circle fa-fw"></i>Send Message</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <!-- // Modal body END -->
+        </div>
+    </div>
+
+</div>

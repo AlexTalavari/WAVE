@@ -1,0 +1,197 @@
+﻿@{
+    ViewBag.Title = "About Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section FooterScripts
+{
+    <script>
+        $(window).scroll(function(e) {
+            parallax();
+        });
+
+        function parallax() {
+            var scrolled = $(window).scrollTop();
+            $('.bg').css('top', -(scrolled * 0.2) + 'px');
+        }
+    </script>
+    <script src="~/Scripts/Jquery/jquery.hoverdir.js"></script>
+}
+@section Header
+{
+    <link href="~/Content/css/plugins/directionawarehover/style.css" rel="stylesheet" />
+    <noscript>
+        <link href="~/Content/css/plugins/directionawarehover/noJS.css" rel="stylesheet" />
+    </noscript>
+    <link href="~/Content/css/HomePage.min.css" rel="stylesheet" />
+    <style>
+        #endorsmentSection { }
+
+        #scanlines {
+            height: 100%;
+            left: 0;
+            position: absolute;
+            text-indent: -999em;
+            top: 0;
+            width: 100%;
+            z-index: 15;
+        }
+
+        .overlay-dotted { background: url('http://themes.doitmax.de/wordpress/invictus/wp-content/themes/invictus_3.2.2/css/black/grid.png'); }
+    </style>
+
+}
+<div class="layout-app">
+    <!-- row-app -->
+    <div class="row row-app">
+        <div class="col-md-12 col-sm-12">
+
+            <!-- col-separator.box -->
+            <div class="col-unscrollable box">
+
+                <!-- col-table -->
+                <div class="col-table">
+
+                    <!-- col-table-row -->
+                    <div class="col-table-row">
+
+                        <!-- col-app -->
+                        <div class="col-app col-unscrollable">
+                            <!-- col-app -->
+                            <div class="col-app iscrollWrapper">
+
+                                <div class="jscroll">
+
+                                    <!-- Start of Header Banner -->
+                                    <section class="innerAll slider">
+                                        
+                                        <img src="~/Content/images/top.jpg" class="borderless radius3 shadow1" style="width: 100%" alt="We love to help.Find volunteers or join them.Start an Action" />
+                                        
+                                    </section>
+                                    <!-- End of Header Banner -->
+
+                                    <section id="services" style="background: #fff; padding-bottom: 50px">
+                                        <div class="container" style="text-align: justify">
+
+                                            <h1 class="section-title">Endorsements</h1>
+                                            <div id="endorsmentSection">
+                                                <div class="col-md-6">
+                                                    <div class="col-md-3">
+                                                        <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/t1.0-1/c47.47.590.590/s160x160/313190_2466691948219_1476196692_n.jpg" style="border-radius: 100px;" width="100" height="100" />
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <p style="color: #7d7d7d !important;">
+                                                            Morbi imperdiet bibendum vestibulum. Quisque porta, neque sed dictum adipiscing, magna est porta odio, vel accumsan magna turpis id quam.
+                                                            Nulla semper sagittis dignissim. Maecenas ac augue vitae nunc vestibulum eleifend mattis in lorem.
+                                                        </p>
+                                                        <div class="pull-right" style="text-align: right;">
+                                                            <h5>Anaxagoras Fotopoulos</h5>
+                                                            <h5><i>IEMC Unesco</i></h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="col-md-3">
+                                                        <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/t1.0-1/c47.47.590.590/s160x160/313190_2466691948219_1476196692_n.jpg" style="border-radius: 100px;" width="100" height="100" />
+                                                    </div>
+                                                    <div class="col-md-9">
+                                                        <p style="color: #7d7d7d !important;">
+                                                            Morbi imperdiet bibendum vestibulum. Quisque porta, neque sed dictum adipiscing, magna est porta odio, vel accumsan magna turpis id quam.
+                                                            Nulla semper sagittis dignissim. Maecenas ac augue vitae nunc vestibulum eleifend mattis in lorem.
+                                                        </p>
+                                                        <div class="pull-right" style="text-align: right;">
+                                                            <h5>Anaxagoras Fotopoulos</h5>
+                                                            <h5><i>IEMC Unesco</i></h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--End row (bottom)-->
+                                        </div>
+                                        <!--End container -->
+                                    </section>
+                                    <!--End services section-->
+
+                                    <section class="header-unit">
+                                        <div id="scanlines" class="overlay-dotted">scanlines</div>
+                                        <div id="video-container">
+                                            <video autoplay loop poster="/Content/images/polina.jpg" class="fillWidth">
+                                                <source src="/Content/videos/polina.webm" type="video/webm">
+                                                <source src="/Content/videos/polina.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                        <section class="container">
+                                            <div class="row-fluid">
+                                                <h1 class="section-title" style="color: white; text-rendering: optimizeLegibility; text-shadow: 2px 0 3px rgba(0, 0, 0, 0.9); z-index: 5000;">Select a category</h1>
+                                                <!--/span-->
+                                                <div class="span12">
+                                                    <ul id="da-thumbs" class="da-thumbs" style="z-index: 100">
+                                                        <li>
+                                                            <a href="/Events/Category/Environment">
+                                                                <img src="~/Content/images/categories/Environment.png" />
+                                                                <div><span>Environment</span></div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Events/Category/Culture">
+                                                                <img src="~/Content/images/categories/Culture.png" />
+                                                                <div><span>Culture</span></div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Events/Category/Education">
+                                                                <img src="~/Content/images/categories/Education.png" />
+                                                                <div><span>Education</span></div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Events/Category/Humanity">
+                                                                <img src="~/Content/images/categories/Humanity.png" />
+                                                                <div><span>Humanity</span></div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Events/Category/Disasters">
+                                                                <img src="~/Content/images/categories/Natural.png" />
+                                                                <div><span>Natural Disasters</span></div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Events/Category/Health">
+                                                                <img src="~/Content/images/categories/Health.png" />
+                                                                <div><span>Health</span></div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Events/Category/Children">
+                                                                <img src="~/Content/images/categories/Children.png" />
+                                                                <div><span>Children</span></div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Events/Category/Various">
+                                                                <img src="~/Content/images/categories/Various.png" />
+                                                                <div><span>Various</span></div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!--/span-->
+                                                <div class="span1"></div>
+                                            </div>
+                                        </section>
+                                    </section>
+
+                                    @{ Html.RenderAction("TopActions", "Home"); }
+
+                                    @Html.Partial("~/Views/Shared/LayoutPartials/_Footer.cshtml")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

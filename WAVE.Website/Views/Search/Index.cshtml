@@ -1,0 +1,425 @@
+﻿@using Action = WAVE.Dal.Entities.Action
+@model List<WAVE.Dal.Entities.Action>
+
+@{
+    ViewBag.Title = Resources.SearchIndexVBTitle;
+}
+
+
+@section Header
+{
+    <link href="~/Content/css/Coral/bootstrap-select.css" rel="stylesheet" />
+}
+
+@section FooterScripts
+{<script src="~/Scripts/JQuery/jquery-ui.min.js"></script>
+    <script src="~/Scripts/JQuery/jquery.ui.touch-punch.min.js"></script>
+    <script src="~/Scripts/Coral/modals.init.js"></script>
+    <script src="~/Scripts/Coral/bootbox.min.js"></script>
+    <script src="~/Scripts/Coral/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/Coral/bootstrap-datepicker.init.js"></script>    
+    <script src="~/Scripts/Coral/jquery.gritter.min.js"></script> 
+    <script src="~/Scripts/Coral/gritter.init.js"></script>   
+    <script src="~/Scripts/Coral/bootstrap-timepicker.init.js"></script>  
+    <script src="~/Scripts/Coral/bootstrap-select.init.js"></script>  
+    <script src="~/Scripts/Coral/jqueryui-sliders.init.js"></script>  
+}
+<div class="layout-app">
+
+    <!-- row -->
+    <div class="row row-app margin-none">
+        <!-- col -->
+        <div class="col-md-12">
+
+            <!-- col-separator -->
+            <div class="col-separator col-separator-first border-none">
+
+                <!-- col-table -->
+                <div class="col-table">
+                    <!-- col-table-row -->
+                    <!-- col-table-row -->
+                    <div class="col-table-row">
+
+                        <!-- col-app -->
+                        <div class="col-app">
+
+                            <!-- row-app -->
+                            <div class="row row-app margin-none innerT">
+
+                                <!-- col -->
+                                <div class="col-sm-12 col-md-3 col-lg-2">
+
+                                    <!-- col-separator -->
+                                    <div class="col-separator bg-none">
+                                        <div class="col-separator-h"></div>
+                                        <div class="innerAll  bg-white shadow2" style="border-radius: 3px;">
+                                            <div class="widget widget-tabs border-none margin-none">
+                                                <div class="widget-body padding-none">
+                                                    <label>
+                                                        @Resources.SearchIndexSortBy
+                                                    </label>
+                                                    <select name="" data-container="body" data-style="btn-primary" class="selectpicker form-control">
+                                                        <option selected="selected">@Resources.SearchIndexRelevance</option>
+                                                        <option>@Resources.SearchIndexTitle</option>
+                                                        <option>@Resources.SearchIndexRating</option>
+                                                        <option>@Resources.SearchIndexEnding</option>
+                                                        <option>@Resources.SearchIndexLatest</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-separator-h"></div>
+                                        <div class="innerAll bg-white" style="border-radius: 3px 3px 0 0;">
+                                            <div class="widget widget-tabs border-none margin-none">
+                                                <div class="widget-body padding-none">
+                                                    <label>
+                                                        @Resources.SearchIndexFilterBy
+                                                    </label>
+                                                    <div class="innerAll">
+                                                        <div class="btn-group btn-group-block row margin-none" data-toggle="buttons">
+                                                            <label for="" class="btn btn-primary  col-md-6 active">
+                                                                <input type="radio" name="options" id="option1" checked="checked">
+                                                                @Resources.SearchIndexAllActions
+
+                                                            </label>
+                                                            <label for="" class="btn btn-primary  col-md-6">
+                                                                <input type="radio" name="options" id="option2">
+                                                                @Resources.SearchIndexMyActions
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="innerAll bg-white">
+                                            <label>
+                                                @Resources.EventsCreateSelectActionCategory
+                                            </label>
+                                            <div class="row innerT">
+                                                <div class="col-md-3">
+                                                    <a href="/Events/Category/Environment">
+                                                        @if (ViewBag.Category == "Environment")
+                                                        {
+                                                            <img src="~/Content/images/categories/Environment1.png" class="categoryImg" style="opacity: 1;" />
+                                                        }
+                                                        else
+                                                        {
+                                                            <img src="~/Content/images/categories/Environment1.png" class="categoryImg" />
+                                                        }
+                                                    </a>
+
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a href="/Events/Category/Culture">
+                                                        @if (ViewBag.Category == "Culture")
+                                                        {
+                                                            <img src="~/Content/images/categories/Culture1.png" class="categoryImg" style="opacity: 1;" />
+                                                        }
+                                                        else
+                                                        {
+                                                            <img src="~/Content/images/categories/Culture1.png" class="categoryImg" />
+                                                        }
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a href="/Events/Category/Education">
+                                                        @if (ViewBag.Category == "Education")
+                                                        {
+                                                            <img src="~/Content/images/categories/Education1.png" class="categoryImg" style="opacity: 1;" />
+                                                        }
+                                                        else
+                                                        {
+                                                            <img src="~/Content/images/categories/Education1.png" class="categoryImg" />
+                                                        }
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a href="/Events/Category/Humanity">
+                                                        @if (ViewBag.Category == "Humanity")
+                                                        {
+                                                            <img src="~/Content/images/categories/Humanity1.png" class="categoryImg" style="opacity: 1;" />
+                                                        }
+                                                        else
+                                                        {
+                                                            <img src="~/Content/images/categories/Humanity1.png" class="categoryImg" />
+                                                        }
+                                                    </a>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="row innerT">
+
+                                                <div class="col-md-3">
+                                                    <a href="/Events/Category/Disasters">
+                                                        @if (ViewBag.Category == "Natural")
+                                                        {
+                                                            <img src="~/Content/images/categories/Natural1.png" class="categoryImg" style="opacity: 1;" />
+                                                        }
+                                                        else
+                                                        {
+                                                            <img src="~/Content/images/categories/Natural1.png" class="categoryImg" />
+                                                        }
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a href="/Events/Category/Health">
+                                                        @if (ViewBag.Category == "Health")
+                                                        {
+                                                            <img src="~/Content/images/categories/Health1.png" class="categoryImg" style="opacity: 1;" />
+                                                        }
+                                                        else
+                                                        {
+                                                            <img src="~/Content/images/categories/Health1.png" class="categoryImg" />
+                                                        }
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a href="/Events/Category/Children">
+                                                        @if (ViewBag.Category == "Children")
+                                                        {
+                                                            <img src="~/Content/images/categories/Children1.png" class="categoryImg" style="opacity: 1;" />
+                                                        }
+                                                        else
+                                                        {
+                                                            <img src="~/Content/images/categories/Children1.png" class="categoryImg" />
+                                                        }
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a href="/Events/Category/Various">
+                                                        @if (ViewBag.Category == "Various")
+                                                        {
+                                                            <img src="~/Content/images/categories/Various1.png" class="categoryImg" style="opacity: 1;" />
+                                                        }
+                                                        else
+                                                        {
+                                                            <img src="~/Content/images/categories/Various1.png" class="categoryImg" />
+                                                        }
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="widget widget-tabs border-none margin-none shadow2" style="border-radius: 0 0 3px 3px;">
+                                            <div class="widget-body padding-none">
+                                                <div class="innerAll ">
+                                                    <label>
+                                                        @Resources.EventsIndexOrganizedBy
+                                                    </label>
+                                                    <select name="" data-container="body" data-style="btn-primary" class="selectpicker form-control">
+                                                        <option selected="selected">@Resources.EventsIndexEverybody</option>
+                                                        <option>@Resources.EventsIndexOrganizations</option>
+                                                        <option>@Resources.EventsIndexCompany</option>
+                                                        <option>@Resources.EventsIndexUsers</option>
+                                                    </select>
+                                                </div>
+                                                <div class="innerAll  ">
+                                                    <label>
+                                                        @Resources.EventsIndexActionStatus
+                                                    </label>
+                                                    <select name="" data-container="body" data-style="btn-primary" class="selectpicker form-control">
+                                                        <option selected="selected">@Resources.EventsIndexOngoing</option>
+                                                        <option>@Resources.EventsIndexSuccessful</option>
+                                                        <option>@Resources.EventsIndexUnsuccessful</option>
+                                                    </select>
+                                                </div>
+                                                <div class="innerAll  ">
+                                                    <label>
+                                                        @Resources.SearchIndexSelectByDate
+                                                    </label>
+                                                    <div class="row innerB">
+                                                        <div class="col-md-2 ">
+                                                            <label style="margin-top: 7px;">
+                                                                @Resources.SearchIndexFrom
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="text" value="2013-02-14" id="datepicker11" />
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="row innerB">
+                                                        <div class="col-md-2 ">
+                                                            <label style="margin-top: 7px;">
+                                                                @Resources.SearchIndexTo
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-md-10">
+                                                            <input class="form-control" type="text" value="2013-02-14" id="datepicker22" />
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- // END col-separator -->
+
+                                </div>
+                                <!-- // END col -->
+                                <!-- col -->
+                                <div class="col-lg-10 col-md-9 col-sm-12">
+
+                                    <!-- col-separator -->
+                                    <div class="col-separator col-unscrollable col-separator-last bg-none">
+
+                                        <!-- col-table -->
+                                        <div class="col-table">
+                                            <!-- col-table-row -->
+                                            <div class="col-table-row">
+
+                                                <!-- col-app -->
+                                                <div class="col-app col-unscrollable">
+
+                                                    <!-- col-app -->
+                                                    <div class="col-app">
+
+                                                        <div class="innerAll2">
+                                                            <div class="row">
+                                                                <section class="mbtm" style="padding: 1px;">
+                                                                    <link href="~/Content/css/bootstrap/bootstrap-progressbar-2.3.2.min.css" rel="stylesheet" />
+                                                                    <link href="~/Content/css/actions.css" rel="stylesheet" />
+                                                                    <section class="container container-actions">
+                                                                        <div class="row-fluid">
+                                                                            @if (Model.Count == 0)
+                                                                            {
+                                                                                <h2>@Resources.SearchIndexNoResults</h2>
+                                                                            }
+
+                                                                            @foreach (var a in Model)
+                                                                            {
+                                                                                <a href="/Events/Details/@a.Id">
+                                                                                    <div class="container-item-action">
+                                                                                        <div class="item-action" style="background-image: url(@a.ThumbnailPhoto.Url); background-position: center; background-repeat: no-repeat; background-size: cover;">
+                                                                                            <div class="item-action-overlay">
+                                                                                                <div class="tag @a.GetCategoryClass()">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="item-action-content">
+                                                                                                <div class="item-action-top-content">
+                                                                                                    <div class="item-action-top-content-inner">
+                                                                                                        <img class="organizerPhoto" src="@a.Creator.ProfilePhoto.Url" alt="@a.Creator.GetFullName() Photo" />
+                                                                                                        <div class="item-action-product-title">@a.Title</div>
+                                                                                                        <div class="organizerInfo">
+                                                                                                            by <span>@a.Creator.GetFullName()</span>
+                                                                                                        </div>
+                                                                                                        <div class="rating-container">
+                                                                                                            <div class="rating text-faded">
+                                                                                                                <span class="text-faded"><i class="fa fa-star"></i></span>
+                                                                                                                <span class="text-faded"><i class="fa fa-star"></i></span>
+                                                                                                                <span class="text-rating"><i class="fa fa-star"></i></span>
+                                                                                                                <span class="text-rating"><i class="fa fa-star"></i></span>
+                                                                                                                <span class="text-rating"><i class="fa fa-star"></i></span>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="days">
+
+                                                                                                            @if (a.GetRemainingDays() < 0)
+                                                                                                            {
+                                                                                                                <span>@Resources.EventActionsDatePassed</span>
+                                                                                                            }
+                                                                                                            else if (a.GetRemainingDays() == 1)
+                                                                                                            {
+                                                                                                                <span>@Resources.EventActions1DayLeft</span>
+                                                                                                            }
+                                                                                                            else
+                                                                                                            {
+                                                                                                                <span>@a.GetRemainingDays() @Resources.EventActionsDaysLeft</span>
+                                                                                                            }
+
+                                                                                                        </div>
+                                                                                                        <div class="location-info" style="color: #4193d0 !important;">
+                                                                                                            <i class="fa fa-map-marker"></i><span style="padding-left: 5px">
+                                                                                                                                                @a.Location
+                                                                                                                                            </span>
+                                                                                                        </div>
+                                                                                                    </div>
+
+                                                                                                </div>
+                                                                                                <div class="item-action-add-content">
+                                                                                                    <div class="item-action-add-content-inner">
+                                                                                                        <div class="section">
+                                                                                                            <p class="description">
+                                                                                                                @Html.Raw(@a.Description)
+                                                                                                            </p>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="charity_details">
+                                                                                                <div class="progress progress-striped active" data-ui-jq="createProgressBars">
+
+
+                                                                                                    @{
+                                                                                                        var width = 100*a.Volunteers.Count/a.MaxValueBar;
+                                                                                                        var progress_bar_status = "";
+                                                                                                        var progress_text = "We need " + (a.MaxValueBar - a.Volunteers.Count) + " more!";
+                                                                                                        if (a.MaxValueBar - a.Volunteers.Count <= 0)
+                                                                                                        {
+                                                                                                            progress_bar_status = "success";
+                                                                                                            progress_text = "Aim fulfilled";
+                                                                                                        }
+                                                                                                        else if (@a.GetRemainingDays() < 0 && a.MaxValueBar - a.Volunteers.Count > 0)
+                                                                                                        {
+                                                                                                            progress_bar_status = "fail";
+                                                                                                            progress_text = "Unsuccessful";
+                                                                                                        }
+                                                                                                    }
+                                                                                                    <span class="progressbar-back-text">@progress_text</span>
+                                                                                                    <div class="bar bar-info @progress_bar_status" style="width: @width%">
+                                                                                                        <span class="progressbar-front-text">@progress_text</span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            @*<div class="organizer">
+                        <div class="location-info text-faded">
+                            <i class="fa fa-map-marker"></i><span style="padding-left: 5px">@a.Location
+                            </span>
+                        </div>
+                    </div>*@
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            }
+                                                                        </div>
+                                                                    </section>
+                                                                </section>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- // END col-table-row -->
+
+                                        </div>
+                                        <!-- // END col-table -->
+
+                                    </div>
+                                    <!-- // END col-separator -->
+
+                                </div>
+                                <!-- // END col -->
+
+                            </div>
+                            <!-- // END row -->
+
+                        </div>
+                        <!-- // END col-app -->
+
+                    </div>
+                    <!-- // END col-table-row -->
+
+                </div>
+                <!-- // END col-table -->
+
+            </div>
+            <!-- // END col-separator -->
+
+        </div>
+        <!-- // END col -->
+
+    </div>
+    <!-- // END row-app -->
+</div>

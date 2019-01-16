@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = Resources.ContactIndexVBTitle;
+}
+
+@section FooterScripts
+{
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.form-control2').focusout(function() {
+                $(this).removeClass("form-control3");
+            });
+
+            $('.form-control2').focusin(function() {
+                $(this).addClass("form-control3");
+            });
+        });
+
+    </script>
+}
+@section Header
+{
+    <style>
+        .form-control2 {
+            border: 1px #2776ec solid !important;
+            font-size: 28px !important;
+            min-height: 50px;
+        }
+
+        /*.form-control2:active {
+                border: 2px #f3e700 solid !important;
+            }
+
+            .form-control2:hover {
+                border: 2px #f3e700 solid !important;
+            }*/
+
+        .form-control3 { border: 2px #2776ec solid !important; }
+
+        .form-container {
+            margin-bottom: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+    </style>
+
+
+}
+<div class="layout-app">
+    <!-- row-app -->
+    <div class="row row-app" style="background: #fff">
+        <div class="col-md-12 col-sm-12">
+
+            <!-- col-separator.box -->
+            <div class="col-unscrollable box">
+
+                <!-- col-table -->
+                <div class="col-table">
+
+                    <!-- col-table-row -->
+                    <div class="col-table-row">
+
+                        <!-- col-app -->
+                        <div class="col-app col-unscrollable">
+                            <!-- col-app -->
+                            <div class="col-app iscrollWrapper">
+
+                                <div class="jscroll">
+                                    <section class="shadow2" style="background: #636363; border-bottom: 1px solid #000; min-height: 200px;">
+                                        <h1 style="color: white; font-size: 48px; padding-top: 80px; text-align: center;">
+                                            @Resources.ContactIndexShareYourIdeas
+                                        </h1>
+                                    </section>
+                                    <div class="form-group" style="margin-top: 40px; padding-bottom: 50px;">
+
+                                        @using (Html.BeginForm("Index", "Contact", FormMethod.Post, new {@class = "basic-grey"}))
+                                        {
+                                            <div class="form-container">
+                                                <input id=" name" type="text" name="Name" placeholder="@Resources.ContactIndexPlaceholderName" class="form-control form-control2" />
+                                            </div>
+                                            <div class="form-container">
+                                                <input id="email" type="email" name="Email" placeholder="@Resources.ContactIndexPlaceholderEmail" class="form-control form-control2" />
+                                            </div>
+                                            <div class="form-container">
+                                                <textarea id="message" name="Message" cols="200" rows="5" placeholder="@Resources.ContactIndexPlaceholderMsg" class="form-control form-control2"></textarea>
+
+                                            </div>
+                                            @*<div class="col-md-12">
+                    <label>
+                        <span>Subject :</span><select name="Subject">
+                            <option value="Job Inquiry" selected="selected">Job Inquiry</option>
+                            <option value="General Question">General Question</option>
+                        </select>
+                    </label>
+                </div>*@
+                                            <div class="form-container">
+                                                <input type="submit" class="btn btn-primary btn-stroke pull-right form-control" value="@Resources.ContactIndexSend" />
+                                            </div>
+                                        }
+
+                                    </div>
+                                    @Html.Partial("~/Views/Shared/LayoutPartials/_Footer.cshtml")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

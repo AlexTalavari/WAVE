@@ -1,0 +1,432 @@
+﻿@model HomeModel
+@{
+    ViewBag.Title = "Home Page";
+}
+@helper selected(string c, string culture)
+{
+    if (c == culture)
+    {
+        @:checked="checked"
+    }
+}
+
+@section FooterScripts
+{
+    <script>
+        $(window).scroll(function(e) {
+            parallax();
+        });
+
+        function parallax() {
+            var scrolled = $(window).scrollTop();
+            $('.bg').css('top', -(scrolled * 0.2) + 'px');
+        }
+
+        function ScaleTopSection() {
+            var bodyHeight = document.body.clientHeight;
+            var v1 = $('#slider1_container').css('height').replace(/[^-\d\.]/g, '');
+            var v2 = $('.navbar').css('height').replace(/[^-\d\.]/g, '');
+            var v3 = bodyHeight - v1 - v2;
+            $('#message').css('max-height', v3 + 'px');
+        }
+
+        jQuery(document).ready(function($) {
+            ScaleTopSection();
+            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+                $(window).bind('resize', ScaleTopSection);
+            }
+
+
+            if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
+                $(window).bind("orientationchange", ScaleTopSection);
+            }
+        }); //jQuery('#scroll').click(function () {
+        //    location.href = "#";
+        //    location.href = "#services";
+        //})
+
+    </script>
+
+
+    <script src="~/Scripts/Coral/owl.carousel.min.js"></script>
+    <script src="~/Scripts/Coral/front.shop.owl-carousel.featured.init.js"></script>
+}
+
+@section Header
+{
+    <link href="~/Content/css/plugins/directionawarehover/style.css" rel="stylesheet" />
+    <noscript>
+        <link href="~/Content/css/plugins/directionawarehover/noJS.css" rel="stylesheet" />
+    </noscript>
+    <link href="~/Content/css/HomePage.min.css" rel="stylesheet" />
+    <style>
+        #scanlines {
+            height: 100%;
+            left: 0;
+            position: absolute;
+            text-indent: -999em;
+            top: 0;
+            width: 100%;
+            z-index: 15;
+        }
+
+        .overlay-dotted { background: url('http://themes.doitmax.de/wordpress/invictus/wp-content/themes/invictus_3.2.2/css/black/grid.png'); }
+
+        #message {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 2em;
+            margin-top: 2em;
+            padding-left: 10%;
+            padding-right: 10%;
+            text-align: center;
+        }
+
+        .about-menu-link {
+            border-bottom: 3px solid #fff;
+            float: left;
+            font-size: 18px;
+            padding: 20px 20px 17px;
+            text-align: center;
+            width: 20%;
+        }
+
+        #navigation {
+            background-color: #fff;
+            font-size: 25px;
+            margin-top: -8px;
+            text-align: center;
+        }
+
+        .noradius { border-radius: 0; }
+    </style>
+
+}
+<div class="layout-app">
+    <!-- row-app -->
+    <div class="row row-app">
+        <div class="col-md-12 col-sm-12">
+
+            <!-- col-separator.box -->
+            <div class="col-unscrollable box">
+
+                <!-- col-table -->
+                <div class="col-table">
+
+                    <!-- col-table-row -->
+                    <div class="col-table-row">
+
+                        <!-- col-app -->
+                        <div class="col-app col-unscrollable">
+                            <!-- col-app -->
+                            <div class="col-app iscrollWrapper">
+
+                                <div class="jscroll">
+
+                                    <!-- Start of Header Banner -->
+                                    <section class="slider">
+                                        @*@if (HttpContext.Current.User.Identity.IsAuthenticated)
+                                            {
+                                                <a href="/Events/#Add">
+                                                    <img src="~/Content/images/top.jpg" class="noradius shadow2" style="width: 100%" alt="We love to help.Find volunteers or join them.Start an Action" />
+                                                </a>}
+                                            else
+                                            {
+                                                <a href="Account/Login?ReturnUrl=%2fEvents%2f%23Add">
+                                                    <img src="~/Content/images/top.jpg" class="noradius shadow2" style="width: 100%" alt="We love to help.Find volunteers or join them.Start an Action" />
+                                                </a>
+                                            }*@
+                                        @Html.Partial("~/Views/Home/HomePartials/_Slider.cshtml")
+                                    </section>
+                                    <!-- End of Header Banner -->
+                                    <!-- ==============================================	SERVICES=============================================== -->
+
+                                    <section id="message" style="background: #fff; margin-top: 0; padding: 100px;">
+                                        <div class="container" style="margin-bottom: 15px">
+                                            @Resources.HomePageAbout
+                                        </div>
+                                        <a id="scroll" href="#services"><img src="~/Content/images/arrow_down.png" /></a>
+                                    </section>
+
+                                    <section id="services">
+                                        <a name="howitworks"></a>
+                                        <div class="container">
+
+                                            <h1 class="section-title">@Resources.HowItWorks</h1>
+
+                                            <div class="row services">
+                                                <div class="col-md-3 text-center">
+                                                    <a href="#" class="icon" id="icon1">
+                                                        <img class="borderless" src="~/Content/images/howitworks/find.png" />
+                                                    </a>
+                                                    <h2 id="header1">@Resources.HomeWelcomeFind</h2>
+                                                </div>
+                                                <div class="col-md-3 text-center details">
+                                                    <p class="alternative">
+                                                        @Resources.HomeWelcomeFindString1<br />
+                                                        @Resources.HomeWelcomeFindString2<br />
+                                                        @Resources.HomeWelcomeFindString3<br />
+                                                        @Resources.HomeWelcomeFindString4
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-3 text-center">
+                                                    <a href="#" class="icon" id="icon4">
+                                                        <img class="borderless" src="~/Content/images/howitworks/repeat.png" />
+                                                    </a>
+                                                    <h2 id="header4">@Resources.HomeWelcomeEngage</h2>
+                                                </div>
+                                                <div class="col-md-3 text-center details">
+                                                    <p class="alternative">
+                                                        @Resources.HomeWelcomeString1<br />
+                                                        @Resources.HomeWelcomeString2<br />
+                                                        @Resources.HomeWelcomeString3
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!--End row (top) -->
+
+                                            <div class="row line visible-md visible-lg">
+                                                <div class="col-md-3"><span id="spot1" class="spot"></span></div>
+                                                <div class="col-md-3"><span id="spot2" class="spot"></span></div>
+                                                <div class="col-md-3"><span id="spot4" class="spot"></span></div>
+                                                <div class="col-md-3"><span id="spot3" class="spot"></span></div>
+                                            </div>
+                                            <!--End row -->
+
+                                            <div class="row services bottom-row">
+                                                <div class="col-md-3 text-center col-md-push-3">
+                                                    <h2 id="header2">@Resources.HomeWelcomeStart</h2>
+                                                    <a href="#" class="icon" id="icon2">
+                                                        <img class="borderless" src="~/Content/images/howitworks/start.png" />
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3 text-center details col-md-pull-3">
+                                                    <p class="alternative">
+                                                        @Resources.HomeWelcomeStartString1<br />
+                                                        @Resources.HomeWelcomeStartString2<br />
+                                                        @Resources.HomeWelcomeStartString3<br />
+                                                        @Resources.HomeWelcomeStartString4
+                                                    </p>
+
+                                                </div>
+                                                <div class="col-md-3 text-center  col-md-push-3">
+                                                    <h2 id="header3">@Resources.HomeWelcomeAct</h2>
+                                                    <a href="#" class="icon" id="icon3">
+                                                        <img class="borderless" src="~/Content/images/howitworks/solve.png" />
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3 text-center details  col-md-pull-3">
+                                                    <p class="alternative">
+                                                        @Resources.HomeWelcomeActString1<br />
+                                                        @Resources.HomeWelcomeActString2<br />
+                                                        @Resources.HomeWelcomeActString3
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!--End row (bottom)-->
+                                        </div>
+                                        <!--End container -->
+                                    </section>
+                                    <!--End services section-->
+                                    <section class="header-unit">
+                                        <a name="categories"></a>
+                                        <div id="scanlines" class="overlay-dotted">scanlines</div>
+                                        <div id="video-container">
+                                            <video autoplay loop poster="/Content/images/wave.jpg" class="fillWidth">
+                                                <source src="/Content/videos/wave.ogv" type="video/ogg">
+                                                <source src="/Content/videos/wave.webm" type="video/webm">
+                                                <source src="/Content/videos/wave.mp4" type="video/mp4">
+
+                                            </video>
+                                        </div>
+                                        <section class="container">
+                                            <div class="row-fluid">
+                                                <h1 class="section-title" style="-webkit-text-shadow: 2px 0 3px rgba(0, 0, 0, 0.9); color: white; text-rendering: optimizeLegibility; text-shadow: 2px 0 3px rgba(0, 0, 0, 0.9); z-index: 5000;">@Resources.EventsCreateSelectActionCategory</h1>
+                                                <!--/span-->
+                                                <div class="span12">
+                                                    <ul id="da-thumbs" class="da-thumbs" style="z-index: 100">
+                                                        <li>
+                                                            <a href="/Events/Category/Humanity">
+                                                                <img src="~/Content/images/categories/Humanity.png" />
+                                                                <div><span>@Resources.EventsCreateHumanity</span></div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Events/Category/Disasters">
+                                                                <img src="~/Content/images/categories/Natural.png" />
+                                                                <div><span>@Resources.EventsCreateNaturalDisaster</span></div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Events/Category/Culture">
+                                                                <img src="~/Content/images/categories/Culture.png" />
+                                                                <div><span>@Resources.EventsCreateCulture</span></div>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="/Events/Category/Family">
+                                                                <img src="~/Content/images/categories/Family.png" />
+                                                                <div><span>@Resources.EventsCreateFamily</span></div>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="/Events/Category/Health">
+                                                                <img src="~/Content/images/categories/Health.png" />
+                                                                <div><span>@Resources.EventsCreateHealth</span></div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Events/Category/Education">
+                                                                <img src="~/Content/images/categories/Education.png" />
+                                                                <div><span>@Resources.EventsCreateEducation</span></div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Events/Category/Environment">
+                                                                <img src="~/Content/images/categories/Environment.png" />
+                                                                <div><span>@Resources.EventsCreateEnvironment</span></div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/Events/Category/Various">
+                                                                <img src="~/Content/images/categories/Various.png" />
+                                                                <div><span>@Resources.EventsCreateVarious</span></div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!--/span-->
+                                                <div style="position: relative; z-index: 10000;">
+                                                    <div class="container text-center fadeInUp animated" data-animate="fadeInUp" data-delay="200">
+                                                        <h1 class="section-title" style="-webkit-text-shadow: 2px 0 3px rgba(0, 0, 0, 0.9); color: white; line-height: 0; text-rendering: optimizeLegibility; text-shadow: 2px 0 3px rgba(0, 0, 0, 0.9);">@Resources.HomeWelcomeDiscover</h1>
+                                                        <div class="separator bottom"></div>
+                                                        <div class="row" style="padding: 0 130px 0 70px">
+
+                                                            @using (Html.BeginForm("Index", "Search"))
+                                                            {
+                                                                @Html.ValidationSummary(true)
+                                                                <div class="input-group input-group-lg">
+                                                                    <input class="form-control" placeholder="@Resources.LayoutNavBarSearch" type="text" value="" name="SearchTerm">
+                                                                    <div class="input-group-btn">
+                                                                        <button type="submit" class="btn btn-primary" name="subscribe"><i class="fa fa-search"></i></button>
+                                                                    </div>
+                                                                </div>
+                                                            }
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </section>
+
+
+
+                                    @Html.Partial("~/Views/Home/HomePartials/_TopActions.cshtml", Model)
+                                    @Html.Partial("~/Views/Home/HomePartials/_TopUsers.cshtml", Model)
+
+
+                                    <section id="endorsments" style="background: #fff; margin-bottom: -80px; margin-top: 30px; padding-bottom: 50px;">
+                                        <div class="container" style="text-align: justify">
+
+                                            <h1 class="section-title">@Resources.HomeWelcomeEndorsements</h1>
+                                            <div id="endorsmentSection">
+                                                <div id="owl-endorsments" class="owl-carousel owl-theme">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-3">
+                                                            <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/t1.0-1/c47.47.590.590/s160x160/313190_2466691948219_1476196692_n.jpg" style="border-radius: 100px;" width="100" height="100" />
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <p style="color: #7d7d7d !important;">
+                                                                Morbi imperdiet bibendum vestibulum. Quisque porta, neque sed dictum adipiscing, magna est porta odio, vel accumsan magna turpis id quam.
+                                                                Nulla semper sagittis dignissim. Maecenas ac augue vitae nunc vestibulum eleifend mattis in lorem.
+                                                            </p>
+                                                            <div class="pull-right" style="text-align: right;">
+                                                                <h5>Anaxagoras Fotopoulos</h5>
+                                                                <h5><i>IEMC Unesco</i></h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-3">
+                                                            <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/t1.0-1/c47.47.590.590/s160x160/313190_2466691948219_1476196692_n.jpg" style="border-radius: 100px;" width="100" height="100" />
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <p style="color: #7d7d7d !important;">
+                                                                Morbi imperdiet bibendum vestibulum. Quisque porta, neque sed dictum adipiscing, magna est porta odio, vel accumsan magna turpis id quam.
+                                                                Nulla semper sagittis dignissim. Maecenas ac augue vitae nunc vestibulum eleifend mattis in lorem.
+                                                            </p>
+                                                            <div class="pull-right" style="text-align: right;">
+                                                                <h5>Anaxagoras Fotopoulos</h5>
+                                                                <h5><i>IEMC Unesco</i></h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-3">
+                                                            <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/t1.0-1/c47.47.590.590/s160x160/313190_2466691948219_1476196692_n.jpg" style="border-radius: 100px;" width="100" height="100" />
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <p style="color: #7d7d7d !important;">
+                                                                Morbi imperdiet bibendum vestibulum. Quisque porta, neque sed dictum adipiscing, magna est porta odio, vel accumsan magna turpis id quam.
+                                                                Nulla semper sagittis dignissim. Maecenas ac augue vitae nunc vestibulum eleifend mattis in lorem.
+                                                            </p>
+                                                            <div class="pull-right" style="text-align: right;">
+                                                                <h5>Anaxagoras Fotopoulos</h5>
+                                                                <h5><i>IEMC Unesco</i></h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-3">
+                                                            <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfa1/t1.0-1/c47.47.590.590/s160x160/313190_2466691948219_1476196692_n.jpg" style="border-radius: 100px;" width="100" height="100" />
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <p style="color: #7d7d7d !important;">
+                                                                Morbi imperdiet bibendum vestibulum. Quisque porta, neque sed dictum adipiscing, magna est porta odio, vel accumsan magna turpis id quam.
+                                                                Nulla semper sagittis dignissim. Maecenas ac augue vitae nunc vestibulum eleifend mattis in lorem.
+                                                            </p>
+                                                            <div class="pull-right" style="text-align: right;">
+                                                                <h5>Anaxagoras Fotopoulos</h5>
+                                                                <h5><i>IEMC Unesco</i></h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--End row (bottom)-->
+                                        </div>
+                                        <!--End container -->
+                                    </section>
+                                    <section id="action" style="background: #2776ec; margin-bottom: -50px; padding-bottom: 30px;">
+                                        <div class="container" style="margin-bottom: 15px; margin-top: 80px;">
+                                            <div class="row">
+                                                <div class="col-md-7">
+                                                    <div style="color: #fff; font-size: 44px; font-weight: 200; line-height: 1.1em; margin-left: -20px; padding: 30px 10px 0 0;">
+                                                        @Resources.HomeWelcomeSignUpToday
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <button class="btn btn-danger btn-stroke btn-large pull-right" style="margin-top: 35px;">
+                                                        @Resources.HomeWelcomeStartActionToday
+                                                    </button>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </section>
+                                    @Html.Partial("~/Views/Shared/LayoutPartials/_Footer.cshtml")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

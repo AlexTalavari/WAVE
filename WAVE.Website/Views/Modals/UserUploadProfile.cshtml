@@ -1,0 +1,25 @@
+﻿
+<div class="modal-content">
+    <!-- Modal body -->
+    <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <!-- Tabs -->
+        <div style="margin-top: 25px;">
+            <h4>Select a file to upload as an image</h4>
+            <div class="widget">
+                <!-- // Tabs Heading END -->
+                <div class="widget-body">
+                    @using (Html.BeginForm("UploadFileProfile", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="ProfileActionId" id="ProfileActionId" />
+                        <input type="file" name="files" class="btn btn-file">
+                        <br>
+                        <input type="submit" value="Upload Image" class="btn btn-primary">
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

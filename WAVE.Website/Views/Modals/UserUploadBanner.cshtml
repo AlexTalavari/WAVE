@@ -1,0 +1,28 @@
+﻿<div class="modal-content">
+    <!-- Modal body -->
+    <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <!-- Tabs -->
+        <div style="margin-top: 25px;">
+            <h4>Select a file to upload as an image</h4>
+            <div class="widget">
+                <div class="widget-body">
+                    <!-- Tab content -->
+                    <div class="tab-pane widget-body-regular">
+                        @using (Html.BeginForm("UploadFileBanner", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="BannerActionId" id="BannerActionId" />
+                            <input type="file" name="files" class="btn btn-file">
+                            <br>
+                            <input type="submit" value="Upload Image" class="btn btn-primary">
+                        }
+                    </div>
+                    <!-- // Tab content END -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- // Modal body END -->

@@ -1,0 +1,74 @@
+﻿@model BlogPost
+@{
+    ViewBag.Title = @Model.Title;
+}
+@section Header
+{
+    <style type="text/css">
+        p {
+            font-family: 'Segoe UI Light', serif;
+            font-size: 18px;
+            margin: 0;
+        }
+    </style>
+
+}
+
+
+<div class="layout-app">
+    <div class="row row-app" style="z-index: 100;">
+        <!-- col-app -->
+        <div class="col-app col-unscrollable">
+
+            <!-- col-app -->
+            <div class="col-app bg-white">
+                <div class="col-table">
+                    <div class="col-table-row">
+                        <div class="" style="background: rgba(0, 0, 0, 0.5); color: #fff; float: left; font-size: 64px; margin-left: -7px; padding-bottom: 16px; position: absolute; right: 0; text-align: left; text-shadow: 2px 0 3px rgba(0, 0, 0, 0.9); top: 317px; width: 100%;">
+                            <div style="float: left; height: 25px; width: 100px;">
+                            </div>
+                            <div style="font-size: 48px;">
+                                @Model.Title
+                            </div>
+                        </div>
+                        <div class="box" style="-moz-background-size: cover; -o-background-size: cover; background: url('@Model.ImageUrl') no-repeat; background-size: cover; min-height: 400px;">
+
+                        </div>
+
+                        <div>
+                            <!-- AddThis Button BEGIN -->
+                            <div class="addthis_toolbox addthis_default_style" style="float: right; margin-right: 25px; margin-top: 20px;">
+                                <a class="addthis_button_preferred_1"></a>
+                                <a class="addthis_button_preferred_2"></a>
+                                <a class="addthis_button_preferred_3"></a>
+                                <a class="addthis_button_preferred_4"></a>
+                                <a class="addthis_button_compact"></a>
+                                <a class="addthis_counter addthis_bubble_style"></a>
+                            </div>
+                            <script type="text/javascript"> var addthis_config = { "data_track_addressbar": false }; </script>
+                            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-537f4d8d0e803558"></script>
+                            <!-- AddThis Button END -->
+                        </div>
+                        <div>
+                            <div class="" style="margin-top: 35px;">
+                                <div class="col-md-12">
+                                    <div class="">
+                                        <div class="col-md-8">
+
+                                            <section class="container container-actions" style="text-align: justify !important;">
+                                                @Html.Raw(Model.Content)
+                                            </section>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @Html.Partial("~/Views/Shared/LayoutPartials/_Footer.cshtml")
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

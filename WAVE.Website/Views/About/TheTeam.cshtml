@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "The Team";
+}
+@model List<Team>
+
+@section FooterScripts
+{
+    <script src="~/Scripts/Coral/jquery.gridalicious.min.js"></script>
+    <script src="~/Scripts/Coral/blueimp-gallery.min.js"></script>
+    <script src="~/Scripts/Coral/gridalicious.init.js"></script>
+    <script src="~/Scripts/Coral/jquery.blueimp-gallery.min.js"></script>
+}
+
+
+
+@*<div class="layout-app">
+        <!-- row-app -->
+        <div class="row row-app" style="background:#fff">
+            <div class="col-md-12 col-sm-12">
+
+                <!-- col-separator.box -->
+                <div class="col-unscrollable box">
+
+                    <!-- col-table -->
+                    <div class="col-table">
+
+                        <!-- col-table-row -->
+                        <div class="col-table-row">
+
+                            <!-- col-app -->
+                            <div class="col-app col-unscrollable">
+                                <!-- col-app -->
+                                <div class="col-app iscrollWrapper">
+
+                                    <div class="jscroll">
+                                        <section class="shadow2" style="border-bottom: 1px solid #000;min-height: 200px;background: #636363;">
+                                            <h1 style="font-size: 48px;color: white;padding-top: 80px;text-align: center;">
+                                                The Team
+                                            </h1>
+                                        </section>
+                                        <section class="container" style="width: 50%; padding-bottom: 50px; padding-top: 40px; font-size: 17px;">
+
+                                        </section>
+
+                                        @Html.Partial("~/Views/Shared/LayoutPartials/_Footer.cshtml")
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+<div class="layout-app">
+    <div class="row row-app">
+        <div class="col-md-12">
+            <div class="col-separator box col-separator-first col-unscrollable">
+                <div class="col-table">
+                    <div class="col-table-row">
+                        <div class="col-app col-unscrollable">
+                            <!-- col-app -->
+                            <div class="col-app iscrollWrapper">
+
+                                <div class="jscroll">
+                                    <section class="shadow2" style="background: #636363; border-bottom: 1px solid #000; min-height: 200px;">
+                                        <h1 style="color: white; font-size: 48px; padding-top: 80px; text-align: center;">
+                                            The Team
+                                        </h1>
+                                    </section>
+                                    <div data-toggle="gridalicious" data-gridalicious-width="280" data-gridalicious-gutter="0">
+                                        <div class="innerAll inner-2x loading text-center text-medium">
+                                            <i class="fa fa-fw fa-spinner fa-spin"></i> Loading
+                                        </div>
+                                        <div class="loaded">
+                                            @foreach (var t in Model)
+                                            {
+                                                <div class="widget widget-heading-simple widget-body-white widget-pinterest">
+                                                    <div class="widget-body padding-none">
+                                                        <a href="@t.ExternalUrl" class="thumb" data-gallery>
+                                                            <img src="@t.ImageUrl" alt="@t.Name" />
+                                                        </a>
+                                                        <div class="description col-md-12">
+                                                            <h5 class="text-uppercase">@t.Name</h5>
+                                                            <p>@t.Description</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+
+
+
+                                 
+                                    @Html.Partial("~/Views/Shared/LayoutPartials/_Footer.cshtml")
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

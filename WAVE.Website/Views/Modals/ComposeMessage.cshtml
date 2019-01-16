@@ -1,0 +1,45 @@
+﻿<div class="modal-content">
+    <style>
+        .notes {
+            background-image: -webkit-linear-gradient(left, white - 10px, transparent - 10px), -webkit-linear-gradient(right, white - 10px, transparent - 10px), -webkit-linear-gradient(white 30px, #2776ec 30px, #2776ec 31px, white 31px);
+            background-image: -moz-linear-gradient(left, white - 10px, transparent - 10px), -moz-linear-gradient(right, white - 10px, transparent - 10px), -moz-linear-gradient(white 30px, #2776ec 30px, #2776ec 31px, white 31px);
+            background-image: -ms-linear-gradient(left, white - 10px, transparent - 10px), -ms-linear-gradient(right, white - 10px, transparent - 10px), -ms-linear-gradient(white 30px, #2776ec 30px, #2776ec 31px, white 31px);
+            background-image: -o-linear-gradient(left, white - 10px, transparent - 10px), -o-linear-gradient(right, white - 10px, transparent - 10px), -o-linear-gradient(white 30px, #2776ec 30px, #2776ec 31px, white 31px);
+            background-image: linear-gradient(left, white - 10px, transparent - 10px), linear-gradient(right, white - 10px, transparent - 10px), linear-gradient(white 30px, #2776ec 30px, #2776ec 31px, white 31px);
+            background-size: 100% 100%, 100% 100%, 100% 31px;
+            border: 1px solid #2776ec;
+            line-height: 31px;
+            resize: none;
+        }
+
+        .form-group {
+            font-family: 'SegoeUI';
+        }
+    </style>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        @using (Html.BeginForm("Compose", "Messages"))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input class="form-control" id="inputEmail3" name="To" placeholder="To" type="text" value="" style="background-attachment: scroll; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==); background-position: 100% 50%; background-repeat: no-repeat; cursor: auto;">
+                </div>
+            </div>
+            <div class="form-group" style="margin-bottom: -5px;">
+                <div class="col-sm-12">
+                    <div class="media message" style="padding: 0">
+                        <div class="media-body innerTB" style="border-radius: 0; max-width: 100%; padding: 0;">
+                            <textarea class="form-control notes" rows="3" placeholder="Add your Message" name="CommentText" style="border: none"></textarea>
+                            <button type="submit" class="btn btn-primary btn-sm pull-right" style="margin-top: 5px;"><i class="fa fa-plus-circle fa-fw"></i>Send Message</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <!-- // Modal body END -->
+</div>

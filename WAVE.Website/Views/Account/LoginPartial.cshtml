@@ -1,0 +1,42 @@
+﻿@model LoginModel
+
+@*<div class="text-center">
+    <a href="#" data-placement="bottom" class="facebookbtn loginbtn btn btn-primary"><i class="fa fa fa-facebook"></i><span style="margin: 10px; padding: 35px;">Join with Facebook</span></a>
+</div>
+<div class="text-center" style="margin-top: 10px;">
+    <img src="/Content/images/or-line.png" class="borderless" style="width: 107%; margin-left: -12px;">
+</div>*@
+@using (Html.BeginForm("Login", "Account", new {ReturnUrl = Request.QueryString["ReturnUrl"]}, FormMethod.Post, new {style = "margin-top:15px;", @id = "signupForm", @class = "form-horizontal ng-pristine ng-valid text-center"}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <div class="form-group">
+        <div class="col-sm-12">
+            @Html.TextBoxFor(m => m.UserName, new {@class = "form-control", id = "inputEmail3", placeholder = Resources.PlaceholderUsername})
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            @Html.PasswordFor(m => m.Password, new {@class = "form-control", id = "inputPassword3", placeholder = Resources.PlaceholderPassword})
+        </div>
+    </div>
+    <div class="form-group text-left">
+        <div class="col-sm-12">
+            <div class="col-sm-6">
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBoxFor(m => m.RememberMe, new {@style = "float:none;"})
+                        @Resources.LoginPartRemember
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 text-right">
+            <button type="submit" class="btn btn-stroke btn-primary">
+                <i class="fa fa-sign-in"></i><span style="margin-left: 10px; padding: 15px;">@Resources.LoginPartLogin</span>
+            </button>
+        </div>
+    </div>
+}
+<div class="text-right">
+</div>

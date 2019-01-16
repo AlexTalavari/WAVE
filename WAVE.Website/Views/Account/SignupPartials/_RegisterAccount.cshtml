@@ -1,0 +1,11 @@
+﻿@model RegisterModel
+
+@*@Ajax.ActionLink("Show", "Register", "Account", new{ Id="Volunteer"},
+                new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "result", OnFailure = "onError" },
+                new { @class = "showbtn" })*@
+
+
+@if (Model.UserProfile.UserType == "Volunteer")
+{
+    @Html.Partial("~/Views/Account/SignupPartials/_Volunteer.cshtml", Model)
+}

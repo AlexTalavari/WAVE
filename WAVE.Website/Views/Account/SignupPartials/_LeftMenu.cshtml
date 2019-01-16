@@ -1,0 +1,60 @@
+﻿@model RegisterModel
+
+<!-- col -->
+<div class="col-md-2 col-sm-3">
+
+    <!-- col-separator -->
+    <div class="col-separator col-separator-first box col-unscrollable">
+
+        <!-- col-table -->
+        <div class="col-table">
+
+            <h3 class="innerAll margin-none border-bottom">@Resources.LeftMenuSelect</h3>
+
+            <!-- col-table-row -->
+            <div class="col-table-row">
+
+                <!-- col-app -->
+                <div class="col-app col-unscrollable">
+
+                    <!-- col-app -->
+                    <div class="col-app">
+                        <ul class="list-group list-group-1 margin-none borders-none">
+                            <li class="list-group-item">
+                                <a class="showbtn" data-ajax="true" data-ajax-failure="onError" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#result" href="/Account/Register/Volunteer"><i class="fa fa-user"></i>@Resources.LeftMenuVolunteer</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="showbtn" data-ajax="true" data-ajax-failure="onError" data-ajax-method="GET" data-ajax-mode="replace" data-ajax-update="#result" href="/Account/Register/Group"><i class="fa fa-group"></i>@Resources.LeftMenuGroup</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="widgets.html?lang=en"><i class="fa fa-circle-o"></i>@Resources.LeftMenuNGO</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="tabs.html?lang=en"><i class="fa fa-circle-o"></i>@Resources.LeftMenuUniversity</a>
+                            </li>                           
+                            <li class="list-group-item">
+                                <a href="sliders.html?lang=en"><i class="fa fa-circle-o"></i>@Resources.LeftMenuSchool</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="charts.html?lang=en"><i class="fa fa-circle-o"></i>@Resources.LeftMenuCompany</a>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                    <!-- // END col-app -->
+
+                </div>
+                <!-- // END col-app -->
+
+            </div>
+            <!-- // END col-table-row -->
+
+        </div>
+        <!-- // END col-table -->
+
+    </div>
+    <!-- // END col-separator.box -->
+
+</div>
+<!-- // END col -->

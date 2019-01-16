@@ -1,0 +1,136 @@
+﻿@using WAVE.Website.Classes
+@model EventsIndexModel
+
+
+
+<section class="mbtm" style="padding: 1px;">
+    <link href="~/Content/css/bootstrap/bootstrap-progressbar-2.3.2.min.css" rel="stylesheet" />
+    <link href="~/Content/css/actions.css" rel="stylesheet" />
+    <section class="container container-actions">
+        <div class="row-fluid">
+            @if (Model.LoggedUser != null)
+            {
+                <a href="/#modal-1" data-toggle="modal" id="modalbtn">
+                    <div class="container-item-action">
+                        <div class="item-action" style="background-image: url(/Content/images/create.png); background-position: 2px; background-repeat: no-repeat;">
+                            <div class="item-action-overlay2">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            }
+
+            
+            
+    
+            @foreach (var a in Model.Actions)
+            {
+                <a href="/Events/Details/@a.Id">
+                    <div class="container-item-action">
+                        <div class="item-action" style="background-image: url(@a.ThumbnailPhoto.Url); background-position: center; background-repeat: no-repeat; -ms-background-size: cover; background-size: cover;">
+                            <div class="item-action-overlay">
+                                <div class="tag @a.GetCategoryClass()">
+                                </div>
+                            </div>
+                            <div class="item-action-content">
+                                <div class="item-action-top-content">
+                                    <div class="item-action-top-content-inner">
+                                        <img class="organizerPhoto" src="@a.Creator.ProfilePhoto.Url" alt="@a.Creator.GetFullName() Photo" />
+                                        <div class="item-action-product-title">@a.Title</div>
+                                        <div class="organizerInfo">
+                                            by <span>@a.Creator.GetFullName()</span>
+                                        </div>
+                                        @*<div class="rating-container">
+                                                <div class="rating text-faded">
+                                                    @{
+                                                                var rating = a.Creator.GetRating();
+                                                                if (rating < 0)
+                                                                {
+                                                                    @("Unrated");
+                                                                }
+                                                                else
+                                                                {
+                                                                    for (int i = 5; i > rating; i--)
+                                                                    {
+                                                                <span class="text-faded"><i class="fa fa-star"></i></span>
+                                                                    }
+                                                                    for (int i = 0; i < rating; i++)
+                                                                    {
+                                                                <span class="text-rating"><i class="fa fa-star"></i></span>
+                                                                    }
+                                                                }
+                                                            }
+                                                </div>
+                                            </div>*@
+                                        <div class="days">
+
+                                            @if (a.GetRemainingDays() < 0)
+                                            {
+                                                <span>@Resources.EventActionsDatePassed</span>
+                                            }
+                                            else if (a.GetRemainingDays() == 1)
+                                            {
+                                                <span>@Resources.EventActions1DayLeft</span>
+                                            }
+                                            else
+                                            {
+                                                <span>@a.GetRemainingDays() @Resources.EventActionsDaysLeft</span>
+                                            }
+
+                                        </div>
+                                        <div class="location-info" style="color: #4193d0 !important;">
+                                            <i class="fa fa-map-marker"></i><span style="padding-left: 5px">
+                                                                                @a.Location
+                                                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="item-action-add-content">
+                                    <div class="item-action-add-content-inner">
+                                        <div class="section">
+                                            <p class="description">
+                                                @a.Description.HtmlStripTags(true, true).Truncate(200);
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="charity_details">
+                                <div class="progress progress-striped active" data-ui-jq="createProgressBars">
+
+
+                                    @{
+                                        var width = 100*a.Volunteers.Count/a.MaxValueBar;
+                                        var progressBarStatus = "";
+                                        var progressText = Resources.EventActionsWeNeed + (a.MaxValueBar - a.Volunteers.Count) + Resources.EventActionsMore;
+                                        if (a.MaxValueBar - a.Volunteers.Count <= 0)
+                                        {
+                                            progressBarStatus = Resources.EventActionsSuccess;
+                                            progressText = Resources.EventActionsAimFul;
+                                        }
+                                        else if (@a.GetRemainingDays() < 0 && a.MaxValueBar - a.Volunteers.Count > 0)
+                                        {
+                                            progressBarStatus = Resources.EventActionsFail;
+                                            progressText = Resources.EventActionsUnsuccessful;
+                                        }
+                                    }
+                                    <span class="progressbar-back-text">@progressText</span>
+                                    <div class="bar bar-info @progressBarStatus" style="width: @width%">
+                                        <span class="progressbar-front-text">@progressText</span>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="organizer">
+                                <div class="location-info text-faded">
+                                    <i class="fa fa-map-marker"></i><span style="padding-left: 5px">@a.Location
+                                    </span>
+                                </div>
+                            </div>*@
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+    </section>
+</section>

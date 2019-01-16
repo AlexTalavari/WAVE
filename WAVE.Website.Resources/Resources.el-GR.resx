@@ -1,0 +1,1495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BlogIndexContinue" xml:space="preserve">
+    <value>Συνέχεια</value>
+    <comment>Continue</comment>
+  </data>
+  <data name="BlogIndexVBTitle" xml:space="preserve">
+    <value>Blog</value>
+    <comment>Blog</comment>
+  </data>
+  <data name="BlogIndexWrittenBy" xml:space="preserve">
+    <value>Γράφτηκε απο</value>
+    <comment>Writter by</comment>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Αλλαγή Κωδικού Πρόσβασης</value>
+    <comment>Change password</comment>
+  </data>
+  <data name="ChangePasswordLegend" xml:space="preserve">
+    <value>Φόρμα Αλλαγής Κωδικού Πρόσβασης</value>
+    <comment>Change Password Form</comment>
+  </data>
+  <data name="ChangePasswordTitle" xml:space="preserve">
+    <value>Αλλαγή Κωδικού Πρόσβασης</value>
+    <comment>Change Password</comment>
+  </data>
+  <data name="CommentIndexVBTitle" xml:space="preserve">
+    <value>Index</value>
+    <comment>Index</comment>
+  </data>
+  <data name="ContactIndexPlaceholderEmail" xml:space="preserve">
+    <value>Εισάγετε το email σας...</value>
+    <comment>Enter your email...</comment>
+  </data>
+  <data name="ContactIndexPlaceholderMsg" xml:space="preserve">
+    <value>Εισάγετε το μήνυμά σας...</value>
+    <comment>Enter your message...</comment>
+  </data>
+  <data name="ContactIndexPlaceholderName" xml:space="preserve">
+    <value>Εισάγετε το όνομά σας...</value>
+    <comment>Enter your name...</comment>
+  </data>
+  <data name="ContactIndexSend" xml:space="preserve">
+    <value>Αποστολή</value>
+    <comment>Send</comment>
+  </data>
+  <data name="ContactIndexShareYourIdeas" xml:space="preserve">
+    <value>Μοιραστείτε τις ιδέες σας</value>
+    <comment>Share your ideas</comment>
+  </data>
+  <data name="ContactIndexVBTitle" xml:space="preserve">
+    <value>Επικοινωνήστε μαζί μας</value>
+    <comment>Contact Us</comment>
+  </data>
+  <data name="Errors404Msg1" xml:space="preserve">
+    <value>Ωπ!</value>
+    <comment>Oups!</comment>
+  </data>
+  <data name="Errors404Msg2" xml:space="preserve">
+    <value>Αυτή η σελίδα δεν υπάρχει.</value>
+    <comment>This page does not exist.</comment>
+  </data>
+  <data name="Errors404Msg3" xml:space="preserve">
+    <value>ERROR MESSAGE GOES HERE!</value>
+    <comment>ERROR MESSAGE GOES HERE!</comment>
+  </data>
+  <data name="EventActions1DayLeft" xml:space="preserve">
+    <value>1 μέρα έμεινε</value>
+    <comment>1 day left</comment>
+  </data>
+  <data name="EventActionsAimFul" xml:space="preserve">
+    <value>Ο στόχος επετεύχθη</value>
+    <comment>Aim fulfilled</comment>
+  </data>
+  <data name="EventActionsDatePassed" xml:space="preserve">
+    <value>Ημ/νία πέρασε</value>
+    <comment>Date passed</comment>
+  </data>
+  <data name="EventActionsDaysLeft" xml:space="preserve">
+    <value>μέρες έμειναν</value>
+    <comment>days left</comment>
+  </data>
+  <data name="EventActionsFail" xml:space="preserve">
+    <value>Αποτυχία</value>
+    <comment>fail</comment>
+  </data>
+  <data name="EventActionsMore" xml:space="preserve">
+    <value>ακόμα!</value>
+    <comment>more!</comment>
+  </data>
+  <data name="EventActionsSuccess" xml:space="preserve">
+    <value>Επιτυχής</value>
+    <comment>success</comment>
+  </data>
+  <data name="EventActionsUnsuccessful" xml:space="preserve">
+    <value>Ανεπιτυχής</value>
+    <comment>Unsuccessful</comment>
+  </data>
+  <data name="EventActionsWeNeed" xml:space="preserve">
+    <value>Χρειαζόμαστε</value>
+    <comment>We need </comment>
+  </data>
+  <data name="EventsCreateActionAddress" xml:space="preserve">
+    <value>Διεύθυνση Δράσης</value>
+    <comment>Action Address</comment>
+  </data>
+  <data name="EventsCreateActionCountry" xml:space="preserve">
+    <value>Χώρα Δράσης</value>
+    <comment>Action Country</comment>
+  </data>
+  <data name="EventsCreateActionDescription" xml:space="preserve">
+    <value>Περιγράψτε τη δράση...</value>
+    <comment>Describe the action...</comment>
+  </data>
+  <data name="EventsCreateCategory" xml:space="preserve">
+    <value>Κατηγορία</value>
+    <comment>Category</comment>
+  </data>
+  <data name="EventsCreateCategoryText" xml:space="preserve">
+    <value>Κατηγορία</value>
+    <comment>Category</comment>
+  </data>
+  <data name="EventsCreateFamily" xml:space="preserve">
+    <value>Οικογένεια</value>
+    <comment>Family</comment>
+  </data>
+  <data name="EventsCreateCulture" xml:space="preserve">
+    <value>Πολιτισμός</value>
+    <comment>Culture</comment>
+  </data>
+  <data name="EventsCreateDate" xml:space="preserve">
+    <value>Ημ/νία</value>
+    <comment>Date</comment>
+  </data>
+  <data name="EventsCreateDescription" xml:space="preserve">
+    <value>Περιγραφή</value>
+    <comment>Description</comment>
+  </data>
+  <data name="EventsCreateEducation" xml:space="preserve">
+    <value>Εκπαίδευση</value>
+    <comment>Education</comment>
+  </data>
+  <data name="EventsCreateEndDate" xml:space="preserve">
+    <value>Ημ/νία Λήξης</value>
+    <comment>End Date</comment>
+  </data>
+  <data name="EventsCreateEndTime" xml:space="preserve">
+    <value>Ώρα Λήξης</value>
+    <comment>End Time</comment>
+  </data>
+  <data name="EventsCreateEnterActionTitle" xml:space="preserve">
+    <value>Εισάγετε το Όνομα της Δράσης</value>
+    <comment>Enter Action Title...</comment>
+  </data>
+  <data name="EventsCreateEnvironment" xml:space="preserve">
+    <value>Περιβάλλον</value>
+    <comment>Environment</comment>
+  </data>
+  <data name="EventsCreateGoals" xml:space="preserve">
+    <value>Στόχοι</value>
+    <comment>Goals</comment>
+  </data>
+  <data name="EventsCreateHealth" xml:space="preserve">
+    <value>Υγεία</value>
+    <comment>Health</comment>
+  </data>
+  <data name="EventsCreateHumanity" xml:space="preserve">
+    <value>Ανθρωπότητα</value>
+    <comment>Humanity</comment>
+  </data>
+  <data name="EventsCreateLocation" xml:space="preserve">
+    <value>Τοποθεσία</value>
+    <comment>Location</comment>
+  </data>
+  <data name="EventsCreateNaturalDisaster" xml:space="preserve">
+    <value>Φυσικές Καταστροφές</value>
+    <comment>Natural Disaster</comment>
+  </data>
+  <data name="EventsCreateOf" xml:space="preserve">
+    <value>από</value>
+    <comment>of</comment>
+  </data>
+  <data name="EventsCreatePhoto" xml:space="preserve">
+    <value>Φωτογραφία</value>
+    <comment>Photo</comment>
+  </data>
+  <data name="EventsCreateSelectActionCategory" xml:space="preserve">
+    <value>Επιλέξτε την Κατηγορία της Δράσης</value>
+    <comment>Select Action Category</comment>
+  </data>
+  <data name="EventsCreateSetVolunteerGoals" xml:space="preserve">
+    <value>Ορίστε Στόχους Εθελοντών</value>
+    <comment>Set Volunteer Goals</comment>
+  </data>
+  <data name="EventsCreateStartDate" xml:space="preserve">
+    <value>Ημ/νία Έναρξης</value>
+    <comment>Start Date</comment>
+  </data>
+  <data name="EventsCreateStartTime" xml:space="preserve">
+    <value>Ώρα Έναρξης</value>
+    <comment>Start Time</comment>
+  </data>
+  <data name="EventsCreateStep" xml:space="preserve">
+    <value>Βήμα</value>
+    <comment>Step</comment>
+  </data>
+  <data name="EventsCreateStep1Title" xml:space="preserve">
+    <value>Τίτλος</value>
+    <comment>Title</comment>
+  </data>
+  <data name="EventsCreateStep3Label" xml:space="preserve">
+    <value>Περιγράψτε τη Δράση</value>
+    <comment>Describe the Action</comment>
+  </data>
+  <data name="EventsCreateSubmit" xml:space="preserve">
+    <value>Υποβολή</value>
+    <comment>Submit</comment>
+  </data>
+  <data name="EventsCreateTitle" xml:space="preserve">
+    <value>Τίτλος</value>
+    <comment>Title</comment>
+  </data>
+  <data name="EventsCreateUpdateActionImageUrl" xml:space="preserve">
+    <value>Διεύθυνση (Url) Εικόνας της Δράσης</value>
+    <comment>Action Image Url</comment>
+  </data>
+  <data name="EventsCreateUpdatePlaceholderImgUrl" xml:space="preserve">
+    <value>Δημοσίευστε διεύθυνση URL εικόνας εδω</value>
+    <comment>Post image URL here</comment>
+  </data>
+  <data name="EventsCreateUpdatePreview" xml:space="preserve">
+    <value>Προεπισκόπηση</value>
+    <comment>Preview</comment>
+  </data>
+  <data name="EventsCreateVarious" xml:space="preserve">
+    <value>Διάφορα</value>
+    <comment>Various</comment>
+  </data>
+  <data name="ExtLoginConfMsg1" xml:space="preserve">
+    <value>Συσδέστε τον</value>
+    <comment>Associate your</comment>
+  </data>
+  <data name="ExtLoginConfMsg2" xml:space="preserve">
+    <value>λογαριασμό σας.</value>
+    <comment>account.</comment>
+  </data>
+  <data name="ExtLoginConfMsg3" xml:space="preserve">
+    <value>Έχετε πιστοποιηθεί πετυχημένα με το</value>
+    <comment>You've successfully authenticated with</comment>
+  </data>
+  <data name="ExtLoginConfMsg4" xml:space="preserve">
+    <value>Παρακαλώ εισάγετε ένα όνομα χρήστη και κάντε κλικ στο κουμπί Επιβεβαίωση για να ολοκληρώσετε τη σύνδεσή σας.</value>
+    <comment>Please enter a user name for this site below and click the Confirm button to finish
+            logging in.</comment>
+  </data>
+  <data name="ExtLoginFail" xml:space="preserve">
+    <value>Ανεπιτυχής σύνδεση με την υπηρεσία.</value>
+    <comment>Unsuccessful login with service.</comment>
+  </data>
+  <data name="ExtLoginFailVBTitle" xml:space="preserve">
+    <value>Αποτυχία σύνδεσης</value>
+    <comment>Login Failure</comment>
+  </data>
+  <data name="ExtLoginMsg1" xml:space="preserve">
+    <value>Δεν υπάρχουν εξωτερικές υπηρεσίες ελέγχου ταυτότητας. Δείτε</value>
+    <comment>There are no external authentication services configured. See</comment>
+  </data>
+  <data name="ExtLoginMsg2" xml:space="preserve">
+    <value>αυτό το άρθρο</value>
+    <comment>this article</comment>
+  </data>
+  <data name="ExtLoginMsg3" xml:space="preserve">
+    <value>για λεπτομέρειες σχετικά με τη ρύθμιση αυτής της ASP.NET εφαρμογής για να υποστηρίξει τη σύνδεση μέσω εξωτερικών υπηρεσιών.</value>
+    <comment>for details on setting up this ASP.NET application to support logging in via external services.</comment>
+  </data>
+  <data name="ExtLogins1" xml:space="preserve">
+    <value>Σύνδεση με χρηση του</value>
+    <comment>Log in using your</comment>
+  </data>
+  <data name="ExtLogins2" xml:space="preserve">
+    <value>λογαριασμού σας</value>
+    <comment>account</comment>
+  </data>
+  <data name="ExtLoginSocial" xml:space="preserve">
+    <value>Συνδεθείτε χρησιμοποιώντας άλλη υπηρεσία</value>
+    <comment>Log in using another service</comment>
+  </data>
+  <data name="ExtLoginVBTitle" xml:space="preserve">
+    <value>Εγγραφή</value>
+    <comment>Register</comment>
+  </data>
+  <data name="HomePageAbout" xml:space="preserve">
+    <value>Το WAVE είναι μια πλατφόρμα πληθοπορισμού(crowdsourcing) για κοινωνική δράσεις. Μπορούν όλοι να βρούν εθελοντές για τις δράσεις τους. Οι εθελοντές μπορούν να αλληλεπιδράσουν μαζί σας και να σας κάνει έναν καλύτερο διοργανωτή. Πιστεύουμε ότι ο εθελοντισμός μπορεί να αλλάξει τον κόσμο.</value>
+    <comment>WAVE is a crowdsourcing platform for social actions.You can  finding volunteers for your actions. Volunteers can engage with you and make you a better organizer. We believe volunteerism can change the world.</comment>
+  </data>
+  <data name="HowItWorks" xml:space="preserve">
+    <value>Πώς λειτουργεί</value>
+    <comment>How it Works</comment>
+  </data>
+  <data name="LeftMenuCompany" xml:space="preserve">
+    <value>Εταιρία</value>
+    <comment>Company</comment>
+  </data>
+  <data name="LeftMenuGroup" xml:space="preserve">
+    <value>Ομάδα</value>
+    <comment>Group</comment>
+  </data>
+  <data name="LeftMenuNGO" xml:space="preserve">
+    <value>ΜΚΟ</value>
+    <comment>NGO</comment>
+  </data>
+  <data name="LeftMenuSchool" xml:space="preserve">
+    <value>Σχολείο</value>
+    <comment>School</comment>
+  </data>
+  <data name="LeftMenuSelect" xml:space="preserve">
+    <value>Επιλέξτε:</value>
+    <comment>Select:</comment>
+  </data>
+  <data name="LeftMenuUniversity" xml:space="preserve">
+    <value>Πανεπιστήμιο</value>
+    <comment>University</comment>
+  </data>
+  <data name="LeftMenuVolunteer" xml:space="preserve">
+    <value>Εθελοντής</value>
+    <comment>Volunteer</comment>
+  </data>
+  <data name="LoginLogin" xml:space="preserve">
+    <value>Σύνδεση</value>
+    <comment>Login</comment>
+  </data>
+  <data name="LoginMsg1" xml:space="preserve">
+    <value>Συνδεθέιτε στο λογαριασμό σας</value>
+    <comment>Login to your Account</comment>
+  </data>
+  <data name="LoginNoAccount" xml:space="preserve">
+    <value>Δεν έχετε λογαριασμό; Εγγραφείτε</value>
+    <comment>No account? Register</comment>
+  </data>
+  <data name="LoginPartLogin" xml:space="preserve">
+    <value>Σύνδεση</value>
+    <comment>Login</comment>
+  </data>
+  <data name="LoginPartRemember" xml:space="preserve">
+    <value>Να με θυμάσαι</value>
+    <comment>Remember me</comment>
+  </data>
+  <data name="LoginPassword" xml:space="preserve">
+    <value>Κωδικός Πρόσβασης</value>
+    <comment>Password</comment>
+  </data>
+  <data name="LoginRemember" xml:space="preserve">
+    <value>Να θυμάσαι τις λεπτομέρειές μου</value>
+    <comment>Remember my details</comment>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>Σύνδεση</value>
+    <comment>Login</comment>
+  </data>
+  <data name="LoginUsername" xml:space="preserve">
+    <value>Όνομα Χρήστη</value>
+    <comment>Username</comment>
+  </data>
+  <data name="ManageLogedInAs" xml:space="preserve">
+    <value>Έχετε συνδεθεί ως</value>
+    <comment>You're logged in as</comment>
+  </data>
+  <data name="ManageVBTitle" xml:space="preserve">
+    <value>Διαχείριση Λογαριασμού</value>
+    <comment>Manage Account</comment>
+  </data>
+  <data name="PlaceholderConfirmPassword" xml:space="preserve">
+    <value>Επιβεβαίωση Κωδικού Πρόσβασης</value>
+    <comment>Confirm Password</comment>
+  </data>
+  <data name="PlaceholderEmail" xml:space="preserve">
+    <value>Email</value>
+    <comment>Email</comment>
+  </data>
+  <data name="PlaceholderName" xml:space="preserve">
+    <value>Όνομα</value>
+    <comment>Name</comment>
+  </data>
+  <data name="PlaceholderPassword" xml:space="preserve">
+    <value>Κωδικός</value>
+    <comment>Password</comment>
+  </data>
+  <data name="PlaceholderSurname" xml:space="preserve">
+    <value>Επίθετο</value>
+    <comment>Surname</comment>
+  </data>
+  <data name="PlaceholderUsername" xml:space="preserve">
+    <value>Όνομα Χρήστη/Email</value>
+    <comment>Username/Email</comment>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Εγγραφή</value>
+    <comment>Register</comment>
+  </data>
+  <data name="RegisterCreatAnAccount" xml:space="preserve">
+    <value>Δημιουργία Λογαριασμού</value>
+    <comment>Create an Account</comment>
+  </data>
+  <data name="RegisterHaveAnAccount" xml:space="preserve">
+    <value>Έχετε λογαριασμό; Σύνδεθείτε</value>
+    <comment>Have an account? Login</comment>
+  </data>
+  <data name="RegisterPartRegister" xml:space="preserve">
+    <value>Εγγραφή</value>
+    <comment>Register</comment>
+  </data>
+  <data name="RegisterPartTerms" xml:space="preserve">
+    <value>Όροι Χρήσης</value>
+    <comment>Terms of Use</comment>
+  </data>
+  <data name="RegisterRegister" xml:space="preserve">
+    <value>Εγγραφή</value>
+    <comment>Register</comment>
+  </data>
+  <data name="RegisterTerms" xml:space="preserve">
+    <value>Όροι Χρήσης</value>
+    <comment>Terms of Use</comment>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Κατάργηση</value>
+    <comment>Remove</comment>
+  </data>
+  <data name="RemoveExtLogins1" xml:space="preserve">
+    <value>Αφαιρέστε τα </value>
+    <comment>Remove this</comment>
+  </data>
+  <data name="RemoveExtLogins2" xml:space="preserve">
+    <value>διαπιστευτήρια από το λογαριασμό σας</value>
+    <comment>credential from your account</comment>
+  </data>
+  <data name="SetPassword" xml:space="preserve">
+    <value>Ορισμός κωδικού πρόσβασης</value>
+    <comment>Set Password</comment>
+  </data>
+  <data name="SetPasswordForm" xml:space="preserve">
+    <value>Φόρμα ορισμού κωδικού πρόσβασης</value>
+    <comment>Set Password Form</comment>
+  </data>
+  <data name="SetPasswordMsg" xml:space="preserve">
+    <value>Δεν έχετε ένα τοπικό κωδικό πρόσβασης για αυτό το site. Προσθέστε ένα τοπικό κωδικό πρόσβασης, ώστε να μπορείτε να συνδεθείτε χωρίς εξωτερική σύνδεση.</value>
+    <comment>You do not have a local password for this site. Add a local
+    password so you can log in without an external login.</comment>
+  </data>
+  <data name="VolunteerBasic" xml:space="preserve">
+    <value>Βασικές Πληροφορίες</value>
+    <comment>Basic Info</comment>
+  </data>
+  <data name="VolunteerDescriptionStep2" xml:space="preserve">
+    <value>......................................................</value>
+    <comment>......................................................</comment>
+  </data>
+  <data name="VolunteerDescriptionStep3" xml:space="preserve">
+    <value>.....................................................</value>
+    <comment>......................................................</comment>
+  </data>
+  <data name="VolunteerDoYouAccept" xml:space="preserve">
+    <value>Αποδέχεστε τους</value>
+    <comment>Do you Accept the</comment>
+  </data>
+  <data name="VolunteerFinish" xml:space="preserve">
+    <value>Τέλος</value>
+    <comment>Finish</comment>
+  </data>
+  <data name="VolunteerFirst" xml:space="preserve">
+    <value>Πρώτο</value>
+    <comment>First</comment>
+  </data>
+  <data name="VolunteerLast" xml:space="preserve">
+    <value>Τελευταίο</value>
+    <comment>Last</comment>
+  </data>
+  <data name="VolunteerLocationTrack" xml:space="preserve">
+    <value>Μπορούμε να ανιχνεύουμε τη θέση σας για να σας δίνουμε πληροφορίες με βάση αυτη;</value>
+    <comment>Can we track your location to serve location based info?</comment>
+  </data>
+  <data name="VolunteerNewsletters" xml:space="preserve">
+    <value>Θέλετε να λαμβάνετε ενημερωτικά δελτία;</value>
+    <comment>Do you want to receive newsletters?</comment>
+  </data>
+  <data name="VolunteerNext" xml:space="preserve">
+    <value>Επόμενο</value>
+    <comment>Next</comment>
+  </data>
+  <data name="VolunteerOf" xml:space="preserve">
+    <value>από</value>
+    <comment>of</comment>
+  </data>
+  <data name="VolunteerPersonal" xml:space="preserve">
+    <value>Προσωπικές Πληροφορίες</value>
+    <comment>Personla Info</comment>
+  </data>
+  <data name="VolunteerPersonalization" xml:space="preserve">
+    <value>Εξατομίκευση</value>
+    <comment>Personalization</comment>
+  </data>
+  <data name="VolunteerPlaceholderAddress" xml:space="preserve">
+    <value>Διεύθυνση...</value>
+    <comment>Address...</comment>
+  </data>
+  <data name="VolunteerPlaceholderCity" xml:space="preserve">
+    <value>Πόλη...</value>
+    <comment>City...</comment>
+  </data>
+  <data name="VolunteerPlaceholderConfirmPassword" xml:space="preserve">
+    <value>Επιβεβαίωση κωδικού πρόσβασης ...</value>
+    <comment>Confirm Password...</comment>
+  </data>
+  <data name="VolunteerPlaceholderCountry" xml:space="preserve">
+    <value>Χώρα...</value>
+    <comment>Address...</comment>
+  </data>
+  <data name="VolunteerPlaceholderEmail" xml:space="preserve">
+    <value>Email...</value>
+    <comment>Email...</comment>
+  </data>
+  <data name="VolunteerPlaceholderFacebook" xml:space="preserve">
+    <value>Facebook...</value>
+    <comment>Facebook...</comment>
+  </data>
+  <data name="VolunteerPlaceholderGender" xml:space="preserve">
+    <value>Φύλο ...</value>
+    <comment>Gender...</comment>
+  </data>
+  <data name="VolunteerPlaceholderGooglePlus" xml:space="preserve">
+    <value>Google Plus...</value>
+    <comment>Google Plus...</comment>
+  </data>
+  <data name="VolunteerPlaceholderLinkedIn" xml:space="preserve">
+    <value>LinkedIn...</value>
+    <comment>LinkedIn...</comment>
+  </data>
+  <data name="VolunteerPlaceholderName" xml:space="preserve">
+    <value>Όνομα...</value>
+    <comment>Name...</comment>
+  </data>
+  <data name="VolunteerPlaceholderPassword" xml:space="preserve">
+    <value>Κωδικός πρόσβασης...</value>
+    <comment>Password...</comment>
+  </data>
+  <data name="VolunteerPlaceholderPhone" xml:space="preserve">
+    <value>Τηλέφωνο...</value>
+    <comment>Phone...</comment>
+  </data>
+  <data name="VolunteerPlaceholderSchoolUniversity" xml:space="preserve">
+    <value>Σχολείο / Πανεπιστήμιο</value>
+    <comment>School/University</comment>
+  </data>
+  <data name="VolunteerPlaceholderSkype" xml:space="preserve">
+    <value>Skype...</value>
+    <comment>Skype...</comment>
+  </data>
+  <data name="VolunteerPlaceholderSurname" xml:space="preserve">
+    <value>Επώνυμο...</value>
+    <comment>Surname...</comment>
+  </data>
+  <data name="VolunteerPlaceholderTwitter" xml:space="preserve">
+    <value>Twitter...</value>
+    <comment>Twitter...</comment>
+  </data>
+  <data name="VolunteerPlaceholderUsername" xml:space="preserve">
+    <value>Όνομα Χρήστη...</value>
+    <comment>Username...</comment>
+  </data>
+  <data name="VolunteerPlaceholderWebsite" xml:space="preserve">
+    <value>Ιστοσελίδα...</value>
+    <comment>Website...</comment>
+  </data>
+  <data name="VolunteerPlaceholderYoutube" xml:space="preserve">
+    <value>Youtube...</value>
+    <comment>Youtube...</comment>
+  </data>
+  <data name="VolunteerPlaceholderZipCode" xml:space="preserve">
+    <value>Ταχυδρομικός Κώδικας...</value>
+    <comment>Zip Code...</comment>
+  </data>
+  <data name="VolunteerPrevious" xml:space="preserve">
+    <value>Προηγούμενο</value>
+    <comment>Previous</comment>
+  </data>
+  <data name="VolunteerSignUp" xml:space="preserve">
+    <value>Εγγραφή</value>
+    <comment>Sign Up</comment>
+  </data>
+  <data name="VolunteerSocial" xml:space="preserve">
+    <value>Κοινονικό</value>
+    <comment>Social</comment>
+  </data>
+  <data name="VolunteerStep" xml:space="preserve">
+    <value>Βήμα</value>
+    <comment>Step</comment>
+  </data>
+  <data name="VolunteerStep5Text" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices libero vel massa egestas facilisis. Mauris convallis augue nec dolor dignissim vestibulum. Praesent imperdiet elit posuere arcu posuere consectetur. Morbi dignissim eleifend nibh, eget tincidunt nibh dignissim hendrerit. Cras iaculis congue lorem, eget gravida augue vehicula sed. Nam lorem sem, consectetur ac tempus quis, consectetur ut lectus. In bibendum luctus pharetra. Morbi lacinia sem sem. Phasellus quis tellus magna.</value>
+    <comment>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices libero vel massa egestas facilisis. Mauris convallis augue nec dolor dignissim vestibulum. Praesent imperdiet elit posuere arcu posuere consectetur. Morbi dignissim eleifend nibh, eget tincidunt nibh dignissim hendrerit. Cras iaculis congue lorem, eget gravida augue vehicula sed. Nam lorem sem, consectetur ac tempus quis, consectetur ut lectus. In bibendum luctus pharetra. Morbi lacinia sem sem. Phasellus quis tellus magna.</comment>
+  </data>
+  <data name="VolunteerTerms" xml:space="preserve">
+    <value>Όρους Χρήσης</value>
+    <comment>Terms of Use</comment>
+  </data>
+  <data name="EventsDetailsAddComment" xml:space="preserve">
+    <value>Πρόσθήκη σχολίου</value>
+    <comment>Add comment</comment>
+  </data>
+  <data name="EventsDetailsAddUpdate" xml:space="preserve">
+    <value>Προσθήκη ενημέρωσης</value>
+    <comment>Add update</comment>
+  </data>
+  <data name="EventsDetailsBy" xml:space="preserve">
+    <value>από</value>
+    <comment>by</comment>
+  </data>
+  <data name="EventsDetailsDays" xml:space="preserve">
+    <value>μέρες πριν</value>
+    <comment>days ago</comment>
+  </data>
+  <data name="EventsDetailsDaysLeft" xml:space="preserve">
+    <value>Ημέρες</value>
+    <comment>Days left</comment>
+  </data>
+  <data name="EventsDetailsDeleteComment" xml:space="preserve">
+    <value>Διαγραφή σχολίου</value>
+    <comment>Delete comment</comment>
+  </data>
+  <data name="EventsDetailsDeleteUpdate" xml:space="preserve">
+    <value>Διαγραφή ενημέρωσης</value>
+    <comment>Delete update</comment>
+  </data>
+  <data name="EventsDetailsDescription" xml:space="preserve">
+    <value>Περιγραφή</value>
+    <comment>Description</comment>
+  </data>
+  <data name="EventsDetailsDiscussions" xml:space="preserve">
+    <value>Συζητήσεις</value>
+    <comment>Discussions</comment>
+  </data>
+  <data name="EventsDetailsEditAction" xml:space="preserve">
+    <value>Επεξεργασία Δράσης</value>
+    <comment>Edit Action</comment>
+  </data>
+  <data name="EventsDetailsEditComment" xml:space="preserve">
+    <value>Επεξεργασία σχολίου</value>
+    <comment>Edit comment</comment>
+  </data>
+  <data name="EventsDetailsEditUpdate" xml:space="preserve">
+    <value>Επεξεργασία ενημέρωσης</value>
+    <comment>Edit update</comment>
+  </data>
+  <data name="EventsDetailsEventOrganizer" xml:space="preserve">
+    <value>Διοργανωτής</value>
+    <comment>Event Organizer</comment>
+  </data>
+  <data name="EventsDetailsGoal" xml:space="preserve">
+    <value>Στόχος</value>
+    <comment>Goal</comment>
+  </data>
+  <data name="EventsDetailsHelp" xml:space="preserve">
+    <value>Βοηθήστε</value>
+    <comment>Help</comment>
+  </data>
+  <data name="EventsDetailsHelping" xml:space="preserve">
+    <value>Βοηθάτε!</value>
+    <comment>Helping!</comment>
+  </data>
+  <data name="EventsDetailsHour" xml:space="preserve">
+    <value>ώρα πρίν</value>
+    <comment>hour ago</comment>
+  </data>
+  <data name="EventsDetailsHours" xml:space="preserve">
+    <value>ώρες πριν</value>
+    <comment>hours ago</comment>
+  </data>
+  <data name="EventsDetailsMinute" xml:space="preserve">
+    <value>λεπτό πριν</value>
+    <comment>minute ago</comment>
+  </data>
+  <data name="EventsDetailsMinutes" xml:space="preserve">
+    <value>λεπτά πριν</value>
+    <comment>minutes ago</comment>
+  </data>
+  <data name="EventsDetailsPlaceholderComment" xml:space="preserve">
+    <value>Προσθέστε το σχόλιό σας</value>
+    <comment>Add your comment</comment>
+  </data>
+  <data name="EventsDetailsPlaceholderUpdate" xml:space="preserve">
+    <value>Προσθέστε ενημέρωση</value>
+    <comment>Add your update</comment>
+  </data>
+  <data name="EventsDetailsUpdates" xml:space="preserve">
+    <value>Ενημερώσεις</value>
+    <comment>Updates</comment>
+  </data>
+  <data name="EventsDetailsUploadImg" xml:space="preserve">
+    <value>Ανεβάστε Εικόνα</value>
+    <comment>Upload Image</comment>
+  </data>
+  <data name="EventsDetailsUser" xml:space="preserve">
+    <value>Χρήστης</value>
+    <comment>User</comment>
+  </data>
+  <data name="EventsDetailsVolunteer" xml:space="preserve">
+    <value>Εθελοντής</value>
+    <comment>Volunteer</comment>
+  </data>
+  <data name="EventsDetailsVolunteers" xml:space="preserve">
+    <value>Εθελοντές</value>
+    <comment>Volunteers</comment>
+  </data>
+  <data name="EventsEditDeleteThisEvent" xml:space="preserve">
+    <value>Διαγραφή αυτής της Δράσης</value>
+    <comment>Delete this event</comment>
+  </data>
+  <data name="EventsIndexActionStatus" xml:space="preserve">
+    <value>Κατάσταση Δράσης:</value>
+    <comment>Action Status:</comment>
+  </data>
+  <data name="EventsIndexAll" xml:space="preserve">
+    <value>Όλα</value>
+    <comment>All</comment>
+  </data>
+  <data name="EventsIndexAllActions" xml:space="preserve">
+    <value>Όλες οι Δράσεις</value>
+    <comment>All Actions</comment>
+  </data>
+  <data name="EventsIndexCompany" xml:space="preserve">
+    <value>Εταιρεία</value>
+    <comment>Company</comment>
+  </data>
+  <data name="EventsIndexEnding" xml:space="preserve">
+    <value>Τελειώνουν</value>
+    <comment>Ending</comment>
+  </data>
+  <data name="EventsIndexEverybody" xml:space="preserve">
+    <value>Όλοι</value>
+    <comment>Everybody</comment>
+  </data>
+  <data name="EventsIndexFilterBy" xml:space="preserve">
+    <value>Φιλτράρισμα κατά:</value>
+    <comment>Filter by:</comment>
+  </data>
+  <data name="EventsIndexLatest" xml:space="preserve">
+    <value>Νεότερες</value>
+    <comment>Latest</comment>
+  </data>
+  <data name="EventsIndexMyActions" xml:space="preserve">
+    <value>Οι Δράσεις μου</value>
+    <comment>My Actions</comment>
+  </data>
+  <data name="EventsIndexOngoing" xml:space="preserve">
+    <value>Συνεχίζεται</value>
+    <comment>Ongoing</comment>
+  </data>
+  <data name="EventsIndexOrganizations" xml:space="preserve">
+    <value>Οργανισμός</value>
+    <comment>Organization</comment>
+  </data>
+  <data name="EventsIndexOrganizedBy" xml:space="preserve">
+    <value>Διοργανώθηκε από:</value>
+    <comment>Organized by:</comment>
+  </data>
+  <data name="EventsIndexRelevance" xml:space="preserve">
+    <value>Συνάφεια</value>
+    <comment>Relevance</comment>
+  </data>
+  <data name="EventsIndexResetFilters" xml:space="preserve">
+    <value>Επαναφορά φίλτρων ...</value>
+    <comment>Reset filters...</comment>
+  </data>
+  <data name="EventsIndexSuccessful" xml:space="preserve">
+    <value>Επιτυχής</value>
+    <comment>Successful</comment>
+  </data>
+  <data name="EventsIndexTitle" xml:space="preserve">
+    <value>Τίτλος</value>
+    <comment>Title</comment>
+  </data>
+  <data name="EventsIndexUnsuccessful" xml:space="preserve">
+    <value>Ανεπιτυχής</value>
+    <comment>Unsiccessful</comment>
+  </data>
+  <data name="EventsIndexUsers" xml:space="preserve">
+    <value>Χρήστες</value>
+    <comment>Users</comment>
+  </data>
+  <data name="LayoutNavBarLogout" xml:space="preserve">
+    <value>Αποσύνδεση</value>
+    <comment>Logout</comment>
+  </data>
+  <data name="LayoutNavBarSignIn" xml:space="preserve">
+    <value>Είσοδος</value>
+    <comment>Sign In</comment>
+  </data>
+  <data name="LayoutNavBarSignUp" xml:space="preserve">
+    <value>Εγγραφή</value>
+    <comment>Sign Up</comment>
+  </data>
+  <data name="MessagesIndexCompose" xml:space="preserve">
+    <value>Συντάξτε</value>
+    <comment>Compose</comment>
+  </data>
+  <data name="MessagesIndexDrafts" xml:space="preserve">
+    <value>Πρόχειρα</value>
+    <comment>Drafts</comment>
+  </data>
+  <data name="MessagesIndexEmail" xml:space="preserve">
+    <value>emails.</value>
+    <comment>emails.</comment>
+  </data>
+  <data name="MessagesIndexInbox" xml:space="preserve">
+    <value>Εισερχόμενα</value>
+    <comment>Inbox</comment>
+  </data>
+  <data name="MessagesIndexNew" xml:space="preserve">
+    <value>νέα</value>
+    <comment>new</comment>
+  </data>
+  <data name="MessagesIndexSent" xml:space="preserve">
+    <value>Αποσταλμένα</value>
+    <comment>Sent</comment>
+  </data>
+  <data name="MessagesIndexSettings" xml:space="preserve">
+    <value>Ρυθμίσεις</value>
+    <comment>Settings</comment>
+  </data>
+  <data name="MessagesIndexYouhave" xml:space="preserve">
+    <value>Έχετε</value>
+    <comment>You have</comment>
+  </data>
+  <data name="ModalsEventsUploImgUploadBanner" xml:space="preserve">
+    <value>Ανεβάστε Banner</value>
+    <comment>Upload Banner</comment>
+  </data>
+  <data name="ModalsEventsUploImgUploadThumbnail" xml:space="preserve">
+    <value>Ανεβάστε Μικρογραφία</value>
+    <comment>Upload Thumbnail</comment>
+  </data>
+  <data name="SearchIndexAllActions" xml:space="preserve">
+    <value>Όλες οι Δράσεις</value>
+    <comment>All Actions</comment>
+  </data>
+  <data name="SearchIndexEnding" xml:space="preserve">
+    <value>Τελειώνουν</value>
+    <comment>Ending</comment>
+  </data>
+  <data name="SearchIndexFilterBy" xml:space="preserve">
+    <value>Φιλτράρισμα κατά:</value>
+    <comment>Filter by:</comment>
+  </data>
+  <data name="SearchIndexFrom" xml:space="preserve">
+    <value>Από:</value>
+    <comment>From:</comment>
+  </data>
+  <data name="SearchIndexLatest" xml:space="preserve">
+    <value>Νεότερες</value>
+    <comment>Latest</comment>
+  </data>
+  <data name="SearchIndexMyActions" xml:space="preserve">
+    <value>Οι Δράσεις μου</value>
+    <comment>My Actions</comment>
+  </data>
+  <data name="SearchIndexNoResults" xml:space="preserve">
+    <value>Δεν βρέθηκαν αποτελέσματα ή δεν έχετε καθορίσει ένα ερώτημα</value>
+    <comment>No results Found or you didn't specify a query</comment>
+  </data>
+  <data name="SearchIndexRating" xml:space="preserve">
+    <value>Βαθμολογία</value>
+    <comment>Rating</comment>
+  </data>
+  <data name="SearchIndexRelevance" xml:space="preserve">
+    <value>Συνάφεια</value>
+    <comment>Relevance</comment>
+  </data>
+  <data name="SearchIndexSelectByDate" xml:space="preserve">
+    <value>Επιλέξτε κατά Ημερομηνία:</value>
+    <comment>Select by Date:</comment>
+  </data>
+  <data name="SearchIndexSelectCategory" xml:space="preserve">
+    <value>Επιλέξτε κατά Κατηγορία:</value>
+    <comment>Select category:</comment>
+  </data>
+  <data name="SearchIndexSortBy" xml:space="preserve">
+    <value>Ταξινόμηση κατά:</value>
+    <comment>Sort by:</comment>
+  </data>
+  <data name="SearchIndexTitle" xml:space="preserve">
+    <value>Τίτλος</value>
+    <comment>Title</comment>
+  </data>
+  <data name="SearchIndexTo" xml:space="preserve">
+    <value>Προς:</value>
+    <comment>To:</comment>
+  </data>
+  <data name="SearchIndexVBTitle" xml:space="preserve">
+    <value>Index</value>
+    <comment>Index</comment>
+  </data>
+  <data name="SharedErrorError1" xml:space="preserve">
+    <value>Σφάλμα.</value>
+    <comment>Error.</comment>
+  </data>
+  <data name="SharedErrorError2" xml:space="preserve">
+    <value>Παρουσιάστηκε σφάλμα κατά την επεξεργασία του αιτήματός σας.</value>
+    <comment>An error occurred while processing your request.</comment>
+  </data>
+  <data name="SharedErrorVBTitle" xml:space="preserve">
+    <value>Σφάλμα</value>
+    <comment>Error</comment>
+  </data>
+  <data name="SharedLayoutNotifyMe" xml:space="preserve">
+    <value>Ειδοποίηση</value>
+    <comment>Notify me</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterAbout" xml:space="preserve">
+    <value>είναι μια πλατφόρμα για την εύρεση εθελοντών για τις εκδηλώσεις σας. Οι εθελοντές μπορούν να σας αξιολογήσουν και να σας κάνουν έναν καλύτερο διοργανωτή. Κάνουμε τον εθελοντισμό ένα παιχνίδι όπου μπορείτε να λάβετε εμβλήματα.</value>
+    <comment>is a platform for finding volunteers for your events. Volunteers can rate you and make you
+                        a better organizer. We make volunteerism a game where you can receive badges.</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterAboutSite" xml:space="preserve">
+    <value>Σχετικά με το WAVE</value>
+    <comment>About WAVE</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterAmbassador" xml:space="preserve">
+    <value>Γίνετε πρεσβευτής</value>
+    <comment>Become an Ambassador</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterBlog" xml:space="preserve">
+    <value>Blog</value>
+    <comment>Blog</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterContactUs" xml:space="preserve">
+    <value>Επικοινωνήστε μαζί μας</value>
+    <comment>Contact us</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterDirectory" xml:space="preserve">
+    <value>Κατάλογος</value>
+    <comment>Directory</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterDiscover" xml:space="preserve">
+    <value>Ανακαλύψτε</value>
+    <comment>Discover</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterFAQ" xml:space="preserve">
+    <value>Συχνές ερωτήσεις</value>
+    <comment>FAQs</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterForBusiness" xml:space="preserve">
+    <value>Το WAVE για Επιχειρήσεις</value>
+    <comment>WAVE for Business</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterForOrganizations" xml:space="preserve">
+    <value>για Οργανισμούς</value>
+    <comment>for Organizations</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterInfo" xml:space="preserve">
+    <value>Πληροφορίεας</value>
+    <comment>Inforrmation</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterNewsletter" xml:space="preserve">
+    <value>Εγγραφείτε στο Ενημερωτικό Δελτίο μας</value>
+    <comment>Sign up for Newsletter</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterPlaceholderEmail" xml:space="preserve">
+    <value>Η διεύθυνση email σας</value>
+    <comment>Your email address</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterPrivacy" xml:space="preserve">
+    <value>Πολιτική Προστασίας Προσωπικών Δεδομένων</value>
+    <comment>Privacy Policy</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterStats" xml:space="preserve">
+    <value>Στατιστικά</value>
+    <comment>Stats</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterSupport" xml:space="preserve">
+    <value>Υποστήριξη</value>
+    <comment>Support</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterSupporters" xml:space="preserve">
+    <value>Οι υποστηρικτές μας</value>
+    <comment>Our Supporters</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterTerms" xml:space="preserve">
+    <value>Όροι Χρήσης</value>
+    <comment>Terms of Use</comment>
+  </data>
+  <data name="SharedLayoutPartialsFooterTheTeam" xml:space="preserve">
+    <value>Η Ομάδα</value>
+    <comment>The Team</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuAbout" xml:space="preserve">
+    <value>Σχετικά</value>
+    <comment>About</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuAddAnAction" xml:space="preserve">
+    <value>Νέα Δράση</value>
+    <comment>Add an Action</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuAmbassadors" xml:space="preserve">
+    <value>Πρεσβευτές</value>
+    <comment>Ambassadors</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuBlog" xml:space="preserve">
+    <value>Blog</value>
+    <comment>Blog</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuDiscover" xml:space="preserve">
+    <value>Ανακαλύψτε</value>
+    <comment>Discover</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuHallOfFame" xml:space="preserve">
+    <value>Hall of Fame</value>
+    <comment>Hall of Fame</comment>
+  </data>
+  <data name="SharedLayoutPartialsMenuRankings" xml:space="preserve">
+    <value>Κατάταξη</value>
+    <comment>Rankings</comment>
+  </data>
+  <data name="SharedLoginPartialLogOff" xml:space="preserve">
+    <value>Αποσυνδεθείτε</value>
+    <comment>Log off</comment>
+  </data>
+  <data name="UserEditAddress" xml:space="preserve">
+    <value>Διεύθυνση:</value>
+    <comment>Address:</comment>
+  </data>
+  <data name="UserEditCity" xml:space="preserve">
+    <value>Πόλη:</value>
+    <comment>City:</comment>
+  </data>
+  <data name="UserEditCountry" xml:space="preserve">
+    <value>Χώρα:</value>
+    <comment>Country:</comment>
+  </data>
+  <data name="UserEditDescribeAction" xml:space="preserve">
+    <value>Περιγράψτε τη Δράση</value>
+    <comment>Describe the Action</comment>
+  </data>
+  <data name="UserEditDescription" xml:space="preserve">
+    <value>Πριγραφή</value>
+    <comment>Description</comment>
+  </data>
+  <data name="UserEditFacebook" xml:space="preserve">
+    <value>Facebook:</value>
+    <comment>Facebook:</comment>
+  </data>
+  <data name="UserEditGooglePlus" xml:space="preserve">
+    <value>Google+:</value>
+    <comment>Google+:</comment>
+  </data>
+  <data name="UserEditInfo" xml:space="preserve">
+    <value>Πληροφορίες</value>
+    <comment>Info</comment>
+  </data>
+  <data name="UserEditLinkedIn" xml:space="preserve">
+    <value>LinkedIn:</value>
+    <comment>LinkedIn:</comment>
+  </data>
+  <data name="UserEditLocation" xml:space="preserve">
+    <value>Τοποθεσία</value>
+    <comment>Location</comment>
+  </data>
+  <data name="UserEditName" xml:space="preserve">
+    <value>Όνομα:</value>
+    <comment>Name:</comment>
+  </data>
+  <data name="UserEditPhone" xml:space="preserve">
+    <value>Τηλέφωνο:</value>
+    <comment>Phone:</comment>
+  </data>
+  <data name="UserEditPlaceholderAddress" xml:space="preserve">
+    <value>Εισάγετε Διεύθυνση...</value>
+    <comment>Enter Address..</comment>
+  </data>
+  <data name="UserEditPlaceholderCity" xml:space="preserve">
+    <value>Εισάγετε Πόλη...</value>
+    <comment>Enter City...</comment>
+  </data>
+  <data name="UserEditPlaceholderDescribeAction" xml:space="preserve">
+    <value>Περιγράψτε τη Δράση...</value>
+    <comment>Describe the Action...</comment>
+  </data>
+  <data name="USerEditPlaceholderFacebook" xml:space="preserve">
+    <value>Εισάγετε Facebook...</value>
+    <comment>Enter Facebook...</comment>
+  </data>
+  <data name="UserEditPlaceholderGooglePlus" xml:space="preserve">
+    <value>Εισάγετε Google+...</value>
+    <comment>Enter Google+...</comment>
+  </data>
+  <data name="UserEditPlaceholderLinkedIn" xml:space="preserve">
+    <value>Εισάγετε LinkedIn...</value>
+    <comment>Enter LinkedIn...</comment>
+  </data>
+  <data name="UserEditPlaceholderName" xml:space="preserve">
+    <value>Εισάγετε Όνομα...</value>
+    <comment>Enter Name...</comment>
+  </data>
+  <data name="UserEditPlaceholderPhone" xml:space="preserve">
+    <value>Εισάγετε Τηλέφωνο...</value>
+    <comment>Enter Phone...</comment>
+  </data>
+  <data name="UserEditPlaceholderSkype" xml:space="preserve">
+    <value>Εισάγετε Skype...</value>
+    <comment>Enter Skype...</comment>
+  </data>
+  <data name="UserEditPlaceholderSurname" xml:space="preserve">
+    <value>Εισάγετε Όνομα...</value>
+    <comment>Enter Surname...</comment>
+  </data>
+  <data name="UserEditPlaceholderTwitter" xml:space="preserve">
+    <value>Εισάγετε Twitter...</value>
+    <comment>Enter Twitter...</comment>
+  </data>
+  <data name="UserEditPlaceholderWebsite" xml:space="preserve">
+    <value>Εισάγετε Ιστοσελίδα...</value>
+    <comment>Enter Website...</comment>
+  </data>
+  <data name="UserEditPlaceholderYoutube" xml:space="preserve">
+    <value>Εισάγετε Youtube...</value>
+    <comment>Enter Youtube...</comment>
+  </data>
+  <data name="UserEditPlaceholderZipCode" xml:space="preserve">
+    <value>Εισάγετε Ταχυδρομικός Κώδικας ...</value>
+    <comment>Enter Zip Code...</comment>
+  </data>
+  <data name="UserEditSkype" xml:space="preserve">
+    <value>Skype:</value>
+    <comment>Skype:</comment>
+  </data>
+  <data name="UserEditSocial" xml:space="preserve">
+    <value>Κοινωνικό</value>
+    <comment>Social</comment>
+  </data>
+  <data name="UserEditStartDate" xml:space="preserve">
+    <value>Ημ/νία Έναρξης</value>
+    <comment>Start Date</comment>
+  </data>
+  <data name="UserEditSurname" xml:space="preserve">
+    <value>Επώνυμο:</value>
+    <comment>Surname:</comment>
+  </data>
+  <data name="UserEditTitle" xml:space="preserve">
+    <value>Επεξεργασία προφίλ</value>
+    <comment>Edit Profile</comment>
+  </data>
+  <data name="UserEditTwitter" xml:space="preserve">
+    <value>Twitter:</value>
+    <comment>Twitter:</comment>
+  </data>
+  <data name="UserEditWebsite" xml:space="preserve">
+    <value>Ιστοσελίδα</value>
+    <comment>Website</comment>
+  </data>
+  <data name="UserEditYoutube" xml:space="preserve">
+    <value>Youtube:</value>
+    <comment>Youtube:</comment>
+  </data>
+  <data name="UserEditZipCode" xml:space="preserve">
+    <value>Ταχυδρομικός Κώδικας:</value>
+    <comment>Zip Code:</comment>
+  </data>
+  <data name="UserIndexCreated" xml:space="preserve">
+    <value>Δημιουργήσατε</value>
+    <comment>Created</comment>
+  </data>
+  <data name="UserIndexEditProfile" xml:space="preserve">
+    <value>Επεξεργασία προφίλ</value>
+    <comment>Edit Profile</comment>
+  </data>
+  <data name="UserIndexFollow" xml:space="preserve">
+    <value>Ακολουθήστε</value>
+    <comment>Follow</comment>
+  </data>
+  <data name="UserIndexFollowers" xml:space="preserve">
+    <value>Σας Ακολουθούν</value>
+    <comment>Followers</comment>
+  </data>
+  <data name="UserIndexFollowing" xml:space="preserve">
+    <value>Ακολουθάτε</value>
+    <comment>Following</comment>
+  </data>
+  <data name="UserIndexFollowing1" xml:space="preserve">
+    <value>Ακολουθάτε!</value>
+    <comment>Following!</comment>
+  </data>
+  <data name="UserIndexParticipated" xml:space="preserve">
+    <value>Συμμετείχατε</value>
+    <comment>Participated</comment>
+  </data>
+  <data name="UserIndexUploadImg" xml:space="preserve">
+    <value>Ανεβάστε Εικόνα</value>
+    <comment>Upload Image</comment>
+  </data>
+  <data name="LayoutNavBarProfile" xml:space="preserve">
+    <value>Προφίλ</value>
+    <comment>Profile</comment>
+  </data>
+  <data name="LayoutNavBarSearch" xml:space="preserve">
+    <value>Αναζητήστε για μία δράση...</value>
+    <comment>Search for and action...</comment>
+  </data>
+  <data name="ModalsEventsUploImgUploadBtn" xml:space="preserve">
+    <value>Ανεβάστε την εικόνα</value>
+    <comment>Upload Image</comment>
+  </data>
+  <data name="UserEditBirthDate" xml:space="preserve">
+    <value>Ημ/νία Γέννησης</value>
+    <comment>Birth Date:</comment>
+  </data>
+  <data name="HomeSlider1A" xml:space="preserve">
+    <value>Δρασε σημερα</value>
+    <comment>Take Action Today</comment>
+  </data>
+  <data name="HomeSlider1B" xml:space="preserve">
+    <value>Κάνε τη Γη ενα καλύτερο μέρος</value>
+    <comment>Make earth a better place</comment>
+  </data>
+  <data name="HomeSlider2A" xml:space="preserve">
+    <value>ΜΠΟΡΕΙΣ ΝΑ ΚΑΝΕΙΣ ΤΑ ΠΑΝΤΑ</value>
+    <comment>You can do everything</comment>
+  </data>
+  <data name="HomeSlider2B" xml:space="preserve">
+    <value>Εμείς θα σε υποστηρίξουμε</value>
+    <comment>We will suport you</comment>
+  </data>
+  <data name="HomeSlider3A" xml:space="preserve">
+    <value>Κανε τον κοσμο καλυτερο</value>
+    <comment>Make a better world</comment>
+  </data>
+  <data name="HomeSlider3B" xml:space="preserve">
+    <value>Βρες ανθρώπους που θέλουν να ενταχθούν μαζί σου</value>
+    <comment>Find people who want to join you</comment>
+  </data>
+  <data name="HomeSlider4A" xml:space="preserve">
+    <value>ΣΟΥ ΑΡΕΣΕΙ ΝΑ ΒΟΗΘΑΣ;</value>
+    <comment>You love to help?</comment>
+  </data>
+  <data name="HomeSlider4B" xml:space="preserve">
+    <value>Κάνε εγγραφη σήμερα και βοήθησέ μας να διαμορφώσουμε το μέλλον</value>
+    <comment>Join today and help us shape the future</comment>
+  </data>
+  <data name="HomeTopActionsPopularActions" xml:space="preserve">
+    <value>Δημοφιλείς Δράσεις</value>
+    <comment>Popular Actions</comment>
+  </data>
+  <data name="HomeTopActionsSeeAll" xml:space="preserve">
+    <value>Δείτε τα όλα...</value>
+    <comment>See all...</comment>
+  </data>
+  <data name="HomeTopUsersCreated" xml:space="preserve">
+    <value>Δημιουργηθηκε</value>
+    <comment>Created</comment>
+  </data>
+  <data name="HomeTopUsersFollowers" xml:space="preserve">
+    <value>Ακολουθούν</value>
+    <comment>Followers</comment>
+  </data>
+  <data name="HomeTopUsersFollowing" xml:space="preserve">
+    <value>Ακολουθάτε</value>
+    <comment>Following</comment>
+  </data>
+  <data name="HomeTopUsersParticipated" xml:space="preserve">
+    <value>Συμμετείχαν</value>
+    <comment>Participated</comment>
+  </data>
+  <data name="HomeTopUsersPopularUsers" xml:space="preserve">
+    <value>Δημοφιλείς Χρήστες</value>
+    <comment>Popular Users</comment>
+  </data>
+  <data name="HomeWelcomeAct" xml:space="preserve">
+    <value>Δραστε</value>
+    <comment>Act</comment>
+  </data>
+  <data name="HomeWelcomeActString1" xml:space="preserve">
+    <value>Επικοινωνήστε με</value>
+    <comment>Communicate with</comment>
+  </data>
+  <data name="HomeWelcomeActString2" xml:space="preserve">
+    <value>άλλους εθελοντές και</value>
+    <comment>other vollunteers</comment>
+  </data>
+  <data name="HomeWelcomeActString3" xml:space="preserve">
+    <value>φτιάξτε ενα σχέδιο δράσης.</value>
+    <comment>and make an action plan.</comment>
+  </data>
+  <data name="HomeWelcomeDiscover" xml:space="preserve">
+    <value>Ανακαλυψτε</value>
+    <comment>Discover</comment>
+  </data>
+  <data name="HomeWelcomeEndorsements" xml:space="preserve">
+    <value>Εγκρίσεις</value>
+    <comment>Endorsements</comment>
+  </data>
+  <data name="HomeWelcomeEngage" xml:space="preserve">
+    <value>Ασχοληθειτε</value>
+    <comment>Engage</comment>
+  </data>
+  <data name="HomeWelcomeFind" xml:space="preserve">
+    <value>Βρείτε</value>
+    <comment>Find</comment>
+  </data>
+  <data name="HomeWelcomeFindString1" xml:space="preserve">
+    <value>Ξεκινήστε τη δική σας δράση</value>
+    <comment>Start your own action</comment>
+  </data>
+  <data name="HomeWelcomeFindString2" xml:space="preserve">
+    <value>μέσα σε δευτερόλεπτα και</value>
+    <comment>within seconds and</comment>
+  </data>
+  <data name="HomeWelcomeFindString3" xml:space="preserve">
+    <value>βρείτε ανθρώπους που θα</value>
+    <comment>find people that</comment>
+  </data>
+  <data name="HomeWelcomeFindString4" xml:space="preserve">
+    <value>ήθελαν να βοηθήσουν</value>
+    <comment>would love to help</comment>
+  </data>
+  <data name="HomeWelcomeSignUpToday" xml:space="preserve">
+    <value>Εγγραφείτε σήμερα και ξεκινήστε τη δράση σας.</value>
+    <comment>Sign up today and start your action.</comment>
+  </data>
+  <data name="HomeWelcomeStart" xml:space="preserve">
+    <value>Ξεκινηστε</value>
+    <comment>Start</comment>
+  </data>
+  <data name="HomeWelcomeStartActionToday" xml:space="preserve">
+    <value>Ξεκινήστε μια δράση σήμερα</value>
+    <comment>Start an Action today</comment>
+  </data>
+  <data name="HomeWelcomeStartString1" xml:space="preserve">
+    <value>Προσδιορίστε ένα πρόβλημα</value>
+    <comment>Identify a problem that</comment>
+  </data>
+  <data name="HomeWelcomeStartString2" xml:space="preserve">
+    <value>που συμβαίνει κοντά σας</value>
+    <comment>is happening near you</comment>
+  </data>
+  <data name="HomeWelcomeStartString3" xml:space="preserve">
+    <value>ή αναζητήστε ένα από</value>
+    <comment>or browse for one from</comment>
+  </data>
+  <data name="HomeWelcomeStartString4" xml:space="preserve">
+    <value>την κοινότητάς μας</value>
+    <comment>our community</comment>
+  </data>
+  <data name="HomeWelcomeString1" xml:space="preserve">
+    <value>Πηγαίντε εκεί έξω</value>
+    <comment>Go out there</comment>
+  </data>
+  <data name="HomeWelcomeString2" xml:space="preserve">
+    <value>και κάντε τον κόσμο μας</value>
+    <comment>and make our world</comment>
+  </data>
+  <data name="HomeWelcomeString3" xml:space="preserve">
+    <value>ένα καλύτερο μέρος!</value>
+    <comment>a better place!</comment>
+  </data>
+  <data name="LayoutNavBarReportAProblem" xml:space="preserve">
+    <value>Αναφορά Προβλήματος</value>
+    <comment>Report a problem</comment>
+  </data>
+  <data name="LayoutNavBarHelp" xml:space="preserve">
+    <value>Βοήθεια</value>
+    <comment>Help</comment>
+  </data>
+  <data name="EventsDaysPassed" xml:space="preserve">
+    <value>Έληξε</value>
+    <comment>Date Passed</comment>
+  </data>
+  <data name="RegisterTerms0" xml:space="preserve">
+    <value>Συμφωνώ με τους</value>
+    <comment>Agree to</comment>
+  </data>
+</root>

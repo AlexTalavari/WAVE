@@ -1,0 +1,90 @@
+﻿@model HomeModel
+
+<section class="mbtm">
+
+    <h1 class="section-title">@Resources.HomeTopUsersPopularUsers </h1>
+    <a class="pull-right btn btn-stroke btn-primary innerLR" style="margin-right: 30px; margin-top: -40px;">@Resources.HomeTopActionsSeeAll</a>
+    <div class="clearfix"></div>
+
+
+    <div class="parallax" id="slide1" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="owl-users" class="owl-carousel owl-theme">
+                        @foreach (var u in Model.TopUsers)
+                        {
+                            <div class="item">
+                                <a href="/User/@u.Account.UserName">
+                                    <div class="container-item-action">
+                                        <div class="item-action" style="background-image: url(@u.BannerPhoto.Url); background-position: center; background-repeat: no-repeat; background-size: cover; height: 320px; width: 380px">
+                                            <div class="item-action-content" style="bottom: 0;">
+                                                <div class="item-action-top-content">
+                                                    <div class="item-action-top-content-inner">
+                                                        <img class="organizerPhoto" src="@u.ProfilePhoto.Url" alt="@u.GetFullName() Photo" />
+                                                        <div class="item-action-product-title" style="font-size: 16px !important; height: 53px !important; margin-top: -53px !important; padding-top: 20px !important;">@u.GetFullName()</div>
+                                                        <div style="color: #4193d0 !important;">
+                                                            <div class="margin-none pull-left" style="margin-left: -6px !important; padding-top: 5px">
+
+                                                                <div class="media-body" style="border-right: 1px solid lightgray !important; font-size: 12px; important; text-align: center !important; !width: 75px !important;">
+                                                                    <p class="margin-none" style="color: #4193d0 !important; font-size: 12px !important; text-align: center !important;">@Resources.HomeTopUsersCreated</p>
+                                                                    <p class="margin-none" style="color: #4193d0 !important; font-size: 18px !important;">@u.Actions.Count()</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="margin-none pull-left" style="padding-top: 5px !important">
+
+                                                                <div class="media-body" style="border-right: 1px solid lightgray !important; font-size: 12px !important; text-align: center !important; width: 75px !important;">
+                                                                    <p class="margin-none" style="color: #4193d0 !important; font-size: 12px !important; text-align: center !important;">@Resources.HomeTopUsersParticipated</p>
+                                                                    <p class="margin-none" style="color: #4193d0 !important; font-size: 18px !important;">@u.Volunteers.Count()</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="margin-none pull-left" style="padding-top: 5px !important">
+
+                                                                <div class="media-body" style="border-right: 1px solid lightgray !important; font-size: 12px !important; text-align: center !important; width: 75px !important;">
+                                                                    <p class="margin-none" style="color: #4193d0 !important; font-size: 12px !important; text-align: center !important;">@Resources.HomeTopUsersFollowers</p>
+                                                                    <p class="margin-none" style="color: #4193d0 !important; font-size: 18px !important;">@u.UserReceivedUnites.Count()</p>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="margin-none pull-left" style="padding-top: 5px !important">
+                                                                <div class="media-body" style="font-size: 12px !important; text-align: center !important; width: 75px !important;">
+                                                                    <p class="margin-none" style="color: #4193d0 !important; font-size: 12px !important; text-align: center !important;">@Resources.HomeTopUsersFollowing</p>
+                                                                    <p class="margin-none" style="color: #4193d0 !important; font-size: 18px !important;">@u.UserSendUnites.Count()</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        }
+
+                        @*<div class="item">
+                                <div class="widget widget-pinterest fixed-height">
+                                    <div class="mark text-center">
+                                        <span class="caret caret-default"></span>
+                                        <span class="text">Sale</span>
+                                    </div>
+                                    <div class="widget-body padding-none">
+                                        <a href="product.html" class="thumb">
+                                            <img src="../assets/images/shop/photodune-4524609-long-wavy-hair-s.jpg" alt="photo" class="img-responsive" />
+                                        </a>
+                                        <div class="description">
+                                            <a href="cart.html" class="btn btn-primary btn-circle pull-right"><i class="fa fa-shopping-cart"></i></a>
+                                            <h5 class="text-uppercase">Product name</h5>
+                                            <span class="text-primary text-medium text-condensed">&euro;215.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
